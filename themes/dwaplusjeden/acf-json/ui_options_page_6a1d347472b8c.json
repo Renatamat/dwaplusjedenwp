@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_6a1d347472b8c",
+    "title": "Motyw",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Motyw",
+    "menu_slug": "motyw",
+    "parent_slug": "none",
+    "advanced_configuration": false,
+    "icon_url": "",
+    "menu_title": "",
+    "position": null,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Aktualizuj",
+    "updated_message": "Ustawienia zostały zaktualizowane",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": false,
+    "modified": 1780297200
+}
