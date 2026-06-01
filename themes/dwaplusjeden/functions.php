@@ -46,10 +46,15 @@ function dwaplusjeden_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in multiple locations.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'dwaplusjeden' ),
+			'menu-1'                       => esc_html__( 'Menu główne', 'dwaplusjeden' ),
+			'footer-accounting'            => esc_html__( 'Footer - Księgowość', 'dwaplusjeden' ),
+			'footer-industries'            => esc_html__( 'Footer - Branże', 'dwaplusjeden' ),
+			'footer-business-support'      => esc_html__( 'Footer - Wsparcie biznesu', 'dwaplusjeden' ),
+			'footer-company-registration'  => esc_html__( 'Footer - Rejestracja firmy', 'dwaplusjeden' ),
+			'footer-useful-links'          => esc_html__( 'Footer - Przydatne linki', 'dwaplusjeden' ),
 		)
 	);
 
@@ -138,16 +143,77 @@ add_action( 'widgets_init', 'dwaplusjeden_widgets_init' );
  * Enqueue scripts and styles.
  */
 function dwaplusjeden_scripts() {
-	wp_enqueue_style( 'dwaplusjeden-style', get_stylesheet_uri(), array(), _S_VERSION );
+	$theme_style_path = get_template_directory() . '/assets/css/style.css';
+	$theme_style_uri  = get_template_directory_uri() . '/assets/css/style.css';
+	$theme_style_ver  = file_exists( $theme_style_path ) ? filemtime( $theme_style_path ) : _S_VERSION;
+	$theme_script_path = get_template_directory() . '/assets/js/bundle.js';
+	$theme_script_uri  = get_template_directory_uri() . '/assets/js/bundle.js';
+	$theme_gsap_path   = get_template_directory() . '/assets/js/gsap.bundle.js';
+	$theme_gsap_uri    = get_template_directory_uri() . '/assets/js/gsap.bundle.js';
+
+	if ( ! file_exists( $theme_script_path ) ) {
+		$theme_script_path = get_template_directory() . '/_dev/source/js/bundle/bundle.js';
+		$theme_script_uri  = get_template_directory_uri() . '/_dev/source/js/bundle/bundle.js';
+	}
+
+	if ( ! file_exists( $theme_gsap_path ) ) {
+		$theme_gsap_path = get_template_directory() . '/_dev/source/js/bundle/gsap.bundle.js';
+		$theme_gsap_uri  = get_template_directory_uri() . '/_dev/source/js/bundle/gsap.bundle.js';
+	}
+
+	wp_enqueue_style( 'dwaplusjeden-style', $theme_style_uri, array(), $theme_style_ver );
 	wp_style_add_data( 'dwaplusjeden-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'dwaplusjeden-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	if ( file_exists( $theme_script_path ) ) {
+		wp_enqueue_script( 'dwaplusjeden-bundle', $theme_script_uri, array(), filemtime( $theme_script_path ), true );
+	}
+
+	if ( file_exists( $theme_gsap_path ) ) {
+		wp_enqueue_script( 'dwaplusjeden-gsap', $theme_gsap_uri, array(), filemtime( $theme_gsap_path ), true );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dwaplusjeden_scripts' );
+
+/**
+ * Allow SVG uploads.
+ *
+ * @param array $mimes Allowed MIME types.
+ * @return array
+ */
+function dwaplusjeden_allow_svg_uploads( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'dwaplusjeden_allow_svg_uploads' );
+
+/**
+ * Fix SVG file type validation.
+ *
+ * @param array  $data     File type data.
+ * @param string $file     Full path to the file.
+ * @param string $filename Uploaded file name.
+ * @param array  $mimes    Allowed MIME types.
+ * @return array
+ */
+function dwaplusjeden_check_svg_filetype( $data, $file, $filename, $mimes ) {
+	if ( 'svg' !== pathinfo( $filename, PATHINFO_EXTENSION ) ) {
+		return $data;
+	}
+
+	$filetype = wp_check_filetype( $filename, $mimes );
+
+	return array(
+		'ext'             => $filetype['ext'],
+		'type'            => $filetype['type'],
+		'proper_filename' => $data['proper_filename'],
+	);
+}
+add_filter( 'wp_check_filetype_and_ext', 'dwaplusjeden_check_svg_filetype', 10, 4 );
 
 /**
  * Implement the Custom Header feature.
@@ -175,4 +241,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

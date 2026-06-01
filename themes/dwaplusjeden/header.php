@@ -25,35 +25,68 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dwaplusjeden' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$dwaplusjeden_description = get_bloginfo( 'description', 'display' );
-			if ( $dwaplusjeden_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $dwaplusjeden_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<?php
+	$header_logo = dwaplusjeden_get_header_logo();
+	$login_url   = function_exists( 'get_field' ) ? get_field( 'general_login_url', 'option' ) : '';
+	$login_url   = dwaplusjeden_translate_url( $login_url );
+	?>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dwaplusjeden' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	<header>
+		<div class="fixed-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="site-header">
+							<div class="d-flex align-items-center gap-48">
+								<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Strona główna', 'dwaplusjeden' ); ?>">
+									<img src="<?php echo esc_url( $header_logo['url'] ); ?>" alt="<?php echo esc_attr( $header_logo['alt'] ); ?>">
+								</a>
+
+								<nav class="main-navigation" aria-label="<?php esc_attr_e( 'Główne menu', 'dwaplusjeden' ); ?>">
+									<div class="mobile-header-menu d-xl-none">
+										<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Strona główna', 'dwaplusjeden' ); ?>">
+											<img src="<?php echo esc_url( $header_logo['url'] ); ?>" alt="<?php echo esc_attr( $header_logo['alt'] ); ?>">
+										</a>
+										<div class="mobile-header-close">
+											<svg class="i-sprite icon-24">
+												<use href="<?php echo esc_url( dwaplusjeden_get_sprite_url( 'icons-24.svg' ) ); ?>#close"></use>
+											</svg>
+										</div>
+									</div>
+
+									<?php dwaplusjeden_main_navigation(); ?>
+
+									<div class="mobile-footer-menu">
+										<?php if ( $login_url ) : ?>
+											<a href="<?php echo esc_url( $login_url ); ?>" class="c-btn c-btn-s c-btn-fill menu-login d-xl-none w-100">
+												<span><?php esc_html_e( 'Logowanie', 'dwaplusjeden' ); ?></span>
+											</a>
+										<?php endif; ?>
+										<a href="#" class="c-btn c-btn-s c-btn-link d-xl-none w-100">
+											<span class="c-black"><?php echo esc_html( strtoupper( substr( get_locale(), 0, 2 ) ) ); ?></span>
+										</a>
+									</div>
+								</nav>
+							</div>
+
+							<div class="d-flex gap-24 align-items-center">
+								<?php if ( $login_url ) : ?>
+									<a href="<?php echo esc_url( $login_url ); ?>" class="c-btn c-btn-s c-btn-fill menu-login d-none d-sm-flex">
+										<span><?php esc_html_e( 'Logowanie', 'dwaplusjeden' ); ?></span>
+									</a>
+								<?php endif; ?>
+								<div class="menu-hamburger d-xl-none">
+									<svg class="i-sprite icon-24">
+										<use href="<?php echo esc_url( dwaplusjeden_get_sprite_url( 'icons-24.svg' ) ); ?>#hamburger"></use>
+									</svg>
+								</div>
+								<a href="#" class="c-btn c-btn-s c-btn-link d-none d-xl-block btn-lang">
+									<span><?php echo esc_html( strtoupper( substr( get_locale(), 0, 2 ) ) ); ?></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
