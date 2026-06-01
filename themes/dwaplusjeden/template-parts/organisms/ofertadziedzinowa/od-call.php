@@ -1,0 +1,47 @@
+<section class="od-call pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="position-relative">
+                    <div class="od-call-container">
+                        <div class="od-call-bg">
+                            <img src="{{callback}}" alt="">
+                        </div>
+                        <div class="od-call-content">
+                            <span class="p-xl fw-bolder c-white">Sprawdź, jak może wyglądać obsługa kadr i płac w Twojej firmie</span>
+                            <p class="p-m c-white">Napisz lub zadzwoń. Powiemy Ci, jak możemy przejąć obsługę i zaproponujemy dopasowany zakres współpracy.</p>
+                            <a href="#" class="c-btn c-btn-s c-btn-fill ">
+                                <span>Skontaktuj się z nami</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="od-call-front-image">
+                        <img src="{{callfront}}" alt="">
+                    </div>  
+                    <div class="hp-hero-slider-message a-bubble-pop" data-animate-delay="0.22" data-animate-start="top 80%">
+                        <div class="hp-hero-slider-message-wrapper">
+                            <div class="d-flex flex-column gap-16">
+                                <p class="p-s">
+                                    Ten wydatek możemy wrzucić w koszty - zapłaci Pani mniejszy podatek.
+                                </p>
+                                <div class="d-flex flex-column">
+                                    <span class="p-s fw-bolder c-body">
+                                        Iwona
+                                    </span>
+                                    <span class="p-overline c-black">TWOJA KSIEGOWA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-slider-avatar">
+                            <div class="avatar">
+                                <div class="avatar-wrapper">
+                                    <img src="{{person}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
