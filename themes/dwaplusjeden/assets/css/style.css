@@ -21631,6 +21631,7 @@ footer .c-btn-outline:hover {
 .breadcrumb .breadcrumb_last {
   border-radius: var(--Radius-brand, 4px);
   background: var(--Surface-secondary, #28655B);
+  color: #fff;
 }
 .breadcrumb .breadcrumb_last a {
   color: #fff;
@@ -22090,7 +22091,7 @@ footer .c-btn-outline:hover {
   color: var(--Text-headline, #124738);
 }
 .hp-blog-card-title a:hover {
-  color: #000;
+  color: var(--Text-primary, #C83232);
 }
 
 .od-hero-card {
@@ -22535,6 +22536,7 @@ footer .c-btn-outline:hover {
 }
 .od-call-bg img {
   height: calc(100% - 32px);
+  width: auto;
 }
 @media (min-width: 768px) {
   .od-call-bg {
@@ -22556,6 +22558,7 @@ footer .c-btn-outline:hover {
 }
 .od-call-front-image img {
   max-height: 100%;
+  width: auto;
 }
 @media (min-width: 992px) {
   .od-call-front-image {
@@ -23266,6 +23269,25 @@ footer .c-btn-outline:hover {
   width: 100%;
   height: 100%;
 }
+.blog-new-first-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blog-new-first-title a:hover {
+  color: var(--Text-primary, #C83232);
+}
+.blog-new-first-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  align-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .chip {
   border-radius: var(--Radius-round, 1000px);
@@ -23340,6 +23362,9 @@ footer .c-btn-outline:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.blog-card-header a:hover {
+  color: var(--Text-primary, #C83232);
+}
 .blog-card-desc {
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -23397,6 +23422,12 @@ footer .c-btn-outline:hover {
   margin-bottom: 24px;
   color: #222;
 }
+.blog-single-contents ol li:hover a {
+  color: var(--Text-primary, #C83232);
+}
+.blog-single-contents ol li:hover:before {
+  background: var(--Text-primary, #C83232);
+}
 .blog-single-contents li:last-child {
   margin-bottom: 0;
 }
@@ -23405,6 +23436,7 @@ footer .c-btn-outline:hover {
   position: absolute;
   left: 0;
   top: 0;
+  transition: 0.3s ease;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -23609,6 +23641,12 @@ footer .c-btn-outline:hover {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--Border-400, #D4EAE9);
 }
+.blog-content a {
+  text-decoration: underline;
+}
+.blog-content a:hover {
+  color: var(--Text-primary, #C83232);
+}
 
 .blog-single-more-slider {
   width: 100%;
@@ -23698,6 +23736,9 @@ footer .c-btn-outline:hover {
   color: #28655B;
 }
 .about-header .breadcrumb span a {
+  color: #fff;
+}
+.about-header .breadcrumb span.breadcrumb_last {
   color: #fff;
 }
 .about-header .hero-split-word,
