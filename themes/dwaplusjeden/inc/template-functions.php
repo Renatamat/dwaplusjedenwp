@@ -329,24 +329,3 @@ function dwaplusjeden_main_navigation() {
 	echo '</ul>';
 }
 
-/**
- * Limit related service picker to field offer pages.
- *
- * @param array $args Relationship query args.
- * @return array
- */
-function dwaplusjeden_filter_related_offer_pages( $args ) {
-	$args['post_type'] = array( 'page' );
-
-	if ( empty( $args['meta_query'] ) ) {
-		$args['meta_query'] = array();
-	}
-
-	$args['meta_query'][] = array(
-		'key'   => '_wp_page_template',
-		'value' => 'template-ofertadziedzinowa.php',
-	);
-
-	return $args;
-}
-add_filter( 'acf/fields/relationship/query/name=od_more_related_pages', 'dwaplusjeden_filter_related_offer_pages' );

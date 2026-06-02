@@ -49,9 +49,9 @@ if ( ! $related ) {
 								continue;
 							}
 
-							$card_icon  = $has_acf ? get_field( 'od_card_icon', $page_id ) : 0;
-							$card_title = $has_acf ? get_field( 'od_card_title', $page_id ) : '';
-							$card_text  = $has_acf ? get_field( 'od_card_text', $page_id ) : '';
+							$card_icon  = $has_acf ? get_field( 'page_card_icon', $page_id ) : 0;
+							$card_title = $has_acf ? get_field( 'page_card_title', $page_id ) : '';
+							$card_text  = $has_acf ? get_field( 'page_card_text', $page_id ) : '';
 
 							if ( ! $card_icon && ! $card_title && ! $card_text ) {
 								continue;

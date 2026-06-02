@@ -12,8 +12,20 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
             get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-hero' );
-			get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-info' );
-            get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-cta' );
+			get_template_part(
+				'template-parts/organisms/global/info-section',
+				null,
+				array(
+					'field_prefix' => 'od_info',
+				)
+			);
+            get_template_part(
+                'template-parts/organisms/global/cta-accordion-section',
+                null,
+                array(
+                    'field_prefix' => 'od_cta',
+                )
+            );
             get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-services' );
             get_template_part( 'template-parts/organisms/global/trust-section' );
             get_template_part(
