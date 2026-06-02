@@ -29,7 +29,9 @@ wp-config.php
 # Uploads
 /wp-content/uploads/
 /uploads/
-
+/wp-content/languages/
+/languages/
+/plugins/
 # Log files
 *.log
 
