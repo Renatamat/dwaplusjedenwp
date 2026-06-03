@@ -1,6 +1,6 @@
 <?php
 /**
- * Field offer related services.
+ * Reusable related pages section.
  *
  * @package dwaplusjeden
  */
@@ -10,25 +10,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $has_acf = function_exists( 'get_field' );
+$prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'more';
 
-if ( $has_acf && false === get_field( 'od_more_enabled' ) ) {
+if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 	return;
 }
 
-$heading      = $has_acf ? get_field( 'od_more_heading' ) : '';
-$related      = $has_acf ? get_field( 'od_more_related_pages' ) : array();
+$heading = $has_acf ? get_field( $prefix . '_heading' ) : '';
+$related = $has_acf ? get_field( $prefix . '_related_pages' ) : array();
 
 if ( ! $related ) {
 	return;
 }
+
+$heading_id = $prefix . '-heading';
 ?>
 
-<section class="od-more pb-56 pb-sm-64 pb-lg-96 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="od-more-heading"' : ''; ?>>
+<section class="od-more pb-56 pb-sm-64 pb-lg-96 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $heading_id ) . '"' : ''; ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<?php if ( $heading ) : ?>
-					<h2 id="od-more-heading" class="p-l fw-bolder d-block w-100 text-center c-body"><?php echo wp_kses_post( $heading ); ?></h2>
+					<h2 id="<?php echo esc_attr( $heading_id ); ?>" class="p-l fw-bolder d-block w-100 text-center c-body"><?php echo wp_kses_post( $heading ); ?></h2>
 				<?php endif; ?>
 			</div>
 		</div>

@@ -6,6 +6,7 @@
             "key": "field_ob_hero_tab",
             "label": "Hero",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_hero_enabled",
             "label": "Pokaż sekcję",
             "name": "ob_hero_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -41,6 +44,7 @@
             "key": "field_ob_hero_heading",
             "label": "Nagłówek",
             "name": "ob_hero_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -60,6 +64,7 @@
             "key": "field_ob_hero_text",
             "label": "Tekst",
             "name": "ob_hero_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -79,6 +84,7 @@
             "key": "field_ob_hero_link",
             "label": "Przycisk",
             "name": "ob_hero_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -94,6 +100,7 @@
             "key": "field_ob_info_tab",
             "label": "Info",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -104,12 +111,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_info_enabled",
             "label": "Pokaż sekcję",
             "name": "ob_info_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -126,10 +135,11 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_ob_info_heading",
-            "label": "Nagłówek",
-            "name": "ob_info_heading",
-            "type": "text",
+            "key": "field_6a1fb502294c6",
+            "label": "Info",
+            "name": "ob_info",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -138,101 +148,19 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Wygodna księgowość która Ci się opłaci",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_info_cards",
-            "label": "Karty",
-            "name": "ob_info_cards",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_info_card_title",
-            "button_label": "Dodaj kartę",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_info_card_icon",
-                    "label": "Ikonka",
-                    "name": "icon",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_ob_info_card_title",
-                    "label": "Tytuł",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_info_card_text",
-                    "label": "Tekst",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 2,
-                    "new_lines": ""
-                }
-            ]
+            "clone": [
+                "group_info_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_ob_cta_tab",
             "label": "CTA",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -243,13 +171,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_cta_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_cta_enabled",
-            "type": "true_false",
+            "label": "CTA akordion",
+            "name": "ob_cta",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -258,216 +188,19 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_ob_cta_heading",
-            "label": "Nagłówek",
-            "name": "ob_cta_heading",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Co obejmuje księgowość\ndla specjalistów IT",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
-        },
-        {
-            "key": "field_ob_cta_items",
-            "label": "Akordeon",
-            "name": "ob_cta_items",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_cta_item_title",
-            "button_label": "Dodaj element",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_cta_item_title",
-                    "label": "Tytuł",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_cta_item_text",
-                    "label": "Tekst",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                }
-            ]
-        },
-        {
-            "key": "field_ob_cta_link",
-            "label": "Przycisk",
-            "name": "ob_cta_link",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_ob_cta_image",
-            "label": "Obraz",
-            "name": "ob_cta_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_ob_cta_bubble_text",
-            "label": "Dymek - tekst",
-            "name": "ob_cta_bubble_text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
-        },
-        {
-            "key": "field_ob_cta_bubble_name",
-            "label": "Dymek - imię",
-            "name": "ob_cta_bubble_name",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Iwona",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_cta_bubble_role",
-            "label": "Dymek - rola",
-            "name": "ob_cta_bubble_role",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "TWOJA KSIĘGOWA",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_cta_bubble_image",
-            "label": "Dymek - avatar",
-            "name": "ob_cta_bubble_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "clone": [
+                "group_cta_accordion_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_ob_offer_tab",
             "label": "Oferta",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -478,12 +211,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_offer_enabled",
             "label": "Pokaż sekcję",
             "name": "ob_offer_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -503,6 +238,7 @@
             "key": "field_ob_offer_left_image",
             "label": "Lewy kafel - obraz",
             "name": "ob_offer_left_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -527,6 +263,7 @@
             "key": "field_ob_offer_left_text",
             "label": "Lewy kafel - tekst",
             "name": "ob_offer_left_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -546,6 +283,7 @@
             "key": "field_ob_offer_right_image",
             "label": "Prawy kafel - obraz",
             "name": "ob_offer_right_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -570,6 +308,7 @@
             "key": "field_ob_offer_right_text",
             "label": "Prawy kafel - tekst",
             "name": "ob_offer_right_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -589,6 +328,7 @@
             "key": "field_ob_offer_link",
             "label": "Przycisk",
             "name": "ob_offer_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -604,6 +344,7 @@
             "key": "field_ob_process_tab",
             "label": "Proces",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -614,13 +355,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_process_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_process_enabled",
-            "type": "true_false",
+            "label": "Proces",
+            "name": "ob_process",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -629,115 +372,19 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_ob_process_heading",
-            "label": "Nagłówek",
-            "name": "ob_process_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Jak wygląda współpraca",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_process_text",
-            "label": "Tekst",
-            "name": "ob_process_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Prosty model działania",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_process_items",
-            "label": "Kroki",
-            "name": "ob_process_items",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_process_item_title",
-            "button_label": "Dodaj krok",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_process_item_title",
-                    "label": "Tytuł",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_process_item_text",
-                    "label": "Tekst",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 2,
-                    "new_lines": ""
-                }
-            ]
+            "clone": [
+                "group_process_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_ob_call_tab",
             "label": "Call",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -748,12 +395,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_call_enabled",
             "label": "Pokaż sekcję",
             "name": "ob_call_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -773,6 +422,7 @@
             "key": "field_ob_call_heading",
             "label": "Nagłówek",
             "name": "ob_call_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -792,6 +442,7 @@
             "key": "field_ob_call_text",
             "label": "Tekst",
             "name": "ob_call_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -811,6 +462,7 @@
             "key": "field_ob_call_link",
             "label": "Przycisk",
             "name": "ob_call_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -826,6 +478,7 @@
             "key": "field_ob_call_bg_image",
             "label": "Tło",
             "name": "ob_call_bg_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -850,6 +503,7 @@
             "key": "field_ob_call_front_image",
             "label": "Obraz z przodu",
             "name": "ob_call_front_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -874,6 +528,7 @@
             "key": "field_ob_call_bubble_text",
             "label": "Dymek - tekst",
             "name": "ob_call_bubble_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -893,6 +548,7 @@
             "key": "field_ob_call_bubble_name",
             "label": "Dymek - imię",
             "name": "ob_call_bubble_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -912,6 +568,7 @@
             "key": "field_ob_call_bubble_role",
             "label": "Dymek - rola",
             "name": "ob_call_bubble_role",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -931,6 +588,7 @@
             "key": "field_ob_call_bubble_image",
             "label": "Dymek - avatar",
             "name": "ob_call_bubble_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -955,6 +613,7 @@
             "key": "field_ob_faq_tab",
             "label": "FAQ",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -965,13 +624,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_faq_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_faq_enabled",
-            "type": "true_false",
+            "label": "FAQ",
+            "name": "ob_faq",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -980,96 +641,19 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_ob_faq_heading",
-            "label": "Nagłówek",
-            "name": "ob_faq_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Najczęściej zadawane pytania",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_faq_items",
-            "label": "Pytania",
-            "name": "ob_faq_items",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_faq_item_question",
-            "button_label": "Dodaj pytanie",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_faq_item_question",
-                    "label": "Pytanie",
-                    "name": "question",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_faq_item_answer",
-                    "label": "Odpowiedź",
-                    "name": "answer",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                }
-            ]
+            "clone": [
+                "group_faq_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_ob_knowledge_tab",
             "label": "Wiedza",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1080,13 +664,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_knowledge_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_knowledge_enabled",
-            "type": "true_false",
+            "label": "Wiedza",
+            "name": "ob_knowledge",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1095,96 +681,19 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_ob_knowledge_heading",
-            "label": "Nagłówek",
-            "name": "ob_knowledge_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Co warto wiedzieć o kadrach i płacach",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_knowledge_items",
-            "label": "Elementy",
-            "name": "ob_knowledge_items",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_knowledge_item_title",
-            "button_label": "Dodaj element",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_knowledge_item_title",
-                    "label": "Tytuł",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_knowledge_item_text",
-                    "label": "Tekst",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                }
-            ]
+            "clone": [
+                "group_knowledge_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_ob_more_tab",
-            "label": "Powiązane usługi",
+            "label": "Powiązane strony usług",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1195,13 +704,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_ob_more_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_more_enabled",
-            "type": "true_false",
+            "label": "Powiązane usługi",
+            "name": "ob_more",
+            "aria-label": "",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1210,172 +721,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_ob_more_heading",
-            "label": "Nagłówek",
-            "name": "ob_more_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Powiązane usługi",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_more_items",
-            "label": "Usługi",
-            "name": "ob_more_items",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "field_ob_more_item_title",
-            "button_label": "Dodaj usługę",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_ob_more_item_icon",
-                    "label": "Ikonka",
-                    "name": "icon",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "30",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_ob_more_item_title",
-                    "label": "Tytuł",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_ob_more_item_text",
-                    "label": "Tekst",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_ob_more_item_related_page",
-                    "label": "Relacja do strony/wpisu",
-                    "name": "related_page",
-                    "type": "post_object",
-                    "instructions": "Jeśli wybierzesz relację, będzie ważniejsza niż ręczny link.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page",
-                        "post"
-                    ],
-                    "taxonomy": "",
-                    "return_format": "object",
-                    "multiple": 0,
-                    "allow_null": 1,
-                    "ui": 1
-                },
-                {
-                    "key": "field_ob_more_item_link",
-                    "label": "Link ręczny",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
-                },
-                {
-                    "key": "field_ob_more_item_button_label",
-                    "label": "Etykieta przycisku",
-                    "name": "button_label",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Sprawdź",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "clone": [
+                "group_related_pages_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -1395,5 +747,9 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": "2026-06-01 00:00:00"
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1780466457
 }
