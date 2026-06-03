@@ -54,7 +54,7 @@ get_header();
 				)
 			);
 			get_template_part(
-				'template-parts/organisms/global/more',
+				'template-parts/organisms/global/more-section',
 				null,
 				array(
 					'field_prefix' => 'ob_more',

@@ -126,7 +126,7 @@
             "name": "od_hero_card_1_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, /7.",
+            "instructions": "Np. +, %, \/7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -206,7 +206,7 @@
             "name": "od_hero_card_2_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, /7.",
+            "instructions": "Np. +, %, \/7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -286,7 +286,7 @@
             "name": "od_hero_card_3_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, /7.",
+            "instructions": "Np. +, %, \/7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -294,7 +294,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "/7",
+            "default_value": "\/7",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -413,11 +413,11 @@
             "selected": 0
         },
         {
-            "key": "field_od_cta_clone",
-            "label": "CTA",
-            "name": "od_cta",
+            "key": "field_od_cta_enabled",
+            "label": "Pokaż sekcję",
+            "name": "od_cta_enabled",
             "aria-label": "",
-            "type": "clone",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -426,13 +426,223 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_cta_accordion_section"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 1,
-            "prefix_name": 1
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_od_cta_heading",
+            "label": "Nagłówek",
+            "name": "od_cta_heading",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Co obejmuje \nobsługa kadrowa-płacowa",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_od_cta_items",
+            "label": "Lista accordionu",
+            "name": "od_cta_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_od_cta_item_title",
+            "button_label": "Dodaj pozycję",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_od_cta_item_title",
+                    "label": "Tytuł",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_od_cta_items"
+                },
+                {
+                    "key": "field_od_cta_item_text",
+                    "label": "Tekst",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "br",
+                    "parent_repeater": "field_od_cta_items"
+                }
+            ]
+        },
+        {
+            "key": "field_od_cta_link",
+            "label": "Przycisk",
+            "name": "od_cta_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_od_cta_image",
+            "label": "Obraz",
+            "name": "od_cta_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_od_cta_bubble_text",
+            "label": "Dymek - tekst",
+            "name": "od_cta_bubble_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ten wydatek możemy wrzucić w koszty - zapłaci Pani mniejszy podatek.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_od_cta_bubble_name",
+            "label": "Dymek - imię",
+            "name": "od_cta_bubble_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Iwona",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_od_cta_bubble_role",
+            "label": "Dymek - rola",
+            "name": "od_cta_bubble_role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "TWOJA KSIĘGOWA",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_od_cta_bubble_image",
+            "label": "Dymek - avatar",
+            "name": "od_cta_bubble_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_od_services_tab",
@@ -552,7 +762,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_od_services_items"
                 }
             ]
         },
@@ -942,7 +1153,7 @@
             "selected": 0
         },
         {
-            "key": "field_od_more_clone",
+            "key": "field_od_more_enabled",
             "label": "Pozostałe usługi",
             "name": "od_more",
             "aria-label": "",
@@ -956,7 +1167,7 @@
                 "id": ""
             },
             "clone": [
-                "group_more_section"
+                "group_related_pages_section"
             ],
             "display": "seamless",
             "layout": "block",
@@ -981,9 +1192,9 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
+    "show_in_rest": 0,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780403400
+    "modified": 1780476971
 }

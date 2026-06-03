@@ -43,12 +43,32 @@
             "maxlength": ""
         },
         {
+            "key": "field_related_pages_show_icons",
+            "label": "Pokaż ikony i opisy",
+            "name": "show_icons",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Z ikonami",
+            "ui_off_text": "Bez ikon"
+        },
+        {
             "key": "field_related_pages_related_pages",
             "label": "Powiązane strony usług",
             "name": "related_pages",
             "aria-label": "",
             "type": "relationship",
-            "instructions": "Wybierz strony. Dane kart beda pobrane z globalnych pol Dane karty strony na wybranych stronach.",
+            "instructions": "Wybierz strony. Dane kart będą pobrane z globalnych pól Dane karty strony na wybranych stronach.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -59,7 +79,6 @@
             "post_type": [
                 "page"
             ],
-            "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search"
@@ -75,9 +94,9 @@
     "location": [
         [
             {
-                "param": "current_user_role",
+                "param": "post_type",
                 "operator": "==",
-                "value": "contributor"
+                "value": "__never__"
             }
         ]
     ],
@@ -88,10 +107,10 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Ukryta grupa do klonowania sekcji powiazanych stron.",
-    "show_in_rest": 0,
+    "description": "Ukryta grupa do klonowania sekcji powiązanych stron.",
+    "show_in_rest": false,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780465947
+    "modified": 1780470730
 }
