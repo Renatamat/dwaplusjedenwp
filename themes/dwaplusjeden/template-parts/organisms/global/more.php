@@ -26,15 +26,20 @@ if ( ! $related ) {
 $heading_id = $prefix . '-heading';
 ?>
 
-
+<<<<<<<< HEAD:themes/dwaplusjeden/template-parts/organisms/global/more-section.php
 <section class="od-more pb-56 pb-sm-64 pb-lg-96 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
-
+========
+<section class="od-more pb-56 pb-sm-64 pb-lg-96 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $heading_id ) . '"' : ''; ?>>
+>>>>>>>> origin/rm_branzowe_czesc:themes/dwaplusjeden/template-parts/organisms/global/more.php
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<?php if ( $heading ) : ?>
-
+<<<<<<<< HEAD:themes/dwaplusjeden/template-parts/organisms/global/more-section.php
+					<h2 id="<?php echo esc_attr( $prefix ); ?>-heading" class="p-l fw-bolder d-block w-100 text-center c-body"><?php echo wp_kses_post( $heading ); ?></h2>
+========
 					<h2 id="<?php echo esc_attr( $heading_id ); ?>" class="p-l fw-bolder d-block w-100 text-center c-body"><?php echo wp_kses_post( $heading ); ?></h2>
+>>>>>>>> origin/rm_branzowe_czesc:themes/dwaplusjeden/template-parts/organisms/global/more.php
 				<?php endif; ?>
 			</div>
 		</div>
