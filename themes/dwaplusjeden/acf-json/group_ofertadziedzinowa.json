@@ -22,7 +22,7 @@
         },
         {
             "key": "field_od_hero_enabled",
-            "label": "Poka\u017c sekcj\u0119",
+            "label": "Pokaż sekcję",
             "name": "od_hero_enabled",
             "aria-label": "",
             "type": "true_false",
@@ -42,7 +42,7 @@
         },
         {
             "key": "field_od_hero_heading",
-            "label": "Nag\u0142\u00f3wek",
+            "label": "Nagłówek",
             "name": "od_hero_heading",
             "aria-label": "",
             "type": "text",
@@ -54,7 +54,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Kadry i p\u0142ace bez komplikacji",
+            "default_value": "Kadry i płace bez komplikacji",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -74,7 +74,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Przejmujemy obowi\u0105zki dzia\u0142u kadr i p\u0142ac, dostosowuj\u0105c zakres wsp\u00f3\u0142pracy do potrzeb klienta.",
+            "default_value": "Przejmujemy obowiązki działu kadr i płac, dostosowując zakres współpracy do potrzeb klienta.",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
@@ -154,7 +154,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Projekt\u00f3w kadrowo-p\u0142acowych",
+            "default_value": "Projektów kadrowo-płacowych",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -234,7 +234,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Gwarancja bezpiecze\u0144stwa i poufno\u015bci",
+            "default_value": "Gwarancja bezpieczeństwa i poufności",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -314,7 +314,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Dost\u0119pno\u015b\u0107 online",
+            "default_value": "Dostępność online",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -436,7 +436,7 @@
         },
         {
             "key": "field_od_services_tab",
-            "label": "Us\u0142ugi",
+            "label": "Usługi",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -454,7 +454,7 @@
         },
         {
             "key": "field_od_services_enabled",
-            "label": "Poka\u017c sekcj\u0119",
+            "label": "Pokaż sekcję",
             "name": "od_services_enabled",
             "aria-label": "",
             "type": "true_false",
@@ -474,7 +474,7 @@
         },
         {
             "key": "field_od_services_heading",
-            "label": "Nag\u0142\u00f3wek",
+            "label": "Nagłówek",
             "name": "od_services_heading",
             "aria-label": "",
             "type": "textarea",
@@ -486,7 +486,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Nasze us\u0142ugi skierowane s\u0105 do du\u017cych, \u015brednich i ma\u0142ych firm",
+            "default_value": "Nasze usługi skierowane są do dużych, średnich i małych firm",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
@@ -506,7 +506,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Wspieramy JDG, sp\u00f3\u0142ki i organizacje - jasno, terminowo i bez zb\u0119dnego anga\u017cowania Twojego czasu.",
+            "default_value": "Wspieramy JDG, spółki i organizacje - jasno, terminowo i bez zbędnego angażowania Twojego czasu.",
             "placeholder": "",
             "maxlength": "",
             "rows": 3,
@@ -531,7 +531,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_od_services_item_text",
-            "button_label": "Dodaj pozycj\u0119",
+            "button_label": "Dodaj pozycję",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -632,7 +632,7 @@
         },
         {
             "key": "field_od_call_enabled",
-            "label": "Poka\u017c sekcj\u0119",
+            "label": "Pokaż sekcję",
             "name": "od_call_enabled",
             "aria-label": "",
             "type": "true_false",
@@ -652,7 +652,7 @@
         },
         {
             "key": "field_od_call_background_image",
-            "label": "Obraz t\u0142a",
+            "label": "Obraz tła",
             "name": "od_call_background_image",
             "aria-label": "",
             "type": "image",
@@ -704,7 +704,7 @@
         },
         {
             "key": "field_od_call_heading",
-            "label": "Nag\u0142\u00f3wek",
+            "label": "Nagłówek",
             "name": "od_call_heading",
             "aria-label": "",
             "type": "textarea",
@@ -716,7 +716,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Sprawd\u017a, jak mo\u017ce wygl\u0105da\u0107 obs\u0142uga kadr i p\u0142ac w Twojej firmie",
+            "default_value": "Sprawdź, jak może wyglądać obsługa kadr i płac w Twojej firmie",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
@@ -736,7 +736,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Napisz lub zadzwo\u0144. Powiemy Ci, jak mo\u017cemy przej\u0105\u0107 obs\u0142ug\u0119 i zaproponujemy dopasowany zakres wsp\u00f3\u0142pracy.",
+            "default_value": "Napisz lub zadzwoń. Powiemy Ci, jak możemy przejąć obsługę i zaproponujemy dopasowany zakres współpracy.",
             "placeholder": "",
             "maxlength": "",
             "rows": 3,
@@ -772,7 +772,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Ten wydatek mo\u017cemy wrzuci\u0107 w koszty - zap\u0142aci Pani mniejszy podatek.",
+            "default_value": "Ten wydatek możemy wrzucić w koszty - zapłaci Pani mniejszy podatek.",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
@@ -780,7 +780,7 @@
         },
         {
             "key": "field_od_call_bubble_name",
-            "label": "Dymek - imi\u0119",
+            "label": "Dymek - imię",
             "name": "od_call_bubble_name",
             "aria-label": "",
             "type": "text",
@@ -812,7 +812,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "TWOJA KSI\u0118GOWA",
+            "default_value": "TWOJA KSIĘGOWA",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -925,7 +925,7 @@
         },
         {
             "key": "field_od_more_tab",
-            "label": "Pozosta\u0142e us\u0142ugi",
+            "label": "Pozostałe usługi",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -942,11 +942,11 @@
             "selected": 0
         },
         {
-            "key": "field_od_more_enabled",
-            "label": "Poka\u017c sekcj\u0119",
-            "name": "od_more_enabled",
+            "key": "field_od_more_clone",
+            "label": "Pozostałe usługi",
+            "name": "od_more",
             "aria-label": "",
-            "type": "true_false",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -955,59 +955,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_od_more_heading",
-            "label": "Nag\u0142\u00f3wek",
-            "name": "od_more_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Powiązane usługi",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_od_more_related_pages",
-            "label": "Powi\u0105zane strony us\u0142ug",
-            "name": "od_more_related_pages",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "Wybierz strony. Dane kart b\u0119d\u0105 pobrane z globalnych p\u00f3l \u201eDane karty strony\u201d na wybranych stronach.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
+            "clone": [
+                "group_more_section"
             ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -1031,5 +985,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780403000
+    "modified": 1780403400
 }

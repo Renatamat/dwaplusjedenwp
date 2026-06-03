@@ -50,7 +50,13 @@ get_header();
                     'field_prefix' => 'od_knowledge',
                 )
             );
-            get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-more' );
+            get_template_part(
+                'template-parts/organisms/global/more-section',
+                null,
+                array(
+                    'field_prefix' => 'od_more',
+                )
+            );
 		endwhile;
 		?>
 	</main>
