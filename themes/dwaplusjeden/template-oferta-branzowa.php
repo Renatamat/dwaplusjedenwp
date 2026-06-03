@@ -14,7 +14,13 @@ get_header();
 			the_post();
 
 			get_template_part( 'template-parts/organisms/oferta-branzowa/breadcrumb' );
-			get_template_part( 'template-parts/organisms/oferta-branzowa/ob-hero' );
+			get_template_part(
+				'template-parts/organisms/global/simple-hero-section',
+				null,
+				array(
+					'field_prefix' => 'ob_hero',
+				)
+			);
 			get_template_part(
 				'template-parts/organisms/global/info-section',
 				null,

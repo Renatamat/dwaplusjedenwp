@@ -231,6 +231,16 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Custom post types.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * ACF field helpers.
+ */
+require get_template_directory() . '/inc/acf-fields.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
