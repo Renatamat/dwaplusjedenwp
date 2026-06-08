@@ -13,7 +13,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/organisms/oferta-branzowa/breadcrumb' );
 			get_template_part(
 				'template-parts/organisms/global/simple-hero-section',
 				null,

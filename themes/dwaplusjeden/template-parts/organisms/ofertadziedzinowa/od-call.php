@@ -15,11 +15,11 @@ if ( $has_acf && false === get_field( 'od_call_enabled' ) ) {
 	return;
 }
 
-$background_image = $has_acf ? get_field( 'od_call_background_image' ) : 0;
+$background_image = 315;
 $heading          = $has_acf ? get_field( 'od_call_heading' ) : '';
 $text             = $has_acf ? get_field( 'od_call_text' ) : '';
 $link             = $has_acf ? dwaplusjeden_get_acf_link( 'od_call_link', get_the_ID() ) : array();
-$front_image      = $has_acf ? get_field( 'od_call_front_image' ) : 0;
+$front_image      = 316;
 $bubble_text      = $has_acf ? get_field( 'od_call_bubble_text' ) : '';
 $bubble_name      = $has_acf ? get_field( 'od_call_bubble_name' ) : '';
 $bubble_role      = $has_acf ? get_field( 'od_call_bubble_role' ) : '';

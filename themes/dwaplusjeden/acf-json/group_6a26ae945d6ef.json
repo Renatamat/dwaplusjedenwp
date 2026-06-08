@@ -1,0 +1,155 @@
+{
+    "key": "group_6a26ae945d6ef",
+    "title": "Wpis",
+    "fields": [
+        {
+            "key": "field_post_author_type",
+            "label": "Typ autora",
+            "name": "typ_autora",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "lista": "Autor z listy",
+                "reczny": "Autor ręczny"
+            },
+            "default_value": "lista",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal",
+            "wpml_cf_preferences": 1
+        },
+        {
+            "key": "field_post_related_author",
+            "label": "Autor z listy",
+            "name": "powiazany_autor",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Wybierz autora z CPT Autorzy. Na stronie wpisu zostaną użyte tytuł, obrazek wyróżniony i link do profilu autora.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_post_author_type",
+                        "operator": "==",
+                        "value": "lista"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "autorzy"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "wpml_cf_preferences": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a26ae9488921",
+            "label": "Imię i nazwisko autora",
+            "name": "autor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_post_author_type",
+                        "operator": "==",
+                        "value": "reczny"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_post_manual_author_image",
+            "label": "Zdjęcie autora",
+            "name": "autor_zdjecie",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_post_author_type",
+                        "operator": "==",
+                        "value": "reczny"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfml_field_group_mode": "translation",
+    "modified": 1780923601
+}

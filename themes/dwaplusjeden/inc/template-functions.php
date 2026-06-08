@@ -37,6 +37,20 @@ function dwaplusjeden_pingback_header() {
 add_action( 'wp_head', 'dwaplusjeden_pingback_header' );
 
 /**
+ * Limit frontend search results to blog posts.
+ *
+ * @param WP_Query $query Query object.
+ */
+function dwaplusjeden_search_posts_only( $query ) {
+	if ( is_admin() || ! $query->is_main_query() || ! $query->is_search() ) {
+		return;
+	}
+
+	$query->set( 'post_type', 'post' );
+}
+add_action( 'pre_get_posts', 'dwaplusjeden_search_posts_only' );
+
+/**
  * Translate URL with WPML when available.
  *
  * @param string $url URL to translate.
@@ -158,6 +172,81 @@ function dwaplusjeden_footer_menu( $location, $class = 'd-flex flex-column gap-1
  */
 function dwaplusjeden_get_sprite_url( $sprite ) {
 	return get_template_directory_uri() . '/_dev/public/sprites/' . ltrim( $sprite, '/' );
+}
+
+/**
+ * Get breadcrumb links from Yoast SEO.
+ *
+ * @return array
+ */
+function dwaplusjeden_get_yoast_breadcrumb_links() {
+	if ( ! class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		return array();
+	}
+
+	$breadcrumbs = new WPSEO_Breadcrumbs();
+
+	if ( ! is_callable( array( $breadcrumbs, 'get_links' ) ) ) {
+		return array();
+	}
+
+	$links = $breadcrumbs->get_links();
+
+	return is_array( $links ) ? $links : array();
+}
+
+/**
+ * Print breadcrumb using Yoast data and Pattern Lab markup.
+ */
+function dwaplusjeden_breadcrumb() {
+	if ( is_front_page() || is_search() ) {
+		return;
+	}
+
+	$links = array_values(
+		array_filter(
+			dwaplusjeden_get_yoast_breadcrumb_links(),
+			function ( $link ) {
+				return ! empty( $link['text'] );
+			}
+		)
+	);
+
+	if ( empty( $links ) ) {
+		return;
+	}
+
+	echo '<nav class="breadcrumb" aria-label="' . esc_attr__( 'Okruszki', 'dwaplusjeden' ) . '">';
+
+	foreach ( $links as $index => $link ) {
+		$text    = ! empty( $link['text'] ) ? wp_strip_all_tags( $link['text'] ) : '';
+		$url     = ! empty( $link['url'] ) ? dwaplusjeden_translate_url( $link['url'] ) : '';
+		$is_last = count( $links ) - 1 === $index;
+
+		if ( $index > 0 ) {
+			echo '<span class="breadcrumb-separator" aria-hidden="true">';
+			echo '<svg class="i-sprite icon-16"><use href="' . esc_url( dwaplusjeden_get_sprite_url( 'icons-16.svg' ) ) . '#chevron_right_2"></use></svg>';
+			echo '</span>';
+		}
+
+		if ( $is_last ) {
+			echo '<span class="breadcrumb_last" aria-current="page">' . esc_html( $text ) . '</span>';
+			continue;
+		}
+
+		$class = 0 === $index ? ' class="breadcrumb-home"' : '';
+		echo '<span' . $class . '>';
+
+		if ( $url ) {
+			echo '<a href="' . esc_url( $url ) . '">' . esc_html( $text ) . '</a>';
+		} else {
+			echo esc_html( $text );
+		}
+
+		echo '</span>';
+	}
+
+	echo '</nav>';
 }
 
 /**

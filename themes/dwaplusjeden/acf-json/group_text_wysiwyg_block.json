@@ -1,0 +1,69 @@
+{
+    "key": "group_text_wysiwyg_block",
+    "title": "Blok: Info sekcja",
+    "fields": [
+        {
+            "key": "field_text_wysiwyg_title",
+            "label": "Nagłówek",
+            "name": "text_wysiwyg_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Nagłówek widoczny na górze boksu informacyjnego.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Np. Ważne",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_text_wysiwyg_content",
+            "label": "Treść",
+            "name": "text_wysiwyg_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Treść boksu informacyjnego. To pole może pojawić się w treści bloku albo w prawym panelu ustawień bloku.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/text-wysiwyg"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola dla bloku Gutenberg: Info sekcja.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfml_field_group_mode": "advanced",
+    "modified": 1780920101
+}
