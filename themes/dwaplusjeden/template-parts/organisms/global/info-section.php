@@ -44,13 +44,14 @@ $cards   = $has_acf ? get_field( $prefix . '_cards' ) : array();
 							<?php
 							$title = isset( $card['title'] ) ? $card['title'] : '';
 							$body  = isset( $card['text'] ) ? $card['text'] : '';
+							$icon  = isset( $card['icon'] ) ? $card['icon'] : 0;
 							?>
 							<?php if ( $title || $body ) : ?>
 								<div class="col-sm-6 col-xl-3 a-card-item">
 									<div class="od-info-card">
 										<div class="od-info-card-wrapper">
 											<div class="od-info-card-icon">
-												<img src="/wp-content/uploads/2026/06/checkbadge.svg" alt="">
+												<?php dwaplusjeden_image( $icon, 'thumbnail', 'checkbadge.svg', wp_strip_all_tags( $title ) ); ?>
 											</div>
 											<div class="d-flex flex-column gap-8">
 												<?php if ( $title ) : ?>

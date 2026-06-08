@@ -1,0 +1,42 @@
+{
+    "key": "group_default_page",
+    "title": "Strona domy\u015blna",
+    "fields": [
+        {
+            "key": "field_default_page_help_cta_tab",
+            "label": "CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_default_page_help_cta_enabled",
+            "label": "Poka\u017c globaln\u0105 sekcj\u0119 \"Potrzebujesz pomocy?\"",
+            "name": "default_page_help_cta_enabled",
+            "type": "true_false",
+            "instructions": "Tre\u015b\u0107 sekcji jest pobierana z opcji motywu: Globalne CTA - potrzebujesz pomocy.",
+            "default_value": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780923174
+}
