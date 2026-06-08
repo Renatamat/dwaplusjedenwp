@@ -150,6 +150,8 @@ function dwaplusjeden_scripts() {
 	$theme_script_uri  = get_template_directory_uri() . '/assets/js/bundle.js';
 	$theme_gsap_path   = get_template_directory() . '/assets/js/gsap.bundle.js';
 	$theme_gsap_uri    = get_template_directory_uri() . '/assets/js/gsap.bundle.js';
+	$blog_script_path  = get_template_directory() . '/assets/js/blog-load-more.js';
+	$blog_script_uri   = get_template_directory_uri() . '/assets/js/blog-load-more.js';
 
 	if ( ! file_exists( $theme_script_path ) ) {
 		$theme_script_path = get_template_directory() . '/_dev/source/js/bundle/bundle.js';
@@ -170,6 +172,10 @@ function dwaplusjeden_scripts() {
 
 	if ( file_exists( $theme_gsap_path ) ) {
 		wp_enqueue_script( 'dwaplusjeden-gsap', $theme_gsap_uri, array(), filemtime( $theme_gsap_path ), true );
+	}
+
+	if ( file_exists( $blog_script_path ) && ( is_home() || is_category() || is_tag() || is_date() || is_author() || is_search() ) ) {
+		wp_enqueue_script( 'dwaplusjeden-blog-load-more', $blog_script_uri, array(), filemtime( $blog_script_path ), true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -239,6 +245,16 @@ require get_template_directory() . '/inc/custom-post-types.php';
  * ACF field helpers.
  */
 require get_template_directory() . '/inc/acf-fields.php';
+
+/**
+ * Blog AJAX handlers.
+ */
+require get_template_directory() . '/inc/blog-ajax.php';
+
+/**
+ * Gutenberg ACF blocks.
+ */
+require get_template_directory() . '/inc/blocks.php';
 
 /**
  * Customizer additions.

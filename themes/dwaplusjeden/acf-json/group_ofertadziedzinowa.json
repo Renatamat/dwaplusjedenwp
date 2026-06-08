@@ -126,7 +126,7 @@
             "name": "od_hero_card_1_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, \/7.",
+            "instructions": "Np. +, %, /7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -206,7 +206,7 @@
             "name": "od_hero_card_2_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, \/7.",
+            "instructions": "Np. +, %, /7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -286,7 +286,7 @@
             "name": "od_hero_card_3_suffix",
             "aria-label": "",
             "type": "text",
-            "instructions": "Np. +, %, \/7.",
+            "instructions": "Np. +, %, /7.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -294,7 +294,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "\/7",
+            "default_value": "/7",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -862,58 +862,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_od_call_background_image",
-            "label": "Obraz tła",
-            "name": "od_call_background_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "default_value": 315,
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_od_call_front_image",
-            "label": "Obraz z przodu",
-            "name": "od_call_front_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "default_value": 316,
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_od_call_heading",
             "label": "Nagłówek",
             "name": "od_call_heading",
@@ -1196,5 +1144,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780476971
+    "modified": 1780907042
 }
