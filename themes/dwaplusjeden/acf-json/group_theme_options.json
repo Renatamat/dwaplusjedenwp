@@ -714,6 +714,43 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_help_cta_tab",
+            "label": "Globalne CTA - potrzebujesz pomocy",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_help_cta_clone",
+            "label": "Globalne CTA - potrzebujesz pomocy",
+            "name": "help_cta",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_help_cta_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -733,5 +770,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": "2026-06-01 00:00:00"
+    "modified": 1780922470
 }

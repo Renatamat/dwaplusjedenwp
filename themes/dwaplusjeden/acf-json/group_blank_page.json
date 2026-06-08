@@ -1,0 +1,94 @@
+{
+    "key": "group_blank_page",
+    "title": "Blank page",
+    "fields": [
+        {
+            "key": "field_blank_downloads_tab",
+            "label": "Pliki do pobrania",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_blank_downloads_enabled",
+            "label": "Poka\u017c pliki do pobrania",
+            "name": "blank_downloads_enabled",
+            "type": "true_false",
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_blank_downloads_heading",
+            "label": "Nag\u0142\u00f3wek",
+            "name": "blank_downloads_heading",
+            "type": "text",
+            "default_value": "Pliki do pobrania"
+        },
+        {
+            "key": "field_blank_downloads",
+            "label": "Pliki",
+            "name": "blank_downloads",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj plik",
+            "sub_fields": [
+                {
+                    "key": "field_blank_download_label",
+                    "label": "Nazwa",
+                    "name": "label",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_blank_download_file",
+                    "label": "Plik",
+                    "name": "file",
+                    "type": "file",
+                    "return_format": "id",
+                    "library": "all",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "field_blank_help_cta_tab",
+            "label": "CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_blank_help_cta_enabled",
+            "label": "Poka\u017c globaln\u0105 sekcj\u0119 \"Potrzebujesz pomocy?\"",
+            "name": "blank_help_cta_enabled",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-blank.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780921123
+}
