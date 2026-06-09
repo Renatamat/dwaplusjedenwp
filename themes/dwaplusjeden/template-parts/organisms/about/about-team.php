@@ -54,22 +54,47 @@ if ( ! $heading && ! $text && ! $members && empty( $link['url'] ) ) {
 							$image      = isset( $member['image'] ) ? $member['image'] : 0;
 							$author     = isset( $member['author'] ) ? $member['author'] : 0;
 							$author_id  = 0;
+							$author_url = '';
 
-							if ( $author instanceof WP_User ) {
-								$author_id = $author->ID;
-							} elseif ( is_array( $author ) && ! empty( $author['ID'] ) ) {
-								$author_id = (int) $author['ID'];
+							if ( is_array( $author ) && isset( $author[0] ) ) {
+								$author_id = (int) $author[0];
 							} elseif ( is_numeric( $author ) ) {
 								$author_id = (int) $author;
 							}
 
-							$author_url = $author_id ? get_author_posts_url( $author_id ) : '';
+							if ( $author_id ) {
+								if ( has_filter( 'wpml_object_id' ) ) {
+									$author_id = apply_filters( 'wpml_object_id', $author_id, 'autorzy', true );
+								}
+
+								if ( 'autorzy' === get_post_type( $author_id ) ) {
+									$author_url = dwaplusjeden_translate_url( get_permalink( $author_id ) );
+
+									if ( ! $name ) {
+										$name = get_the_title( $author_id );
+									}
+
+									if ( ! $role && function_exists( 'get_field' ) ) {
+										$role = get_field( 'author_position', $author_id );
+									}
+
+									if ( ! $image ) {
+										$image = get_post_thumbnail_id( $author_id );
+									}
+								}
+							}
 							?>
 							<?php if ( $name || $role || $experience || $image ) : ?>
 								<div class="col-sm-6 col-lg-4 col-xl-3 a-card-item">
 									<div class="about-team-card">
 										<div class="about-team-card-img">
-											<?php dwaplusjeden_image( $image, 'medium_large', 'team1.jpg', wp_strip_all_tags( $name ) ); ?>
+											<?php if ( $author_url ) : ?>
+												<a href="<?php echo esc_url( $author_url ); ?>" aria-label="<?php echo esc_attr( $name ); ?>">
+													<?php dwaplusjeden_image( $image, 'medium_large', 'team1.jpg', wp_strip_all_tags( $name ) ); ?>
+												</a>
+											<?php else : ?>
+												<?php dwaplusjeden_image( $image, 'medium_large', 'team1.jpg', wp_strip_all_tags( $name ) ); ?>
+											<?php endif; ?>
 										</div>
 										<div class="about-team-card-desc">
 											<div class="d-flex flex-column">
