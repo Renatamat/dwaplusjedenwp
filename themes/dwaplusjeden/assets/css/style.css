@@ -8714,7 +8714,7 @@ select:focus {
 .InputWrap input {
   background-color: #fff;
   border-radius: var(--Radius-brand, 4px);
-  border: var(--Stroke-s, 1px) solid var(--Border-400, #D4EAE9);
+  border: var(--Stroke-s, 1px) solid var(--Border-400, #28655B);
 }
 .InputWrap--noicon input[type=text],
 .InputWrap--noicon input[type=search],
@@ -8772,24 +8772,24 @@ select:focus {
   }
 }
 .InputWrap-l.--with-label .InputPlaceholder-label {
-  padding-bottom: 12px;
+  padding-bottom: 8px;
 }
 .InputWrap-l .custom-select .select-selected {
   padding: 12px var(--Spacing-l, 16px);
 }
 .InputWrap-l .custom-select .select-options-container .select-option {
   padding: var(--Spacing-s, 8px) var(--Spacing-l, 16px);
-  font-size: 20px;
+  letter-spacing: var(--font-spacing-0, 0px);
   font-family: "Work Sans", "Arial", sans-serif;
   font-style: normal;
+  font-size: 16px;
+  line-height: 16px; /* 150% */
   font-weight: 400;
-  letter-spacing: var(--font-spacing-0, 0px);
-  line-height: 20px; /* 140% */
 }
 @media (min-width: 992px) {
   .InputWrap-l .custom-select .select-options-container .select-option {
-    font-size: 24px;
-    line-height: 32px; /* 140% */
+    font-size: 20px;
+    line-height: 28px; /* 150% */
   }
 }
 .InputWrap-m input[type=text],
@@ -9120,12 +9120,18 @@ select:focus {
   background-color: white;
   cursor: pointer;
   color: var(--Text-headline, #000);
-  font-family: inherit;
-  font-size: var(--font-size-l, 20px);
-  font-style: normal;
-  font-weight: var(--font-weight-regular, 400);
-  line-height: var(--font-line-height-m, 28px); /* 140% */
   letter-spacing: var(--font-spacing-0, 0px);
+  font-family: "Work Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px; /* 150% */
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  .custom-select .select-selected {
+    font-size: 20px;
+    line-height: 28px; /* 150% */
+  }
 }
 .custom-select .select-options-container {
   display: none;
@@ -20865,7 +20871,7 @@ button.swiper-pagination-bullet {
   color: var(--Text-body, #2B2B2B);
   font-size: var(--font-size-xs, 12px);
   font-style: normal;
-  font-weight: var(--font-weight-book, 325);
+  font-weight: 400;
   line-height: var(--font-line-height-xs, 16px); /* 133.333% */
   letter-spacing: var(--font-spacing-0, 0px);
 }
@@ -20896,11 +20902,24 @@ button.swiper-pagination-bullet {
 }
 .RadioWrap label.label-s .RadioName {
   color: var(--Text-body, #2B2B2B);
-  font-size: var(--font-size-s, 14px);
+  font-family: "Work Sans", "Arial", sans-serif;
   font-style: normal;
-  font-weight: var(--font-weight-book, 325);
-  line-height: var(--font-line-height-xs, 16px); /* 114.286% */
   letter-spacing: var(--font-spacing-0, 0px);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: var(--font-line-height-s, 14px); /* 100% */
+}
+@media (min-width: 576px) {
+  .RadioWrap label.label-s .RadioName {
+    font-size: 16px;
+    line-height: var(--font-line-height-xs, 16px); /* 114.286% */
+  }
+}
+@media (min-width: 992px) {
+  .RadioWrap label.label-s .RadioName {
+    font-size: 16px;
+    line-height: 20px; /* 114.286% */
+  }
 }
 .RadioWrap label.label-s input + span:before {
   box-shadow: inset 0px 0px 0px 0.75px #878787;
@@ -20929,11 +20948,24 @@ button.swiper-pagination-bullet {
 }
 .RadioWrap label.label-m .RadioName {
   color: var(--Text-body, #2B2B2B);
-  font-size: var(--font-size-m, 16px);
-  font-style: normal;
-  font-weight: var(--font-weight-book, 325);
-  line-height: var(--font-line-height-s, 24px); /* 150% */
   letter-spacing: var(--font-spacing-0, 0px);
+  font-family: "Work Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px; /* 150% */
+  font-weight: 400;
+}
+@media (min-width: 576px) {
+  .RadioWrap label.label-m .RadioName {
+    font-size: 20px;
+    line-height: var(--font-line-height-s, 24px); /* 150% */
+  }
+}
+@media (min-width: 992px) {
+  .RadioWrap label.label-m .RadioName {
+    font-size: 20px;
+    line-height: 28px; /* 150% */
+  }
 }
 .RadioWrap label.label-m input + span:before {
   box-shadow: inset 0px 0px 0px 0.75px #878787;
@@ -20962,11 +20994,24 @@ button.swiper-pagination-bullet {
 }
 .RadioWrap label.label-l .RadioName {
   color: var(--Text-body, #2B2B2B);
-  font-size: var(--font-size-l, 20px);
+  font-size: 20px;
+  font-family: "Work Sans", "Arial", sans-serif;
   font-style: normal;
-  font-weight: var(--font-weight-book, 400);
-  line-height: var(--font-line-height-m, 28px); /* 140% */
+  font-weight: 400;
   letter-spacing: var(--font-spacing-0, 0px);
+  line-height: 20px; /* 140% */
+}
+@media (min-width: 576px) {
+  .RadioWrap label.label-l .RadioName {
+    font-size: 24px;
+    line-height: var(--font-line-height-m, 28px); /* 140% */
+  }
+}
+@media (min-width: 992px) {
+  .RadioWrap label.label-l .RadioName {
+    font-size: 24px;
+    line-height: 32px; /* 140% */
+  }
 }
 .RadioWrap label.label-l input + span:before {
   box-shadow: inset 0px 0px 0px 0.75px #878787;
@@ -24030,10 +24075,17 @@ footer .c-btn-outline:hover {
 .form-wrap-content-row {
   display: flex;
   gap: 24px;
-  align-items: end;
+  align-items: start;
+  flex-direction: column;
 }
 .form-wrap-content-row .InputWrap {
   width: 100%;
+}
+@media (min-width: 576px) {
+  .form-wrap-content-row {
+    align-items: end;
+    flex-direction: row;
+  }
 }
 @media (min-width: 576px) {
   .form-wrap-content .w-180 {
@@ -24054,6 +24106,15 @@ footer .c-btn-outline:hover {
 .form-wrap.--transparent .form-wrap-header {
   border-bottom: 1px solid var(--Border-secondary, #28655B);
   padding-bottom: 16px;
+}
+
+.w-25 {
+  width: 100% !important;
+}
+@media (min-width: 576px) {
+  .w-25 {
+    width: 25% !important;
+  }
 }
 
 body {

@@ -893,7 +893,7 @@
                 "id": ""
             },
             "clone": [
-                "group_more_section"
+                "group_related_pages_section"
             ],
             "display": "seamless",
             "layout": "block",

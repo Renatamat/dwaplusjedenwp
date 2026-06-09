@@ -196,6 +196,55 @@ function dwaplusjeden_get_yoast_breadcrumb_links() {
 }
 
 /**
+ * Add WordPress page ancestors when Yoast returns a flattened page breadcrumb.
+ *
+ * @param array $links Yoast breadcrumb links.
+ * @return array
+ */
+function dwaplusjeden_get_page_breadcrumb_links( $links ) {
+	if ( ! is_page() ) {
+		return $links;
+	}
+
+	$page_id = get_queried_object_id();
+
+	if ( ! $page_id ) {
+		return $links;
+	}
+
+	$ancestors = array_reverse( get_post_ancestors( $page_id ) );
+
+	if ( empty( $ancestors ) ) {
+		return $links;
+	}
+
+	$home = ! empty( $links[0] ) ? $links[0] : array(
+		'text' => __( 'Strona główna', 'dwaplusjeden' ),
+		'url'  => home_url( '/' ),
+	);
+
+	$current = ! empty( $links[ count( $links ) - 1 ] ) ? $links[ count( $links ) - 1 ] : array(
+		'text' => get_the_title( $page_id ),
+	);
+
+	$page_links = array( $home );
+
+	foreach ( $ancestors as $ancestor_id ) {
+		$page_links[] = array(
+			'text' => get_the_title( $ancestor_id ),
+			'url'  => get_permalink( $ancestor_id ),
+		);
+	}
+
+	$page_links[] = array(
+		'text' => ! empty( $current['text'] ) ? $current['text'] : get_the_title( $page_id ),
+		'url'  => '',
+	);
+
+	return $page_links;
+}
+
+/**
  * Print breadcrumb using Yoast data and Pattern Lab markup.
  */
 function dwaplusjeden_breadcrumb() {
@@ -211,6 +260,8 @@ function dwaplusjeden_breadcrumb() {
 			}
 		)
 	);
+
+	$links = dwaplusjeden_get_page_breadcrumb_links( $links );
 
 	if ( empty( $links ) ) {
 		return;
