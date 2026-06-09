@@ -12,16 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $show_modified_date = isset( $args['show_modified_date'] ) ? (bool) $args['show_modified_date'] : true;
 ?>
 
-<div class="container">
-	<div class="row">
-		<div class="col-12">
-			<?php if ( function_exists( 'yoast_breadcrumb' ) ) : ?>
-				<?php yoast_breadcrumb( '<nav class="breadcrumb" aria-label="' . esc_attr__( 'Okruszki', 'dwaplusjeden' ) . '">', '</nav>' ); ?>
-			<?php endif; ?>
-		</div>
-	</div>
-</div>
-
 <section class="blank-header pt-32 pb-32 pt-sm-40 pb-sm-40 pt-lg-48 pb-lg-48 pt-xxxl-64 pb-xxxl-64">
 	<div class="container">
 		<div class="row">

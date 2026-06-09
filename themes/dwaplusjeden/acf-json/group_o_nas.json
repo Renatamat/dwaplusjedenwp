@@ -524,22 +524,34 @@
                     "label": "Autor bloga \/ użytkownik",
                     "name": "author",
                     "aria-label": "",
-                    "type": "user",
+                    "type": "relationship",
                     "instructions": "Opcjonalnie wybierz użytkownika. Jeśli zostanie wybrany, karta zespołu będzie linkować do archiwum autora.",
-                    "required": false,
-                    "conditional_logic": false,
+                    "required": 0,
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "25",
                         "class": "",
                         "id": ""
                     },
-                    "role": "",
+                    "wpml_cf_preferences": 0,
+                    "post_type": [
+                        "autorzy"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
                     "return_format": "id",
-                    "multiple": 0,
-                    "allow_null": 1,
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "elements": "",
                     "bidirectional": 0,
-                    "parent_repeater": "field_about_team_members",
-                    "bidirectional_target": []
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_about_team_members"
                 }
             ]
         },
@@ -745,5 +757,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1780915530
+    "modified": 1780999940
 }

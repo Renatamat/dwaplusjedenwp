@@ -8774,6 +8774,9 @@ select:focus {
 .InputWrap-l.--with-label .InputPlaceholder-label {
   padding-bottom: 8px;
 }
+.InputWrap-l.--textarea .InputPlaceholder {
+  top: calc(16px + 1rem);
+}
 .InputWrap-l .custom-select .select-selected {
   padding: 12px var(--Spacing-l, 16px);
 }
@@ -8826,6 +8829,9 @@ select:focus {
 }
 .InputWrap-m.--with-label .InputPlaceholder-label {
   padding-bottom: 8px;
+}
+.InputWrap-m.--textarea .InputPlaceholder {
+  top: calc(16px + 1rem);
 }
 .InputWrap-s input[type=text],
 .InputWrap-s input[type=search],
@@ -23714,31 +23720,6 @@ footer .c-btn-outline:hover {
   color: var(--Text-primary, #C83232);
 }
 
-.info-section-block {
-  border-radius: 16px;
-  border: 1px dashed var(--Border-alert, #EFB701);
-  background: var(--Surface-alert-light, #FEF0DB);
-  padding: var(--Spacing-2xl, 32px);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  color: var(--Text-body, #101717);
-}
-@media (min-width: 992px) {
-  .info-section-block {
-    border-radius: 24px;
-  }
-}
-
-.info-section-block__placeholder {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.info-section-block__placeholder p {
-  margin: 0;
-}
-
 .blog-single-more-slider {
   width: 100%;
   padding-bottom: 40px;
@@ -23771,6 +23752,27 @@ footer .c-btn-outline:hover {
 
 .blank-content {
   background: #fff;
+}
+.blank-content .blog-content h2, .blank-content .blog-content h3 {
+  letter-spacing: var(--font-spacing-0, 0px);
+  font-family: "Work Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px; /* 150% */
+  font-weight: 400;
+  font-weight: 600;
+}
+@media (min-width: 576px) {
+  .blank-content .blog-content h2, .blank-content .blog-content h3 {
+    font-size: 20px;
+    line-height: var(--font-line-height-s, 24px); /* 150% */
+  }
+}
+@media (min-width: 992px) {
+  .blank-content .blog-content h2, .blank-content .blog-content h3 {
+    font-size: 20px;
+    line-height: 28px; /* 150% */
+  }
 }
 
 .about-header {
@@ -23943,6 +23945,37 @@ footer .c-btn-outline:hover {
     padding: 32px;
     border-radius: var(--Radius-brand-xl, 24px);
   }
+}
+.contact-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.contact-popup[hidden] {
+  display: none;
+}
+.contact-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.contact-popup-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(90%, 721px);
+}
+
+.wpcf7-form .wpcf7-spinner {
+  display: none;
+  visibility: hidden;
+}
+
+body.contact-popup-open {
+  overflow: hidden;
 }
 
 .author-description {

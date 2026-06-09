@@ -90,10 +90,12 @@
 			</div>
 		</div>
 	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<?php dwaplusjeden_breadcrumb(); ?>
+	<?php if ( ! is_page_template( 'template-o-nas.php' ) ) : ?>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<?php dwaplusjeden_breadcrumb(); ?>
+				</div>
 			</div>
 		</div>
-	</div>								
+	<?php endif; ?>
