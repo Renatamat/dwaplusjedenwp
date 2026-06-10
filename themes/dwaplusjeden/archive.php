@@ -12,7 +12,10 @@ get_header();
 
 <main id="primary" class="site-main">
 	<?php
-	if ( is_category() || is_tag() || is_date() || is_author() ) :
+	if ( is_category() ) :
+		get_template_part( 'template-parts/organisms/blog/blog-hero-taxonomy' );
+		get_template_part( 'template-parts/organisms/blog/blog-allnews-taxonomy' );
+	elseif ( is_tag() || is_date() || is_author() ) :
 		get_template_part( 'template-parts/organisms/blog/blog-hero' );
 		get_template_part( 'template-parts/organisms/blog/blog-new' );
 		get_template_part( 'template-parts/organisms/blog/blog-allnews' );
