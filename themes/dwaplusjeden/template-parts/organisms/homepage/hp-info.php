@@ -40,7 +40,7 @@ $link    = dwaplusjeden_get_acf_link( 'homepage_info_link', get_the_ID() );
 									<div class="hp-info-card-wrapper">
 										<div class="d-flex flex-column gap-16 gap-lg-24">
 											<div class="hp-info-card-icon">
-												<?php dwaplusjeden_image( $card['icon'], 'thumbnail', 'iconinfo1.svg', $card['title'] ); ?>
+												<?php dwaplusjeden_image( $card['icon'], 'full', 'iconinfo1.svg', $card['title'] ); ?>
 											</div>
 											<div class="d-flex flex-column gap-8">
 												<?php if ( $card['title'] ) : ?>
