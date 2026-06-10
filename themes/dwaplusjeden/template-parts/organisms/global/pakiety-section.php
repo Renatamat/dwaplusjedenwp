@@ -105,12 +105,36 @@ $active_index = 0;
 								$select_label   = ! empty( $option['select_label'] ) ? $option['select_label'] : '';
 								$select_options = ! empty( $option['select_options'] ) ? $option['select_options'] : array();
 								$active_features = ! empty( $option['active_features'] ) && is_array( $option['active_features'] ) ? $option['active_features'] : array();
+								$display_price  = $price;
+								$has_select_prices = false;
 
-								if ( ! $title && ! $price && ! $description && ! $features ) {
+								if ( $select_label && $select_options ) {
+									$default_select_option = null;
+
+									foreach ( $select_options as $select_option ) {
+										if ( ! empty( $select_option['price'] ) ) {
+											$has_select_prices = true;
+										}
+
+										if ( ! empty( $select_option['selected'] ) && ! $default_select_option ) {
+											$default_select_option = $select_option;
+										}
+									}
+
+									if ( ! $default_select_option ) {
+										$default_select_option = reset( $select_options );
+									}
+
+									if ( ! empty( $default_select_option['price'] ) ) {
+										$display_price = $default_select_option['price'];
+									}
+								}
+
+								if ( ! $title && ! $display_price && ! $has_select_prices && ! $description && ! $features ) {
 									continue;
 								}
 								?>
-								<div class="pakiety-content-item<?php echo $is_highlighted ? ' --popular' : ''; ?>">
+								<div class="pakiety-content-item<?php echo $is_highlighted ? ' --popular' : ''; ?>" data-pricing-card data-pricing-base-price="<?php echo esc_attr( $price ); ?>">
 									<?php if ( $is_highlighted && $highlight_text ) : ?>
 										<div class="pakiet-content-item-popular-text">
 											<span class="p-s fw-bolder c-white"><?php echo esc_html( $highlight_text ); ?></span>
@@ -123,11 +147,9 @@ $active_index = 0;
 												<?php if ( $title ) : ?>
 													<span class="p-l fw-bolder c-body"><?php echo esc_html( $title ); ?></span>
 												<?php endif; ?>
-												<?php if ( $price || $price_suffix ) : ?>
+												<?php if ( $display_price || $price_suffix || $has_select_prices ) : ?>
 													<div class="d-flex gap-8 align-items-end">
-														<?php if ( $price ) : ?>
-															<span class="p-l fw-bolder"><?php echo esc_html( $price ); ?></span>
-														<?php endif; ?>
+														<span class="p-l fw-bolder" data-pricing-price><?php echo esc_html( $display_price ); ?></span>
 														<?php if ( $price_suffix ) : ?>
 															<span class="p-s"><?php echo esc_html( $price_suffix ); ?></span>
 														<?php endif; ?>
@@ -151,17 +173,18 @@ $active_index = 0;
 													<div class="InputWrap InputWrap-l">
 														<div class="position-relative">
 															<span class="wpcf7">
-																<select name="<?php echo esc_attr( $prefix . '_' . $package_slug . '_' . $option_index . '_count' ); ?>">
+																<select name="<?php echo esc_attr( $prefix . '_' . $package_slug . '_' . $option_index . '_count' ); ?>" data-pricing-price-select>
 																	<?php foreach ( $select_options as $select_option ) : ?>
 																		<?php
 																		$select_value = ! empty( $select_option['value'] ) ? $select_option['value'] : '';
 																		$select_text  = ! empty( $select_option['label'] ) ? $select_option['label'] : $select_value;
+																		$select_price = ! empty( $select_option['price'] ) ? $select_option['price'] : '';
 
 																		if ( '' === $select_value && '' === $select_text ) {
 																			continue;
 																		}
 																		?>
-																		<option value="<?php echo esc_attr( $select_value ); ?>"<?php selected( ! empty( $select_option['selected'] ) ); ?>><?php echo esc_html( $select_text ); ?></option>
+																		<option value="<?php echo esc_attr( $select_value ); ?>" data-price="<?php echo esc_attr( $select_price ); ?>"<?php selected( ! empty( $select_option['selected'] ) ); ?>><?php echo esc_html( $select_text ); ?></option>
 																	<?php endforeach; ?>
 																</select>
 															</span>

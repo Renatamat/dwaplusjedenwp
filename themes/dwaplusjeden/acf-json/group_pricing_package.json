@@ -315,7 +315,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "45",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -335,12 +335,32 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "40",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
                             "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_pricing_select_option_price",
+                            "label": "Cena",
+                            "name": "price",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Cena, ktora podmieni cene opcji pakietu po wybraniu tej wartosci.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "499 zl",
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
@@ -430,5 +450,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780498200
+    "modified": 1781076388
 }

@@ -9026,11 +9026,16 @@ select:focus {
   font-family: "Work Sans", "Arial", sans-serif;
   font-size: 12px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 16px;
   position: absolute;
-  left: 12px;
-  top: 38px;
+  left: 0px;
+  top: 45px;
+}
+@media (min-width: 576px) {
+  .InputWrap span > span {
+    top: 55px;
+  }
 }
 .InputWrap--filter .custom-select:before {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.69442 9.68442C5.00463 9.40993 5.47862 9.43889 5.7531 9.7491L11.9722 17.2983L18.1923 9.74908C18.4667 9.43888 18.9407 9.40994 19.2509 9.68444C19.5611 9.95894 19.5901 10.4329 19.3156 10.7431L12.885 18.5302C12.7707 18.6595 12.6302 18.763 12.4728 18.8339C12.3154 18.9048 12.1448 18.9415 11.9722 18.9415C11.7996 18.9415 11.629 18.9048 11.4716 18.8339C11.3142 18.763 11.1737 18.6595 11.0594 18.5302L4.62973 10.7431C4.35524 10.4329 4.3842 9.9589 4.69442 9.68442Z" fill="black"/></svg>');
@@ -20808,6 +20813,9 @@ button.swiper-pagination-bullet {
 .CheckboxWrap label.label-l:hover input + span:before {
   border-color: #E62E2E;
 }
+.CheckboxWrap.label-s label {
+  padding: 0 0 0 24px;
+}
 
 .RadioWrapName-s {
   font-size: var(--font-size-s, 14px);
@@ -21915,6 +21923,7 @@ footer .c-btn-outline:hover {
   flex-direction: column;
   gap: 20px;
   position: relative;
+  height: 100%;
 }
 @media (min-width: 992px) {
   .service-card-wrapper {
@@ -21937,6 +21946,7 @@ footer .c-btn-outline:hover {
   height: 76px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   justify-content: center;
   border-radius: 16px;
   background: linear-gradient(180deg, var(--Surface-page, #FFF) 0%, var(--Surface-300, #E9F5F4) 100%);
@@ -23720,6 +23730,31 @@ footer .c-btn-outline:hover {
   color: var(--Text-primary, #C83232);
 }
 
+.info-section-block {
+  border-radius: 16px;
+  border: 1px dashed var(--Border-alert, #EFB701);
+  background: var(--Surface-alert-light, #FEF0DB);
+  padding: var(--Spacing-2xl, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--Text-body, #101717);
+}
+@media (min-width: 992px) {
+  .info-section-block {
+    border-radius: 24px;
+  }
+}
+
+.info-section-block__placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.info-section-block__placeholder p {
+  margin: 0;
+}
+
 .blog-single-more-slider {
   width: 100%;
   padding-bottom: 40px;
@@ -23974,6 +24009,10 @@ footer .c-btn-outline:hover {
   visibility: hidden;
 }
 
+.wpcf7 form.sent .wpcf7-response-output {
+  display: none;
+}
+
 body.contact-popup-open {
   overflow: hidden;
 }
@@ -24148,6 +24187,12 @@ body.contact-popup-open {
   .w-25 {
     width: 25% !important;
   }
+}
+
+.formularz-zgloszeniowy .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 body {

@@ -195,12 +195,12 @@ $footer_menu_columns      = array(
 
 				<?php if ( $credits_logo_id ) : ?>
 					<div>
-						<?php echo wp_get_attachment_image( $credits_logo_id, 'thumbnail', false, array( 'alt' => $credits_logo_alt ) ); ?>
+						<?php echo wp_get_attachment_image( $credits_logo_id, 'full', false, array( 'alt' => $credits_logo_alt ) ); ?>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $credits_link['url'] ) ) : ?>
-					<span class="p-s c-white"><a<?php dwaplusjeden_link_attrs( $credits_link ); ?> class="p-s c-white"><?php echo esc_html( $credits_link['title'] ?: $credits_link['url'] ); ?></a></span>
+					<span class="p-s c-white"><a<?php dwaplusjeden_link_attrs( $credits_link ); ?> class="p-s c-white link-underline-rtl"><?php echo esc_html( $credits_link['title'] ?: $credits_link['url'] ); ?></a></span>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
