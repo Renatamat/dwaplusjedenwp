@@ -140,6 +140,31 @@ function dwaplusjeden_widgets_init() {
 add_action( 'widgets_init', 'dwaplusjeden_widgets_init' );
 
 /**
+ * Preload local theme fonts before the main stylesheet is parsed.
+ */
+function dwaplusjeden_preload_fonts() {
+	$font_files = array(
+		'work-sans-v24-latin-ext-200.woff2',
+		'work-sans-v24-latin-ext-regular.woff2',
+		'work-sans-v24-latin-ext-600.woff2',
+	);
+
+	foreach ( $font_files as $font_file ) {
+		$font_path = get_template_directory() . '/fonts/' . $font_file;
+
+		if ( ! file_exists( $font_path ) ) {
+			continue;
+		}
+
+		printf(
+			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+			esc_url( get_template_directory_uri() . '/fonts/' . $font_file )
+		);
+	}
+}
+add_action( 'wp_head', 'dwaplusjeden_preload_fonts', 1 );
+
+/**
  * Enqueue scripts and styles.
  */
 function dwaplusjeden_scripts() {

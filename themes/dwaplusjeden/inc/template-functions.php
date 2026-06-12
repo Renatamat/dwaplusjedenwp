@@ -319,8 +319,26 @@ function dwaplusjeden_get_theme_image_url( $image ) {
  * @param string $alt           Fallback alt.
  */
 function dwaplusjeden_image( $attachment_id, $size = 'full', $fallback = '', $alt = '' ) {
+
+	if ( is_array( $attachment_id ) && ! empty( $attachment_id['ID'] ) ) {
+		$attachment_id = (int) $attachment_id['ID'];
+	} elseif ( is_array( $attachment_id ) && ! empty( $attachment_id['id'] ) ) {
+		$attachment_id = (int) $attachment_id['id'];
+	} elseif ( is_object( $attachment_id ) && ! empty( $attachment_id->ID ) ) {
+		$attachment_id = (int) $attachment_id->ID;
+	} else {
+		$attachment_id = (int) $attachment_id;
+	}
+
 	if ( $attachment_id ) {
-		echo wp_get_attachment_image( $attachment_id, $size, false, array( 'alt' => get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ?: $alt ) );
+		echo wp_get_attachment_image(
+			$attachment_id,
+			$size,
+			false,
+			array(
+				'alt' => get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ?: $alt,
+			)
+		);
 		return;
 	}
 
@@ -444,7 +462,7 @@ function dwaplusjeden_main_navigation() {
 			echo '<svg class="i-sprite icon-16"><use href="' . esc_url( dwaplusjeden_get_sprite_url( 'icons-16.svg' ) ) . '#chevron_left"></use></svg>';
 			echo '<span class="p-s fw-bolder">' . esc_html( $item->title ) . '</span>';
 			echo '</div>';
-			echo '<ul aria-label="' . esc_attr( sprintf( /* translators: %s: menu item title */ __( 'Podmenu: %s', 'dwaplusjeden' ), $item->title ) ) . '">';
+			echo '<ul class="mt-16" aria-label="' . esc_attr( sprintf( /* translators: %s: menu item title */ __( 'Podmenu: %s', 'dwaplusjeden' ), $item->title ) ) . '">';
 
 			foreach ( $children as $child ) {
 				$child_url    = dwaplusjeden_translate_url( $child->url );

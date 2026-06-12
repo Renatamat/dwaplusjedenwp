@@ -37,7 +37,7 @@ $accordion_id = wp_unique_id( 'rdDescAccordion-' );
 			</div>
 		<?php endif; ?>
 
-		<div class="row mt-24">
+		<div class="row mt-24 r-gap-24">
 			<div class="col-lg-6">
 				<div class="d-flex flex-column gap-32 gap-sm-40 gap-lg-48 gap-xxxl-64 pr-xxxl-64">
 					<?php if ( $heading || $text ) : ?>

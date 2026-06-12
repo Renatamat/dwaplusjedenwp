@@ -61,7 +61,7 @@ $footer_menu_columns      = array(
 			<div class="d-flex flex-column gap-32">
 				<?php if ( $footer_logo_id ) : ?>
 					<div class="footer-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Idź do strony głównej">
 							<?php echo wp_get_attachment_image( $footer_logo_id, 'full', false, array( 'alt' => $footer_logo_alt ) ); ?>
 						</a>
 					</div>
