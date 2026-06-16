@@ -62,9 +62,7 @@
 												<span><?php esc_html_e( 'Logowanie', 'dwaplusjeden' ); ?></span>
 											</a>
 										<?php endif; ?>
-										<a href="#" class="c-btn c-btn-s c-btn-link d-xl-none w-100">
-											<span class="c-black"><?php echo esc_html( strtoupper( substr( get_locale(), 0, 2 ) ) ); ?></span>
-										</a>
+										
 									</div>
 								</nav>
 							</div>
@@ -80,9 +78,7 @@
 										<use href="<?php echo esc_url( dwaplusjeden_get_sprite_url( 'icons-24.svg' ) ); ?>#hamburger"></use>
 									</svg>
 								</div>
-								<a href="#" class="c-btn c-btn-s c-btn-link d-none d-xl-block btn-lang">
-									<span><?php echo esc_html( strtoupper( substr( get_locale(), 0, 2 ) ) ); ?></span>
-								</a>
+								
 							</div>
 						</div>
 					</div>
