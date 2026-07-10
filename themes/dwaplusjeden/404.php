@@ -12,47 +12,29 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dwaplusjeden' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'dwaplusjeden' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'dwaplusjeden' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$dwaplusjeden_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'dwaplusjeden' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$dwaplusjeden_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+	<section class="page404 pt-96 pb-96">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 col-xxxl-6 mx-auto">
+					<div class="page404-container">
+						<div class="d-flex flex-column align-items-center">
+							<span class="page404-header">404</span>
+							<div class="d-flex flex-column gap-32 align-items-center">
+								<div class="d-flex flex-column gap-16 align-items-center">
+									<span class="h6 fw-bolder c-body text-center">Nie znaleziono strony</span>
+									<p class="p-l text-center">Nie możemy odnaleźć strony, której szukasz.<br>
+									Sprawdź adres strony lub przejdź na stronę główną</p>
+								</div>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-btn c-btn-s c-btn-fill">
+									<span>Strona główna</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	</main><!-- #main -->
 
