@@ -65,6 +65,9 @@ get_header();
 					'field_prefix' => 'ob_more',
 				)
 			);
+			?>
+ 
+			<?php
 		endwhile;
 		?>
 	</main>
