@@ -105,6 +105,11 @@ function dwaplusjeden_link_attrs( $link ) {
 
 	$target = ! empty( $link['target'] ) ? $link['target'] : '';
 	$rel    = '_blank' === $target ? 'noopener noreferrer' : '';
+	$path   = wp_parse_url( $link['url'], PHP_URL_PATH );
+
+	if ( '/kontakt/' === trailingslashit( (string) $path ) ) {
+		$rel = trim( $rel . ' nofollow' );
+	}
 
 	echo ' href="' . esc_url( $link['url'] ) . '"';
 	echo $target ? ' target="' . esc_attr( $target ) . '"' : '';
@@ -486,4 +491,3 @@ function dwaplusjeden_main_navigation() {
 
 	echo '</ul>';
 }
-

@@ -308,3 +308,15 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Sierotki: twarda spacja wyłącznie po:
+ * a, i, o, u, w, z.
+ */
+add_filter(
+	'iworks_orphan_terms',
+	static function ( $terms ) {
+		return array( 'a', 'i', 'o', 'u', 'w', 'z' );
+	},
+	999
+);

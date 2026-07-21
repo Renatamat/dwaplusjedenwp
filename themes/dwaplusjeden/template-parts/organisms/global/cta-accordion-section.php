@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $has_acf = function_exists( 'get_field' );
 $prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'cta';
+$section_class = ' ';
+if ( 'ob_cta' || 'od_cta' === $prefix ) {
+	$section_class .= ' ob-cta';
+}
 
 if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 	return;
@@ -85,7 +89,7 @@ $accordion_id = $prefix . '-accordion-' . get_the_ID();
 				</div>
 			</div>
 			<div class="col-lg-6 order-1 order-lg-2">
-				<div class="position-relative">
+				<div class="position-relative  <?php echo esc_attr( $section_class ); ?>">
 					<?php dwaplusjeden_image( $image, 'full' ); ?>
 					<?php if ( $bubble_text || $bubble_name || $bubble_role || $bubble_image ) : ?>
 						<div class="hp-hero-slider-message a-bubble-pop" data-animate-delay="0.22" data-animate-start="top 80%">

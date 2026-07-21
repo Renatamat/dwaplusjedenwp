@@ -43,6 +43,21 @@ get_header();
                     'field_prefix' => 'od_faq',
                 )
             );
+
+			get_template_part(
+                'template-parts/organisms/global/section-seo',
+                null,
+                array(
+                    'field_prefix' => 'od_seo_right',
+                )
+            );
+			get_template_part(
+                'template-parts/organisms/global/section-seo',
+                null,
+                array(
+                    'field_prefix' => 'od_seo_left',
+                )
+            );
             get_template_part(
                 'template-parts/organisms/global/knowledge-section',
                 null,
