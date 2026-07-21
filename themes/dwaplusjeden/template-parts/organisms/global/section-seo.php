@@ -1,0 +1,86 @@
+<?php
+/**
+ * Reusable SEO section.
+ *
+ * @package dwaplusjeden
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	return;
+}
+
+$has_acf = function_exists( 'get_field' );
+$prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'seo';
+
+if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
+	return;
+}
+
+$heading = $has_acf ? get_field( $prefix . '_heading' ) : '';
+$textdesc    = $has_acf ? get_field( $prefix . '_text_desc' ) : '';
+$textheading    = $has_acf ? get_field( $prefix . '_text_heading' ) : '';
+$text    = $has_acf ? get_field( $prefix . '_text' ) : '';
+$image   = $has_acf ? get_field( $prefix . '_image' ) : 0;
+
+if ( ! $heading && ! $text && ! $image ) {
+	return;
+}
+
+$is_left_layout     = false !== strpos( $prefix, 'left' );
+$text_column_class  = $image ? 'col-lg-7 d-flex align-items-center' : 'col-12';
+$image_column_class = $text ? 'col-lg-5 d-flex align-items-center' : 'col-12';
+
+if ( $text && $image ) {
+	if ( $is_left_layout ) {
+		$text_column_class  .= ' order-1 order-lg-2';
+		$image_column_class .= ' order-2 order-lg-1';
+	} else {
+		$text_column_class  .= ' order-2 order-lg-1';
+		$image_column_class .= ' order-1 order-lg-2';
+	}
+}
+?>
+
+<section class="section-seo pt-56 pb-56 pt-lg-96 pb-lg-96"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
+	<div class="container">
+		<?php if ( $heading ) : ?>
+			<div class="row">
+				<div class="col-12">
+					<h2 id="<?php echo esc_attr( $prefix ); ?>-heading" class="h5 fw-bolder c-body text-center w-100">
+						<?php echo wp_kses_post( $heading ); ?>
+					</h2>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $text || $image ) : ?>
+			<div class="row r-gap-24 mt-32 mt-sm-40 mt-lg-48 mt-xxxl-64">
+				<?php if ( $text || $textdesc ) : ?>
+					<div class="<?php echo esc_attr( $text_column_class ); ?>">
+						<div class="section-seo__text p-m c-body pt-lg-56 w-100">
+							<?php if ( $textdesc ) : ?>
+								<?php echo wp_kses_post( $textdesc ); ?>
+							<?php endif; ?>
+							<?php if ( $textheading ) : ?>
+							<h3>
+								<?php echo wp_kses_post( $textheading ); ?>
+							</h3>
+							<?php endif; ?>
+							<?php if ( $text ) : ?>
+							<?php echo wp_kses_post( $text ); ?>
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( $image ) : ?>
+					<div class="<?php echo esc_attr( $image_column_class ); ?>">
+						<div class="section-seo__image w-100">
+							<?php dwaplusjeden_image( $image, 'full', '', wp_strip_all_tags( $heading ) ); ?>
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+		<?php endif; ?>
+	</div>
+</section>
