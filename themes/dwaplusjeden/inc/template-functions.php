@@ -105,11 +105,7 @@ function dwaplusjeden_link_attrs( $link ) {
 
 	$target = ! empty( $link['target'] ) ? $link['target'] : '';
 	$rel    = '_blank' === $target ? 'noopener noreferrer' : '';
-	$path   = wp_parse_url( $link['url'], PHP_URL_PATH );
-
-	if ( '/kontakt/' === trailingslashit( (string) $path ) ) {
-		$rel = trim( $rel . ' nofollow' );
-	}
+	$rel    = ! empty( $link['nofollow'] ) ? trim( $rel . ' nofollow' ) : $rel;
 
 	echo ' href="' . esc_url( $link['url'] ) . '"';
 	echo $target ? ' target="' . esc_attr( $target ) . '"' : '';
@@ -415,6 +411,121 @@ function dwaplusjeden_get_header_logo() {
 	);
 }
 
+/**
+ * Return the restricted HTML allowlist used for basic editable content.
+ *
+ * @param bool $inline_only Whether to return only elements safe inside a heading.
+ * @return array<string, array<string, bool>>
+ */
+function dwaplusjeden_get_basic_allowed_html( $inline_only = false ) {
+	$with_class = [
+		'class' => true,
+	];
+
+	$inline_html = [
+		'strong' => $with_class,
+		'b'      => $with_class,
+		'em'     => $with_class,
+		'i'      => $with_class,
+		'br'     => $with_class,
+		'span'   => $with_class,
+		'sup'    => $with_class,
+		'sub'    => $with_class,
+		'a'      => [
+			'href'       => true,
+			'title'      => true,
+			'target'     => true,
+			'rel'        => true,
+			'class'      => true,
+			'aria-label' => true,
+		],
+	];
+
+	if ( $inline_only ) {
+		return $inline_html;
+	}
+
+	return array_merge(
+		$inline_html,
+		[
+			'p'          => $with_class,
+			'blockquote' => [
+				'class' => true,
+				'cite'  => true,
+			],
+			'del'        => [
+				'class'    => true,
+				'cite'     => true,
+				'datetime' => true,
+			],
+			'ins'        => [
+				'class'    => true,
+				'cite'     => true,
+				'datetime' => true,
+			],
+			'code'       => $with_class,
+			'img'        => [
+				'src'     => true,
+				'alt'     => true,
+				'title'   => true,
+				'width'   => true,
+				'height'  => true,
+				'class'   => true,
+				'loading' => true,
+				'srcset'  => true,
+				'sizes'        => true,
+				'data-wp-more' => true,
+			],
+			'ul'       => $with_class,
+			'ol'       => $with_class,
+			'li'       => $with_class,
+			'table'    => $with_class,
+			'caption'  => $with_class,
+			'colgroup' => $with_class,
+			'col'      => [
+				'class' => true,
+				'span'  => true,
+			],
+			'thead'    => $with_class,
+			'tbody'    => $with_class,
+			'tfoot'    => $with_class,
+			'tr'       => $with_class,
+			'th'       => [
+				'class'   => true,
+				'colspan' => true,
+				'rowspan' => true,
+				'headers' => true,
+				'scope'   => true,
+				'abbr'    => true,
+			],
+			'td'       => [
+				'class'   => true,
+				'colspan' => true,
+				'rowspan' => true,
+				'headers' => true,
+			],
+		]
+	);
+}
+
+/**
+ * Normalize and sanitize basic editable content.
+ *
+ * Heading tags pasted into body content become paragraphs. Inside an existing
+ * template heading they become spans, preventing invalid nested headings.
+ *
+ * @param string $html        Content to sanitize.
+ * @param bool   $inline_only Whether the content is placed inside a heading.
+ * @return string
+ */
+function dwaplusjeden_kses_basic_content( $html, $inline_only = false ) {
+	$replacement_tag = $inline_only ? 'span' : 'p';
+	$html            = (string) $html;
+	$html            = preg_replace( '/<h[1-6]\b([^>]*)>/i', '<' . $replacement_tag . '$1>', $html );
+	$html            = preg_replace( '/<\/h[1-6]\s*>/i', '</' . $replacement_tag . '>', $html );
+
+	return wp_kses( $html, dwaplusjeden_get_basic_allowed_html( $inline_only ) );
+}
 /**
  * Print main navigation using Pattern Lab markup.
  */

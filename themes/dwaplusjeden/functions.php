@@ -320,3 +320,146 @@ add_filter(
 	},
 	999
 );
+/**
+ * Add a nofollow option to the WordPress link dialog and ACF link fields.
+ */
+function dwaplusjeden_enqueue_admin_link_nofollow() {
+	$script_path = get_template_directory() . '/assets/js/admin-link-nofollow.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'dwaplusjeden-admin-link-nofollow',
+		get_template_directory_uri() . '/assets/js/admin-link-nofollow.js',
+		array( 'jquery', 'wplink' ),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'admin_enqueue_scripts', 'dwaplusjeden_enqueue_admin_link_nofollow' );
+
+/**
+ * Enforce the frontend HTML allowlist in the SEO section WYSIWYG editor.
+ */
+function dwaplusjeden_enqueue_admin_seo_wysiwyg() {
+	$script_path = get_template_directory() . '/assets/js/admin-seo-wysiwyg.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'dwaplusjeden-admin-seo-wysiwyg',
+		get_template_directory_uri() . '/assets/js/admin-seo-wysiwyg.js',
+		array( 'jquery' ),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'admin_enqueue_scripts', 'dwaplusjeden_enqueue_admin_seo_wysiwyg' );
+
+/**
+ * Check whether an ACF WYSIWYG field belongs to SEO section content.
+ *
+ * @param array $field ACF field settings.
+ * @return bool
+ */
+function dwaplusjeden_is_seo_content_field( $field ) {
+	$field_key  = isset( $field['key'] ) ? (string) $field['key'] : '';
+	$field_name = isset( $field['name'] ) ? (string) $field['name'] : '';
+
+	if ( in_array( $field_key, [ 'field_seo_section_text', 'field_seo_section_text_desc' ], true ) ) {
+		return true;
+	}
+
+	return (bool) preg_match( '/(^|_)seo(?:_(?:left|right))?_(?:text|text_desc)$/', $field_name );
+}
+
+/**
+ * Normalize SEO WYSIWYG content before it is stored by ACF.
+ *
+ * @param mixed $value   Field value.
+ * @param mixed $post_id Post ID.
+ * @param array $field   ACF field settings.
+ * @return string
+ */
+function dwaplusjeden_sanitize_acf_seo_text( $value, $post_id, $field ) {
+	if ( ! dwaplusjeden_is_seo_content_field( $field ) ) {
+		return $value;
+	}
+
+	return dwaplusjeden_kses_basic_content( (string) $value );
+}
+add_filter( 'acf/update_value/type=wysiwyg', 'dwaplusjeden_sanitize_acf_seo_text', 10, 3 );
+
+/**
+ * Keep the allowed SEO elements when TinyMCE parses visual editor content.
+ *
+ * @param array $settings WordPress editor settings.
+ * @param array $field    ACF field settings.
+ * @return array
+ */
+function dwaplusjeden_configure_acf_seo_tinymce( $settings, $field ) {
+	if ( ! dwaplusjeden_is_seo_content_field( $field ) ) {
+		return $settings;
+	}
+	if ( ! isset( $settings['tinymce'] ) || ! is_array( $settings['tinymce'] ) ) {
+		$settings['tinymce'] = [];
+	}
+
+	$settings['tinymce']['valid_elements'] = implode(
+		',',
+		[
+			'p[class]',
+			'blockquote[class|cite]',
+			'strong[class]',
+			'b[class]',
+			'em[class]',
+			'i[class]',
+			'del[class|cite|datetime]',
+			'ins[class|cite|datetime]',
+			'code[class]',
+			'img[src|alt|title|width|height|class|loading|srcset|sizes|data-wp-more]',
+			'br[class]',
+			'span[class]',
+			'sup[class]',
+			'sub[class]',
+			'a[href|title|target|rel|class|aria-label]',
+			'ul[class]',
+			'ol[class]',
+			'li[class]',
+			'table[class]',
+			'caption[class]',
+			'colgroup[class]',
+			'col[class|span]',
+			'thead[class]',
+			'tbody[class]',
+			'tfoot[class]',
+			'tr[class]',
+			'th[class|colspan|rowspan|headers|scope|abbr]',
+			'td[class|colspan|rowspan|headers]',
+		]
+	);
+	$settings['tinymce']['extended_valid_elements'] = 'span[class]';
+	$settings['tinymce']['remove_empty'] = false;
+
+	return $settings;
+}
+add_filter( 'acf/fields/wysiwyg/wp_editor_settings', 'dwaplusjeden_configure_acf_seo_tinymce', 10, 2 );
+
+/**
+ * Normalize the custom nofollow value saved with ACF link fields.
+ *
+ * @param mixed $value Link field value.
+ * @return mixed
+ */
+function dwaplusjeden_normalize_acf_link_nofollow( $value ) {
+	if ( is_array( $value ) ) {
+		$value['nofollow'] = empty( $value['nofollow'] ) ? '' : '1';
+	}
+
+	return $value;
+}
+add_filter( 'acf/update_value/type=link', 'dwaplusjeden_normalize_acf_link_nofollow' );

@@ -22,6 +22,7 @@ $textheading    = $has_acf ? get_field( $prefix . '_text_heading' ) : '';
 $text    = $has_acf ? get_field( $prefix . '_text' ) : '';
 $image   = $has_acf ? get_field( $prefix . '_image' ) : 0;
 
+
 if ( ! $heading && ! $text && ! $image ) {
 	return;
 }
@@ -47,7 +48,7 @@ if ( $text && $image ) {
 			<div class="row">
 				<div class="col-12">
 					<h2 id="<?php echo esc_attr( $prefix ); ?>-heading" class="h5 fw-bolder c-body text-center w-100">
-						<?php echo wp_kses_post( $heading ); ?>
+						<?php echo dwaplusjeden_kses_basic_content( $heading, true ); ?>
 					</h2>
 				</div>
 			</div>
@@ -59,15 +60,15 @@ if ( $text && $image ) {
 					<div class="<?php echo esc_attr( $text_column_class ); ?>">
 						<div class="section-seo__text p-m c-body pt-lg-56 w-100">
 							<?php if ( $textdesc ) : ?>
-								<?php echo wp_kses_post( $textdesc ); ?>
+								<?php echo dwaplusjeden_kses_basic_content( $textdesc ); ?>
 							<?php endif; ?>
 							<?php if ( $textheading ) : ?>
 							<h3>
-								<?php echo wp_kses_post( $textheading ); ?>
+								<?php echo dwaplusjeden_kses_basic_content( $textheading, true ); ?>
 							</h3>
 							<?php endif; ?>
 							<?php if ( $text ) : ?>
-							<?php echo wp_kses_post( $text ); ?>
+							<?php echo dwaplusjeden_kses_basic_content( $text ); ?>
 							<?php endif; ?>
 						</div>
 					</div>
