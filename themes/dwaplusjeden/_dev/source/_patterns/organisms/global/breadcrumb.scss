@@ -1,0 +1,37 @@
+.breadcrumb{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-top: 16px;
+    span{
+        padding: var(--Spacing-xs, 4px) var(--Spacing-m, 12px);
+        &.breadcrumb-separator{
+            padding: 0;
+            display: flex;
+        }
+        @include typographyParagraphXs-mobile();
+        @include media-breakpoint-up(sm) {
+            @include typographyParagraphXs-tab();
+        }
+        @include media-breakpoint-up(lg) {
+            @include typographyParagraphXs();
+        }
+        // @include media-breakpoint-up(xxxl) {
+        //     @include typographyParagraphXs-hd();
+        // }
+        a {
+            text-decoration: underline;
+        }
+    }
+    
+    .breadcrumb_last{
+        border-radius: var(--Radius-brand, 4px);
+        background: var(--Surface-secondary, #28655B);
+        color: #fff;
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+        
+    }
+}

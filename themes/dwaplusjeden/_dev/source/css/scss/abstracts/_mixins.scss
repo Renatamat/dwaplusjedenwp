@@ -1,0 +1,196 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+/**
+ * Body Styles 
+ * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
+ */
+@mixin typographyBody() {
+	font-size: $font-size-paragragh-med;
+	line-height: 1.4;
+	-webkit-text-size-adjust: 100%; /* 1 */
+	font-family: $font-family-body;
+    font-optical-sizing: auto;
+    font-weight: 200 900;
+    font-style: normal;
+}
+
+/**
+ * XL Type Styles
+ */
+@mixin typographyBodyLarge() {
+	font-size: $font-size-med-2;
+	line-height: $line-height-large;
+	
+}
+
+/**
+ * XL Heading Styles
+ */
+ @mixin typographyH1-mobile() {
+	letter-spacing: var(--font-spacing--2, -2px);
+	font-family: $font-family-body;
+	font-style: normal;
+	font-size: $font-size-h1-mobile;
+	font-weight: 400;
+	line-height: 112px;
+}
+@mixin typographyH1-tab() {
+	font-size: $font-size-h1-tab;
+	line-height: 88px; /* 100% */
+}
+
+@mixin typographyH1() {
+	font-size: $font-size-h1;
+	line-height: 88px; /* 100% */
+}
+@mixin typographyH1-hd() {
+	font-size: $font-size-h1-hd;
+	line-height: 112px; /* 100% */
+}
+
+/**
+ * Large Heading Styles
+ */
+
+ @mixin typographyH2-mobile () {
+	font-size: $font-size-h2-mobile;
+	font-family: $font-family-body;
+	font-style: normal;
+	letter-spacing: var(--font-spacing--2, -2px);
+	line-height: 72px;
+	font-weight: 400;
+ }
+
+@mixin typographyH2-tab() {
+	font-size: $font-size-h2-tab;
+	line-height: 80px; /* 112.5% */
+}
+
+
+@mixin typographyH2() {
+	font-size: $font-size-h2;
+	line-height: 80px; /* 112.5% */
+}
+
+@mixin typographyH2-hd() {
+	font-size: $font-size-h2-hd;
+	line-height: 104px; /* 100% */
+}
+
+/**
+ * Medium 2 Heading Styles
+ */
+
+ @mixin typographyH3-mobile() {
+	font-family: $font-family-body;
+	font-size: $font-size-h3-mobile;
+	font-weight: 400;
+	line-height: 60px; /* 114.286% */
+	letter-spacing: var(--font-spacing--2, -2px);
+	font-style: normal;
+ }
+
+@mixin typographyH3-tab() {
+	font-size: $font-size-h3-tab;
+	line-height: 72px; /* 114.286% */
+
+}
+
+@mixin typographyH3() {
+	font-size: $font-size-h3;
+	line-height: 72px; /* 114.286% */
+
+}
+
+@mixin typographyH3-hd() {
+	font-size: $font-size-h3-hd;
+	line-height: 96px; /* 112.5% */
+	
+}
+
+
+/**
+ * Medium Heading Styles
+ */
+ 
+ @mixin typographyH4-mobile() {
+	font-family: $font-family-body;
+	letter-spacing: var(--font-spacing--1, -1px);
+	font-size: $font-size-h4-mobile;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 48px;
+ }
+
+ @mixin typographyH4-tab() {
+	font-size: $font-size-h4-tab;
+	line-height: 56px; /* 108.333% */
+}
+@mixin typographyH4() {
+	font-size: $font-size-h4;
+	line-height: 64px; /* 108.333% */
+}
+@mixin typographyH4-hd() {
+	font-size: $font-size-h4-hd;
+	line-height: 88px; /* 114.286% */
+	
+}
+
+
+/**
+ * Small 2 Heading Styles
+ */
+
+ @mixin typographyH5-mobile() {
+	font-family: $font-family-body;
+	letter-spacing: var(--font-spacing--1, -1px);
+	font-style: normal;
+	font-size: $font-size-h5-mobile;
+	font-weight: 400;
+	line-height: 40px; 
+ }
+
+ @mixin typographyH5-tab() {
+	font-size: $font-size-h5-tab;
+	line-height: 48px; /* 130% */
+}
+
+ @mixin typographyH5() {
+	font-size: $font-size-h5;
+	line-height: 56px; /* 130% */
+}
+
+ @mixin typographyH5-hd() {
+	font-size: $font-size-h5-hd;
+	line-height: 80px; /* 133.333% */
+}
+
+
+
+/**
+ * Small Heading Styles
+ */
+
+ @mixin typographyH6-mobile() {
+	font-family: $font-family-body;
+	font-size: $font-size-h6-mobile;
+	font-weight: 400;
+	line-height: 36px; /* 112.5% */
+	letter-spacing: var(--font-spacing--1, -1px);
+	font-style: normal;
+ }
+ @mixin typographyH6-tab() {
+	font-size: $font-size-h6-tab;
+	line-height: 40px; /* 112.5% */
+}
+ @mixin typographyH6() {
+	font-size: $font-size-h6;
+	line-height: 48px; /* 112.5% */
+}
+
+ @mixin typographyH6-hd() {
+	font-size: $font-size-h6-hd;
+	line-height: 72px; /* 110% */
+}

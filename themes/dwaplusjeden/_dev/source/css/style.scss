@@ -1,0 +1,182 @@
+/*------------------------------------*\
+    #TABLE OF CONTENTS
+\*------------------------------------*/
+/**
+ * BOOTSTRAP.............................Declarations Bootstrap
+ * ABSTRACTS..............................Declarations of Sass variables & mixins
+ * BASE...................................Default element styles
+ * LAYOUT.................................Layout-specific styles
+ * COMPONENTS.............................Component styles
+ * UTILITIES..............................Utility classes
+ */
+
+
+ // <weight>: Use a value from 200 to 900
+
+  
+
+/*------------------------------------*\
+    #BOOTSTRAP
+\*------------------------------------*/
+
+.gs-dev-tools {
+    z-index: 99999999;
+    top: 0; 
+}
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+
+@import "scss/abstracts/variables";
+
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px, 
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1200px,
+  xxxl: 1680px,
+);
+$theme-colors: (
+    primary: #7F6053
+  );
+
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1980px, 
+  );
+
+  $font-weight-lighter:         200;
+  $font-weight-bolder:          600;
+  
+
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";  
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+@import "../../node_modules/lightgallery/scss/lightgallery";
+
+  // Definiuj niestandardowe klasy kolumnowe dla xxxl
+  @include media-breakpoint-up(xxxl){
+    @for $i from 1 through 12 {
+    .col-xxxl-#{$i} {
+        flex: 0 0 auto;
+        width: calc(100% * #{$i} / 12);
+    }
+    }
+    }
+    @include media-breakpoint-up(xxxl){
+        @for $i from 1 through 12 {
+        .offset-xxxl-#{$i} {
+            margin-left: calc(100% * #{$i} / 12);
+        }
+        }
+    }
+    .fw-lighter{
+        @include media-breakpoint-up(xxxl){
+            font-weight: 100 !important;
+        }
+    }
+
+/*------------------------------------*\
+    #ABSTRACTS
+\*------------------------------------*/
+
+@import "scss/abstracts/fonts";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/mixinsparagraph";
+@import "scss/abstracts/colors";
+
+
+
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+@import "scss/base/reset";
+@import "scss/base/body";
+@import "scss/base/links";
+@import "scss/base/lists";
+@import "scss/base/headings";
+@import "scss/base/paragraph";
+@import "scss/base/forms";
+@import "scss/base/buttons";
+@import "scss/base/main";
+@import "scss/base/media";
+@import "scss/base/text";
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+@import "scss/layout/layout";
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+@import "scss/utilities/visibility";
+@import "scss/utilities/spacing";
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+@import "scss/swiper-bundle.scss";
+
+@import "../_patterns/atoms/images/icon.scss";
+@import "../_patterns/atoms/forms/checkbox.scss";
+@import "../_patterns/atoms/forms/radio.scss";
+
+@import "../_patterns/molecules/gallery slider/gallery-slider.scss";
+@import "../_patterns/molecules/gallery zoom/gallery-zoom.scss";
+@import "../_patterns/molecules/avatar/avatar.scss";
+
+@import "../_patterns/organisms/global/header.scss";
+@import "../_patterns/organisms/global/footer.scss";
+@import "../_patterns/organisms/global/breadcrumb.scss";
+@import "../_patterns/organisms/homepage/homepage.scss";
+@import "../_patterns/organisms/oferta-dziedzinowa/ofertadziedzinowa.scss";
+@import "../_patterns/organisms/oferta-branzowa/ofertabranzowa.scss";
+@import "../_patterns/organisms/rejestracja-dzialalnosci/rejestracjadzialalnosci.scss";
+@import "../_patterns/organisms/program-partnerski/program-partnerski.scss";
+@import "../_patterns/organisms/cennik/cennik.scss";
+@import "../_patterns/organisms/blog/blog.scss";
+@import "../_patterns/organisms/about/about.scss";
+@import "../_patterns/organisms/contact/contact.scss";
+@import "../_patterns/organisms/author/author.scss";
+@import "../_patterns/organisms/logowanie/logowanie.scss";
+@import "../_patterns/organisms/page404/page404.scss";
+@import "../_patterns/organisms/zlecenie-ksiegowosci/zlecenie-ksiegowosci.scss";
+ 
+body{
+    background: var(--Surface-300, #E9F5F4);
+}
+
+.icon-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-20 {
+    width: 20px;
+    height: 20px;
+}
+.icon-16 { 
+    width: 16px;
+    height: 16px;
+}
+

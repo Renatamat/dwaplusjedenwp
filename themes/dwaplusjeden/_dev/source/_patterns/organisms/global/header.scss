@@ -1,0 +1,212 @@
+.site-header{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--Radius-brand-xl, 24px);
+    background: transparent;
+    padding: 16px;
+    @include media-breakpoint-up(xl){
+        padding: var(--Spacing-xl, 24px);
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border-radius: inherit;
+        background: rgba(255, 255, 255, 0.60);
+        background-blend-mode: overlay;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        pointer-events: none;
+    }
+    & > *{
+        position: relative;
+        z-index: 1;
+    }
+    @include media-breakpoint-down(xl) {
+        &:has(.main-navigation.open){
+            &::before{
+                //display: none;
+            }
+        }
+        & > *:has(.main-navigation.open){
+            z-index: 10000;
+        }
+    }
+} 
+header{
+    height: 96px;
+    position: relative;
+    z-index: 999;
+    @include media-breakpoint-up(xl){
+        height: 116px;
+    }
+} 
+.fixed-header{
+    position: fixed;
+    width: 100%;
+    top: 16px;
+}
+.main-menu{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    a{
+        span{
+            color: var(--Text-body, #101717);
+            transition: 0.3s ease;
+        }
+        &:hover{
+            span{
+                color: var(--Text-primary, #C83232);
+            }
+            
+        }
+    }
+    
+    &>li{
+        width: 100%;
+        @include media-breakpoint-up(xl){
+            width: fit-content;
+        }
+    }
+    &>li>a{
+        padding: 12px 0px !important;
+    }
+}
+.mobile-button-submenu, .mobile-back, .menu-hamburger, .mobile-header-close{
+    cursor: pointer;
+}
+.btn-lang{
+        span{
+            color: var(--Text-body, #101717);
+            transition: 0.3s ease;
+        }
+        &:hover{
+            span{
+                color: var(--Text-primary, #C83232);
+            }
+            
+        }
+    }
+.mobile-back{
+    width: fit-content;
+
+    *{
+        pointer-events: none;
+    }
+    @include media-breakpoint-up(xl){
+        display: none !important;
+    }
+}
+.menu-login{
+    width: 160px;
+}
+.menu-item-has-children{
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-up(xl){
+        position: relative;
+    }
+    .sub-menu{
+        position: absolute;
+        background: var(--Surface-page, #FFF);
+        overflow: auto;
+        transition: 0.3s ease;
+        @include media-breakpoint-up(xl) {
+            opacity: 0;
+            z-index: -1;
+            top: 40px;
+            pointer-events: none;
+        }
+        @include media-breakpoint-down(xl) {
+            width: 100%;
+            height: calc(100svh - 140px);
+            top: 0;
+            left: 110%;
+            z-index: 99;
+        }
+        a{
+            padding: var(--Spacing-m, 12px) var(--Spacing-l, 16px);
+            width: max-content;
+            min-width: 100%;
+            display: block;
+            @include media-breakpoint-down(xl) {
+                padding-left: 24px;
+            }
+        }
+        @include media-breakpoint-down(xl) {
+            &.open{
+                left: 0%;
+                z-index: 999;
+            }
+        }
+
+        
+    }
+    &:hover{
+        .sub-menu{
+            opacity: 1;
+            z-index: 99;
+            pointer-events: auto;
+        }
+    }
+}
+.main-navigation{
+    
+    @include media-breakpoint-down(xl) {
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        left: 110%;
+        top: 0;
+        z-index: 9999;
+        padding: 16px;
+        transition: 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        &.open{
+            left: 0%;
+        }
+        .main-menu{
+            flex-direction: column;
+            align-items: start;
+            margin-top: 48px;
+            gap:0px;
+        }
+    }
+}
+.mobile-header-menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+.mobile-footer-menu{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 16px;
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+}
+.menu-item{
+    .c-btn-s{
+        @include media-breakpoint-down(sm) {
+            font-size: 16px !important;
+        }
+    }
+    .p-s{
+        @include media-breakpoint-down(sm) {
+            font-size: 16px !important;
+        }
+    }
+}

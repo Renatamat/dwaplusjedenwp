@@ -1,0 +1,65 @@
+<section class="hp-hero-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="position-relative">
+                    <div
+                        class="hp-hero-slider-wrapper swiper"
+                        data-swiper
+                        data-swiper-options='{"slidesPerView": 1, "loop": true}'
+                    >
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{{slider1}}" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{{slider2}}" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{{slider2}}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        
+                    </div>
+                    <div class="hp-hero-slider-message --secondary a-bubble-pop" data-animate-start="top 60%" data-animate-delay="0.18">
+                        <div class="hp-hero-slider-message-wrapper">
+                            <div class="d-flex flex-column gap-16">
+                                <p class="p-s">
+                                    Ten wydatek możemy wrzucić w koszty – zapłaci Pani mniejszy podatek.
+                                </p>
+                                <div class="d-flex flex-column">
+                                    <span class="p-s fw-bolder c-body">
+                                        Iwona
+                                    </span>
+                                    <span class="p-overline c-black">TWOJA KSIĘGOWA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-slider-avatar">
+                            {{> molecules-avatar }}
+                        </div>
+                    </div>
+                    <div class="hp-hero-slider-message --primary a-bubble-pop" data-animate-delay="0.24">
+                        <div class="hp-hero-slider-message-wrapper">
+                            <div class="d-flex flex-column gap-16">
+                                <p class="p-m">
+                                    Księgowa pomogła założyć mi działalność i odpowiedziała na wszystkie pytania :)
+                                </p>
+                                <div class="d-flex flex-column">
+                                    <span class="p-s fw-bolder c-body">
+                                        Anna Jakubowska
+                                    </span>
+                                    <span class="p-overline c-black">GRAFICZKA, JDG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-slider-avatar">
+                            <img src="{{ testimonialautor }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

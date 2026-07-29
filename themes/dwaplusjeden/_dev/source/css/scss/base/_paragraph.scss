@@ -1,0 +1,140 @@
+/*------------------------------------*\
+    #PARAGRAPHS
+\*------------------------------------*/
+
+/**
+ * Paragraph Uppercase base styles
+ */
+ .p-up {
+    @include typographyParagraphUppercase();
+    @include media-breakpoint-up(xxxl) {
+        @include typographyParagraphUppercase-hd();
+    }
+}
+
+/**
+ * Paragraph Overline base styles
+ */
+.p-overline {
+    @include typographyParagraphOverline-mobile();
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphOverline-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphOverline();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphOverline-hd();
+    // }
+}
+
+/**
+ * Paragraph Extra Small base styles
+ */
+ @mixin p-xs() {
+    @include typographyParagraphXs-mobile();
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphXs-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphXs();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphXs-hd();
+    // }
+}
+
+.p-xs {
+    @include p-xs();
+}
+/**
+ * Paragraph Small base styles
+ */
+ @mixin p-s() {
+        @include typographyParagraphS-mobile();
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphS-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphS();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphS-hd();
+    // }
+}
+
+.p-s {
+    @include p-s();
+}
+
+/**
+ * Paragraph Medium base styles
+ */
+@mixin p-m() {
+    @include typographyParagraphM-mobile();
+
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphM-tab();
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphM();
+    }
+
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphM-hd();
+    // }
+}
+.p-m {
+    @include p-m();
+}
+
+/**
+ * Paragraph Large base styles
+ */
+@mixin p-l() {
+    @include typographyParagraphL-mobile();
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphL-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphL();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphL-hd();
+    // }
+}
+
+.p-l {
+    @include p-l();
+}
+/**
+ * Paragraph Extra Large base styles
+ */
+@mixin p-xl {
+    @include typographyParagraphXl-mobile();
+    @include media-breakpoint-up(sm) {
+        @include typographyParagraphXl-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphXl();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphXl-hd();
+    // }
+}
+.p-xl {
+    @include p-xl();
+}
+
+p{
+    & > a{
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+        transition: all 0.4s ease-in-out;
+        text-underline-offset: 2px;
+        &:hover{
+              text-decoration-color: color-mix(in srgb, currentColor 100%, transparent);
+        }
+    }
+}

@@ -1,0 +1,466 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+/**
+ * Button and submit inputs reset
+ * 1) These should be styled using c-btn
+ */
+button {
+	cursor: pointer;
+}
+
+/**
+ *
+ * 1) Button or link that has functionality to it
+ */
+ .c-btn {
+	font-family: $font-family-body;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px; /* 120% */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	transition: 0.3s ease;
+	cursor: pointer;
+	&:hover{
+		background: $color-btn-primary-bg-hover;
+	}
+}
+
+/*
+ * Inner container wrapper
+ * 1) Container is direct decendant of <button>, since there's
+ *    a bug with applying flexbox directly to a <button>
+ * 2) Only needs to be used for buttons containing both icons and text
+ */
+.c-btn__inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+
+/*
+ * Button icon
+ */
+.c-btn__icon {
+	width: 1rem;
+	height: 1rem;
+	fill: $color-btn-primary;
+	transition: fill $anim-fade-quick $anim-ease;
+}
+
+/* Rozmiary */
+.c-btn-xs { 
+	@include typographyParagraphXs-mobile();
+	@include media-breakpoint-up(sm) {
+        @include typographyParagraphXs-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphXs();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphXs-hd();
+    // }
+	padding: 12px;
+	svg{
+		width: 16px;
+		height: 16px;
+	}
+	&>span{
+		padding: 0px 8px;
+	}
+}
+.c-btn-s { 
+	@include typographyParagraphS-mobile();
+	@include media-breakpoint-up(sm) {
+        @include typographyParagraphS-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphS();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphS-hd();
+    // }
+	padding: 16px;
+	svg{
+		width: 16px;
+		height: 16px;
+	}
+	&>span{
+		padding: 0px 8px;
+	}
+}
+.c-btn-m { 
+
+	@include typographyParagraphM-mobile();
+	@include media-breakpoint-up(sm) {
+        @include typographyParagraphM-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphM();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphM-hd();
+    // }
+	padding: 16px;
+	svg{
+		width: 20px;
+		height: 20px;
+	}
+	.c-btn__inner {
+		padding: 0px 8px;
+	}
+	&>span{
+		padding: 0px 8px;
+	}
+ }
+.c-btn-l { 
+	@include typographyParagraphL-mobile();
+	@include media-breakpoint-up(sm) {
+        @include typographyParagraphL-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphL();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphL-hd();
+    // }
+	padding: 24px;
+	gap: 4px;
+	&>span{
+		padding: 0px var(--Spacing-m, 12px);
+	}
+	
+
+ }
+ .c-btn-xl { 
+	@include typographyParagraphXl-mobile();
+	@include media-breakpoint-up(sm) {
+        @include typographyParagraphXl-tab();
+    }
+    @include media-breakpoint-up(lg) {
+        @include typographyParagraphXl();
+    }
+    // @include media-breakpoint-up(xxxl) {
+    //     @include typographyParagraphXl-hd();
+    // }
+	padding: 32px;
+	gap: 4px;
+	
+
+	&>span{
+		padding: 0px var(--Spacing-m, 12px);
+	}
+ }
+
+ .c-btn-link { 
+	color: var(--Text-primary, #C83232);
+	padding: 0px !important;
+	font-weight: 700;
+	&:hover {
+		color: var(--Text-body, #101717);
+		background: unset;
+	}
+	&:target, &:active, &:focus, &:visited  {
+		color: var(--Text-body, #101717);
+	}
+	&.disabled{
+		color: var(--Text-disabled, #B9B9B9);
+		pointer-events: none;
+	}
+	span{
+		padding: 0px !important;
+	}
+ }
+/* Typy */
+.c-btn-fill { 
+	color: #fff;
+	border-radius: 4px;
+	position: relative;
+	z-index: 0;
+	background: linear-gradient(180deg, #E62E2E 0%, #C83232 100%);
+	font-weight: 700;
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 4px;
+		background: linear-gradient(180deg, #C83232 0%, #C83232 100%);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		z-index: -1;
+	}
+
+	&:hover{
+		color: #fff;
+		background: linear-gradient(180deg, #E62E2E 0%, #C83232 100%);
+		&::after {
+		opacity: 1;
+		}
+	}
+	&:target, &:active, &:focus, &:visited  {
+		color: #fff;
+		background: linear-gradient(180deg, #E62E2E 0%, #C83232 50%, #C83232 100%);
+		background-position: bottom;
+	}
+	&.disabled{
+		background: var(--Surface-disabled, #B9B9B9);
+		pointer-events: none;
+	}
+ }
+.c-btn-outline { 
+	text-wrap: nowrap;
+	color: var(--Text-secondary, #264543);
+	border-radius: 0;
+	background: transparent;
+	border-radius: var(--Radius-brand, 4px);
+	font-weight: 700;
+	border: 2px solid var(--Border-secondary, #28655B);
+	&:hover {
+		background: var(--Surface-400, #D4EAE9);
+		border: 2px solid var(--Border-secondary, #28655B);
+		color: var(--Text-secondary, #264543);
+		svg{
+			path{
+				fill:var(--Border-secondary, #28655B);
+			}
+		}
+	}
+	&:target, &:active, &:focus {
+		background: transparent;
+		border: 2px solid var(--Border-secondary, #28655B);
+		color: var(--Text-secondary, #264543);
+	}
+	svg{
+		path{
+			fill:var(--Border-secondary, #28655B);
+		}
+	}
+	&.c-white{
+		&:hover{
+			color:$color-btn-outline !important;
+		}
+
+	}
+	&.disabled{
+		border: 2px solid var(--Border-disabled, #B9B9B9);
+		color: var(--Text-disabled, #B9B9B9);
+		pointer-events: none;
+		svg{
+			path{
+				fill:var(--Text-disabled, #B9B9B9);
+			}
+		}
+	}
+	&.--white{
+
+        border: 2px solid var(--Border-secondary, #FCFDFD);
+        color: #fff;
+        &:hover{
+            border: 2px solid var(--Border-secondary, #FCFDFD);
+            color: #fff;    
+            background: #ffffff52;
+        }
+    
+	}
+ }
+.c-btn-text { 
+	padding: 0px;
+	color: var(--Text-primary, #C83232);
+	font-weight: 700;
+	svg{
+		path{
+			fill:#000;
+			transition: .3s ease;
+		}
+	}
+	&:hover {
+		background: unset;		
+		border: none;
+		color: var(--Text-body, #101717);
+		svg{
+			path{
+				fill:#000;
+			}
+		}
+	}
+	.c-btn__inner {
+		padding: 0px;
+	}
+	&.disabled{
+		color: var(--Text-disabled, #B9B9B9);
+		pointer-events: none;
+		svg{
+			path{
+				fill: var(--Text-disabled, #B9B9B9);
+			}
+		}
+	}
+ }
+
+/* Ikony */
+.c-btn__icon {
+    fill: red; /* Ustawia kolor wypełnienia SVG na czerwony */
+}
+.c-btn__icon--left {
+
+}
+.c-btn__icon--right {
+
+}
+
+
+// Inne przyciski
+
+.c-btn-icon {
+	transition: .3s;
+	border-radius: 4px;
+	align-items: center;
+	justify-content: center;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.c-btn-icon.c-btn-text{
+	svg{
+		path{
+			fill: #28655B;
+		}
+	}
+	&:hover{
+		background: var(--Surface-400, #D4EAE9);
+	}
+	&.disabled{
+		svg{
+			path{
+				fill: #B9B9B9;
+			}
+		}
+		pointer-events: none;
+	}
+}
+.c-btn-icon-xs {
+	width: 24px;
+	height: 24px;
+	svg{
+		width: 12px;
+		height: 12px;
+	}
+} 
+.c-btn-icon-s {
+	width: 32px;
+	height: 32px;
+	svg{
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.c-btn-icon-m {
+	width: 44px;
+	height: 44px;
+	svg{
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.c-btn-icon-l {
+	width: 52px;
+	height: 52px;
+	svg{
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.c-btn-icon-xl {
+	width: 72px;
+	height: 72px;
+	svg{
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.c-btn-text.c-btn-icon-xl{
+	width: 40px;
+	height: 40px;
+}
+
+.c-btn-text.c-btn-icon-l{
+	width: 28px;
+	height: 28px;
+}
+
+.c-btn-text.c-btn-icon-m{
+	width: 28px;
+	height: 28px;
+}
+
+.c-btn-text.c-btn-icon-s{
+	width: 24px;
+	height: 24px;
+}
+.c-btn-text.c-btn-icon-xs{
+	width: 16px;
+	height: 16px;
+}
+
+.c-btn-wherebuy {
+	text-align: center;
+	flex: 1;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.c-btn-label {
+	transition: .3s;
+	border: unset;
+
+	padding: var(--gap-s, 12px) var(--gap-m, 16px);
+	border-radius: 1000px;
+	background: var(--surface-page, #FFF);
+
+	color: var(--text-action, #2E53C2);
+	font-family: $font-family-body;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+
+	display: flex;
+	gap: 8px;
+	span {
+		padding: 0px 4px;
+	}
+	&:hover {
+		color: #fff;
+		background: #2E53C2;
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
+	}
+}
+.c-btn-mobile {
+	width: 100%;
+	@include media-breakpoint-up(lg) {
+		width: fit-content;
+	}
+	&-sm{
+		width: 100%;
+		@include media-breakpoint-up(sm) {
+			width: fit-content;
+		}
+	}
+}

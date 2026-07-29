@@ -1,0 +1,80 @@
+.contact{
+    &-item{
+        &-icon{
+            padding: 16px;
+            border-radius: var(--Radius-brand-xl, 24px);
+            background: linear-gradient(180deg, var(--Surface-page, #FFF) 0%, var(--Surface-300, #E9F5F4) 100%);
+            flex-shrink: 0;
+            /* Shadow Secondary m */
+            box-shadow: 0 58px 16px 0 rgba(54, 135, 130, 0.00), 0 37px 15px 0 rgba(54, 135, 130, 0.03), 0 21px 13px 0 rgba(54, 135, 130, 0.10), 0 9px 9px 0 rgba(54, 135, 130, 0.16), 0 2px 5px 0 rgba(54, 135, 130, 0.19);
+        }
+    }
+    &-form{
+        padding: 20px;
+        border-radius: 16px;
+        background: var(--Surface-page, #FFF);
+
+        /* Shadow Secondary m */
+        box-shadow: 0 58px 16px 0 rgba(54, 135, 130, 0.00), 0 37px 15px 0 rgba(54, 135, 130, 0.03), 0 21px 13px 0 rgba(54, 135, 130, 0.10), 0 9px 9px 0 rgba(54, 135, 130, 0.16), 0 2px 5px 0 rgba(54, 135, 130, 0.19);
+    
+        .InputWrap input{
+            border-radius: var(--Radius-brand, 4px);
+            border: var(--Stroke-s, 1px) solid var(--Border-secondary, #28655B);
+        }
+        .custom-select .select-selected{
+            border-radius: var(--Radius-brand, 4px);
+            border: var(--Stroke-s, 1px) solid var(--Border-secondary, #28655B);
+            padding: var(--Spacing-m, 12px) var(--Spacing-l, 16px);
+        }
+        .custom-select .select-options-container .select-option, .select-selected{
+            padding: var(--Spacing-s, 8px) var(--Spacing-l, 16px);
+            @include typographyParagraphM-mobile();
+
+            @include media-breakpoint-up(lg) {
+                @include typographyParagraphM();
+            }
+            &.--active{
+                color: var(--Text-headline, #124738);
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 32px;
+            border-radius: var(--Radius-brand-xl, 24px);
+        }
+    }
+    &-popup{
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+
+        &[hidden]{
+            display: none;
+        }
+
+        &-backdrop{
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.70);
+        }
+
+        &-dialog{
+            position: relative;
+            z-index: 1;
+            width: min(90%, 721px); 
+        }
+    }
+}
+.wpcf7-form .wpcf7-spinner{
+    display: none;
+    visibility: hidden;
+}
+.wpcf7 form.sent .wpcf7-response-output{
+    display: none;
+}
+body.contact-popup-open{
+    overflow: hidden;
+}

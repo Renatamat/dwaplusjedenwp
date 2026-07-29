@@ -1,0 +1,26 @@
+.info-section-block {
+  border-radius: 16px;
+  border: 1px dashed var(--Border-alert, #EFB701);
+  background: var(--Surface-alert-light, #FEF0DB);
+  padding: var(--Spacing-2xl, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--Text-body, #101717);
+}
+
+.info-section-block__placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .info-section-block {
+    border-radius: 24px;
+  }
+}

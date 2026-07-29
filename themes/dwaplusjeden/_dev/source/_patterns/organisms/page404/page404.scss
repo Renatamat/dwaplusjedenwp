@@ -1,0 +1,36 @@
+.page404{
+    &-container{
+        padding: 24px;
+        border-radius: var(--Radius-brand-xl, 24px);
+        background: #FFF;
+
+        /* Shadow Secondary m */
+        box-shadow: 0 58px 16px 0 rgba(54, 135, 130, 0.00), 0 37px 15px 0 rgba(54, 135, 130, 0.03), 0 21px 13px 0 rgba(54, 135, 130, 0.10), 0 9px 9px 0 rgba(54, 135, 130, 0.16), 0 2px 5px 0 rgba(54, 135, 130, 0.19);
+        
+        @include media-breakpoint-up(lg) {
+            padding: var(--Spacing-4xl, 64px);
+        } 
+    }
+    &-header{
+        color: var(--Text-headline, #124738);
+        font-family: var(--font-family-body, "Work Sans");
+        
+        font-style: normal;
+        font-weight: var(--font-weight-bold, 600);
+        font-size: 120px;
+        line-height: 120px; /* 100% */
+        @include media-breakpoint-up(sm) {
+            font-size: 200px;
+            line-height: 200px; /* 100% */
+        } 
+        @include media-breakpoint-up(lg) {
+            font-size: 360px;
+            line-height: 360px; /* 100% */
+        } 
+    }
+}
+
+.ti-widget.ti-goog .ti-review-item>.ti-inner{
+    background-color: #ffffffb7 !important;
+    border-color: #ffffffb7 !important;
+}

@@ -1,0 +1,105 @@
+.pp-desc{
+    &-image{
+        height: 294px;
+        width: 100%;
+        border-radius: var(--Radius-brand-xl, 24px);
+        overflow: hidden;
+        @include media-breakpoint-up(sm) {
+            height: 576px;
+        }
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &-content{
+        padding-right: 24px;
+    }
+    &-btn{
+        width: 100%;
+        margin: 0 auto;
+        @include media-breakpoint-up(sm) {
+            width: 70%;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+            margin: unset;
+        }
+    }
+    
+           
+}
+.pp-requirements{
+    &-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        @include media-breakpoint-up(sm) {
+            gap: 56px;
+            
+        }
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr;
+            
+        }
+        @include media-breakpoint-up(lg) {
+            gap: 64px;
+        }
+    }
+    &-item{
+            padding: var(--Spacing-xl, 16px) var(--Spacing-2xl, 20px);
+
+        border-radius: var(--Radius-brand-xl, 24px);
+        background: rgba(255, 255, 255, 0.70);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            padding: var(--Spacing-xl, 24px) var(--Spacing-2xl, 32px);
+        }
+        &-icon{
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--Radius-round, 1000px);
+            background: var(--Surface-primary, #E62E2E);
+            flex-shrink: 0;
+        }
+    }
+}
+
+.pp-proces{
+    background-color: #fff;
+    &-item{
+        border-radius: var(--Radius-brand-xl, 24px);
+        background: var(--Surface-300, #E9F5F4);
+        padding: 16px;
+        @include media-breakpoint-up(lg) {
+            padding: var(--Spacing-xl, 24px);
+        }
+        &-number{
+            border-radius: var(--Radius-brand-xl, 24px);
+            background: linear-gradient(180deg, var(--Surface-page, #FFF) 0%, var(--Surface-300, #E9F5F4) 100%);
+            padding: var(--Spacing-l, 16px);
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            /* Shadow Secondary m */
+            box-shadow: 0 58px 16px 0 rgba(54, 135, 130, 0.00), 0 37px 15px 0 rgba(54, 135, 130, 0.03), 0 21px 13px 0 rgba(54, 135, 130, 0.10), 0 9px 9px 0 rgba(54, 135, 130, 0.16), 0 2px 5px 0 rgba(54, 135, 130, 0.19);
+            @include media-breakpoint-up(sm) {
+                width: 80px;
+            }
+        }
+    }
+}
+
+.pp-cta{
+    background-color: #fff;
+}

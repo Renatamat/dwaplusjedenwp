@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+/**
+ * Link base styles
+ */
+a {
+	color: #264543;
+	text-decoration: none;
+	outline: 0;
+	transition: color $anim-fade-quick $anim-ease;
+
+	// &:hover, &:focus {
+	// 	color: currentColor;
+	// }
+
+	// &:active {
+	// 	color:currentColor;
+	// }
+	// &:visited{
+	// 	color: currentColor;
+	// }
+}
+.link-underline-rtl {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  overflow: visible;
+  width: fit-content;
+}
+
+.link-underline-rtl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.4s ease;
+  pointer-events: none;
+}
+
+.link-underline-rtl:hover::after {
+  width: 100%;
+}

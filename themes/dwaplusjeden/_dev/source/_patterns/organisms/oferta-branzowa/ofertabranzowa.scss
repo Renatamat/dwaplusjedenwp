@@ -1,0 +1,106 @@
+.ob-offer{
+    overflow: hidden;
+    &-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        position: relative;
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: 1fr 1fr;
+         }
+    }
+
+    &-item{
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: start;
+        img{
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        span{
+            position: relative;
+            padding: 24px;
+        }
+        @include media-breakpoint-up(xxxl) {
+            max-height: 576px;
+        }
+            
+    }
+    &-plus{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        width: 90px;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid #ffffff57;
+        svg{
+            width: 60px;
+            height: 60px;
+        }
+        @include media-breakpoint-up(sm) { 
+            top: 40%;
+        }
+        @include media-breakpoint-up(md) { 
+            width: 156px;
+            height: 156px;
+            svg{
+                width: 90px;
+                height: 90px;
+            }
+        }
+        @include media-breakpoint-up(xl) { 
+            width: 280px;
+            height: 280px; 
+            svg{
+                width: 165px;
+                height: 165px;
+            }
+        }
+    }
+
+}
+.--noicon{
+    .service-card-wrapper{
+        min-height: 180px;
+        gap: 16px;
+    }
+    .service-card{
+         padding:16px;
+        @include media-breakpoint-up(xl) {
+            padding:24px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .service-card:hover{
+            transform: translateY(-8px);
+             .service-card-content{
+                transform: translateY(0);
+            }
+        }
+    }
+}
+.global-brand{
+    .service-card:hover .service-card-content{
+        transform: translateY(0); 
+    }
+    .service-card{
+        @include media-breakpoint-up(lg) {
+            padding:24px;
+        }
+    }
+}

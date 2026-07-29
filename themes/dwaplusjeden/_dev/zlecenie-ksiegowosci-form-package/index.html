@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zlecenie usług księgowych</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <main class="page">
+    <section class="zlecenie-ksiegowosci pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form class="d-flex flex-column gap-48" data-zk-form>
+                    <h1 class="h5 fw-bolder c-body text-center w-100">Zlecenie usług księgowych</h1>
+                    <div class="form-wrap">
+                        <div class="form-wrap-header">
+                            <span class="p-l fw-bolder c-body">Krok 1 z 4: Dane firmy</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.544575 15.53C0.252164 15.2493 0.23357 14.7748 0.503046 14.4703L9.19595 4.64445C9.30192 4.52501 9.43024 4.43135 9.57138 4.3679C9.71246 4.30447 9.86421 4.27214 10.0169 4.27214C10.1695 4.27214 10.3213 4.30447 10.4624 4.3679C10.6035 4.43135 10.7318 4.52501 10.8378 4.64445L19.5307 14.4703C19.8002 14.7748 19.7816 15.2493 19.4892 15.53C19.1968 15.8107 18.7413 15.7914 18.4718 15.4868L10.0169 5.92996L1.56196 15.4868C1.29249 15.7914 0.836986 15.8107 0.544575 15.53Z" fill="#28655B"/>
+                            </svg>
+                        </div>
+                        <div class="form-wrap-content">
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-l --with-label">
+                                    <span class="InputPlaceholder-label">Forma prawna *</span>
+                                    <div class="position-relative">
+                                        <span class="wpcf7">
+                                        <select name="company-legal-form" required>
+                                            <option value="" selected disabled>Wybierz</option>
+                                            <option value="spolka-2">Księgowość dla spółki2</option>
+                                            <option value="spolka-3">Księgowość dla spółki3</option>
+                                        </select>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">NIP</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="company-nip">
+                                        </span>
+                                    </div>
+                                </div>
+                                <span class="c-btn c-btn-s c-btn-outline">
+                                    <span class="ws-nowrap">Pobierz dane z GUS</span>
+                                </span>
+                                <div class="CheckboxWrap">
+                                    <label class="label-s">
+                                         <input name="company-no-nip" type="checkbox">
+                                        <span class="CheckboxName text-nowrap">Brak NIP</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">REGON</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="company-regon">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="CheckboxWrap">
+                                    <label class="label-s">
+                                         <input name="company-no-regon" type="checkbox">
+                                        <span class="CheckboxName text-nowrap">Brak REGON</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">Nazwa firmy*</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="company-name" required>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <span class="p-m fw-bolder c-body">Adres prowadzenia działalności</span>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="CheckboxWrap">
+                                    <label class="label-s">
+                                         <input name="business-address-1-no-fixed-place" type="checkbox">
+                                        <span class="CheckboxName ">Brak stałego miejsca wykonywania działalności gospodarczej</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label w-25">
+                                    <span class="InputPlaceholder-label">Kod pocztowy</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="business-address-1-postal-code">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">Miasto</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="business-address-1-city">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">Ulica</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="business-address-1-street">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">Numer domu</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="business-address-1-house-number">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="InputWrap InputWrap-m --with-label">
+                                    <span class="InputPlaceholder-label">Numer lokalu</span>
+                                    <div class="position-relative">
+                                        <div class="InputBox">
+                                            <span class="InputPlaceholder"></span>
+                                            <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="wpcf7">
+                                             <input type="text" name="business-address-1-apartment-number">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-wrap-content-row">
+                                <div class="c-btn c-btn-s c-btn-text">
+                                    <span class="ps-0 c-black">Dodaj kolejny adres</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2.375C8.41421 2.375 8.75 2.71079 8.75 3.125V7.25H12.875C13.2892 7.25 13.625 7.58579 13.625 8C13.625 8.41421 13.2892 8.75 12.875 8.75H8.75V12.875C8.75 13.2892 8.41421 13.625 8 13.625C7.58579 13.625 7.25 13.2892 7.25 12.875V8.75H3.125C2.71079 8.75 2.375 8.41421 2.375 8C2.375 7.58579 2.71079 7.25 3.125 7.25H7.25V3.125C7.25 2.71079 7.58579 2.375 8 2.375Z" fill="black"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                        </div>   
+                    </div>
+                    <div class="form-wrap">
+                            <div class="form-wrap-header">
+                                <span class="p-l fw-bolder c-body">Krok 2 z 4: Dane reprezentantów</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.544575 15.53C0.252164 15.2493 0.23357 14.7748 0.503046 14.4703L9.19595 4.64445C9.30192 4.52501 9.43024 4.43135 9.57138 4.3679C9.71246 4.30447 9.86421 4.27214 10.0169 4.27214C10.1695 4.27214 10.3213 4.30447 10.4624 4.3679C10.6035 4.43135 10.7318 4.52501 10.8378 4.64445L19.5307 14.4703C19.8002 14.7748 19.7816 15.2493 19.4892 15.53C19.1968 15.8107 18.7413 15.7914 18.4718 15.4868L10.0169 5.92996L1.56196 15.4868C1.29249 15.7914 0.836986 15.8107 0.544575 15.53Z" fill="#28655B"/>
+                                </svg>
+                            </div>
+                            <div class="form-wrap-content">
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Dane osobowe</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Nazwisko*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-last-name" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Imię*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-first-name" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">PESEL</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-pesel">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="CheckboxWrap">
+                                        <label class="label-s">
+                                             <input name="representative-1-no-pesel" type="checkbox">
+                                            <span class="CheckboxName text-nowrap">Brak PESEL</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Obywatelstwo*</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="representative-1-citizenship" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="polskie">Polskie</option>
+                                                <option value="ukrainskie">Ukraińskie</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Data urodzenia</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                <input type="date" name="representative-1-birth-date">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Rodzaj dokumentu*</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="representative-1-document-type" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="dowod-osobisty">Dowód osobisty</option>
+                                                <option value="paszport">Paszport</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Seria i numer dokumentu*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-document-number" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Adres zamieszkania</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label w-25">
+                                        <span class="InputPlaceholder-label">Kod pocztowy</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-residence-address-postal-code">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Miasto</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-residence-address-city">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Ulica</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-residence-address-street">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Numer domu</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-residence-address-house-number">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Numer lokalu</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-residence-address-apartment-number">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Adres korespondencyjny</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="CheckboxWrap">
+                                        <label class="label-s">
+                                            <input name="representative-1-same-correspondence-address" type="checkbox">
+                                            <span class="CheckboxName text-nowrap">Taki sam jak zamieszkania</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label w-25">
+                                        <span class="InputPlaceholder-label">Kod pocztowy</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-correspondence-address-postal-code">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Miasto</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-correspondence-address-city">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Ulica</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-correspondence-address-street">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Numer domu</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-correspondence-address-house-number">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Numer lokalu</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="representative-1-correspondence-address-apartment-number">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Dane osobowe</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Adres e-mail*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder">jan.kowalski@email.pl</span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.616934 0.0133895C0.478994 0.0367495 0.344754 0.10945 0.230234 0.22287C0.115214 0.33675 0.050874 0.45651 0.021514 0.61129C-0.00856597 0.76991 -0.00642596 13.0949 0.023694 13.2369C0.080454 13.5043 0.285554 13.7243 0.559194 13.8113C0.655494 13.8419 18.5869 13.8419 18.6832 13.8113C18.8748 13.7504 19.0686 13.593 19.1518 13.4306C19.1778 13.3799 19.2089 13.2809 19.2208 13.2106C19.2363 13.12 19.2409 11.2667 19.2369 6.83287C19.2315 0.92143 19.2293 0.57799 19.196 0.49287C19.1209 0.30087 18.9213 0.105889 18.7221 0.0300695C18.663 0.00754949 17.1586 0.00258952 9.68121 0.000249521C4.74771 -0.00131048 0.668794 0.00460948 0.616934 0.0133895ZM2.82193 1.54123C2.87797 1.59547 9.61069 7.09287 9.62109 7.09287C9.63149 7.09287 16.3643 1.59555 16.4205 1.54121C16.4458 1.51675 15.5132 1.51287 9.62121 1.51287C3.72747 1.51287 2.79665 1.51675 2.82193 1.54123ZM1.50121 7.38287V12.3329H9.62121H17.7412V7.38287C17.7412 4.66037 17.7345 2.43293 17.7262 2.43301C17.718 2.43307 15.9898 3.84025 13.8858 5.56005C11.7818 7.27985 10.0176 8.71027 9.96519 8.73877C9.76831 8.84593 9.47407 8.84591 9.27709 8.73871C9.22467 8.71017 7.46041 7.27975 5.35649 5.55999C3.25259 3.84023 1.52445 2.43309 1.51621 2.43301C1.50797 2.43293 1.50121 4.66037 1.50121 7.38287Z" fill="black"/>
+                                                </svg>
+                                                <input type="email" name="representative-1-email" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Telefon*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder">+48 123 456 789</span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                <input type="tel" name="representative-1-phone" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="c-btn c-btn-s c-btn-text">
+                                        <span class="ps-0 c-black">Dodaj kolejnego reprezentanta</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2.375C8.41421 2.375 8.75 2.71079 8.75 3.125V7.25H12.875C13.2892 7.25 13.625 7.58579 13.625 8C13.625 8.41421 13.2892 8.75 12.875 8.75H8.75V12.875C8.75 13.2892 8.41421 13.625 8 13.625C7.58579 13.625 7.25 13.2892 7.25 12.875V8.75H3.125C2.71079 8.75 2.375 8.41421 2.375 8C2.375 7.58579 2.71079 7.25 3.125 7.25H7.25V3.125C7.25 2.71079 7.58579 2.375 8 2.375Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="form-wrap">
+                            <div class="form-wrap-header">
+                                <span class="p-l fw-bolder c-body">Krok 3 z 4: Charakterystyka działalności</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.544575 15.53C0.252164 15.2493 0.23357 14.7748 0.503046 14.4703L9.19595 4.64445C9.30192 4.52501 9.43024 4.43135 9.57138 4.3679C9.71246 4.30447 9.86421 4.27214 10.0169 4.27214C10.1695 4.27214 10.3213 4.30447 10.4624 4.3679C10.6035 4.43135 10.7318 4.52501 10.8378 4.64445L19.5307 14.4703C19.8002 14.7748 19.7816 15.2493 19.4892 15.53C19.1968 15.8107 18.7413 15.7914 18.4718 15.4868L10.0169 5.92996L1.56196 15.4868C1.29249 15.7914 0.836986 15.8107 0.544575 15.53Z" fill="#28655B"/>
+                                </svg>
+                            </div>
+                            <div class="form-wrap-content">
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Dane osobowe</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Przedmiot i zakres działalności (krótki opis)*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="business-description" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Przybliżona ilość dokumntów w miesiącu (faktury przychodowe / kosztowe)*</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="monthly-documents-count" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Transakcje zagraniczne *</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="foreign-transactions" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="tak">Tak</option>
+                                                <option value="nie">Nie</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Obsługa w j. angielskim *</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="english-service" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="tak">Tak</option>
+                                                <option value="nie">Nie</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Czy firma zatrudnia pracowników*</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="has-employees" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="tak">Tak</option>
+                                                <option value="nie">Nie</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Dodatkowe informacje (opcjonalne)</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="additional-information">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="form-wrap --transparent">
+                            <div class="form-wrap-header">
+                                <span class="p-l fw-bolder c-body">Krok 4 z 4: Podsumowanie</span>
+
+                            </div>
+                            <div class="form-wrap-content">
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Jak Dowiedziałeś się o 2+1?</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                     <div class="InputWrap InputWrap-l --with-label">
+                                        <span class="InputPlaceholder-label">Transakcje zagraniczne *</span>
+                                        <div class="position-relative">
+                                            <span class="wpcf7">
+                                            <select name="source" required>
+                                                <option value="" selected disabled>Wybierz</option>
+                                                <option value="pracuj-pl">Pracuj.pl</option>
+                                                <option value="linkedin">LinkedIn</option>
+                                                <option value="gowork">GoWork</option>
+                                                <option value="facebook">Facebook</option>
+                                                <option value="grupa-na-facebooku">Grupa na Facebooku</option>
+                                                <option value="z-polecenia">Z polecenia</option>
+                                                <option value="portal-lokalny">Portal lokalny np. trójmiasto.pl</option>
+                                                <option value="strona-www">Ze strony www</option>
+                                                <option value="wydarzenie-2plus1">Wydarzenie zorganizowane przez 2+1</option>
+                                                <option value="inne">Inne</option>
+                                            </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="InputWrap InputWrap-m --with-label">
+                                        <span class="InputPlaceholder-label">Inne</span>
+                                        <div class="position-relative">
+                                            <div class="InputBox">
+                                                <span class="InputPlaceholder"></span>
+                                                <svg class="check" width="56" height="48" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.0595 16.9496L25.8277 31.5045C25.5565 31.8028 25.098 31.8334 24.7896 31.5737L16.9432 24.9655L17.9095 23.8182L25.2035 29.9612L37.9496 15.9406L39.0595 16.9496Z" fill="#14131C"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="wpcf7">
+                                                 <input type="text" name="source-other">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <span class="p-m fw-bolder c-body">Zgody</span>
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="CheckboxWrap">
+                                        <label class="label-s">
+                                            <input name="privacy-policy" type="checkbox" required>
+                                            <span class="CheckboxName">Przyjmuję do wiadomości, że administratorem podanych przeze mnie danych jest DwaPlusJeden sp. z o.o., ul. Jaśkowa Dolina 6/3, 80 – 252 Gdańsk. Dane będą przetwarzane w celu złożenia oferty, a w przypadku jej przyjęcia w celu wykonania zleconej usługi oraz spełnienia obowiązków prawnych wynikających m.in. z prawa podatkowego i rachunkowego, a nadto w celu dochodzenia i obrony przed ewentualnymi roszczeniami (podstawa art. 6 ust. 1 lit. b, c i f RODO). Więcej informacji, w tym o przysługujących uprawnieniach znajdziecie Państwo w Polityce prywatności.</span>
+                                        </label>
+                                    </div>
+                                
+                                </div>
+                                <div class="form-wrap-content-row">
+                                    <div class="d-flex flex-column flex-sm-row gap-16 ms-auto justify-content-end w-100">
+                                        <button class="c-btn c-btn-s c-btn-outline w-180 w-100" type="reset">
+                                            <span>Anuluj</span>
+                                        </button>
+                                        <button class="c-btn c-btn-s c-btn-fill w-180 w-100" type="submit">
+                                            <span>Akceptuj i wyślij</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+  </main>
+  <script src="form.js"></script>
+</body>
+</html>

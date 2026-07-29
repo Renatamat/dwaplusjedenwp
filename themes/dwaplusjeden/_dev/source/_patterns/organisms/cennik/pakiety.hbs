@@ -1,0 +1,39 @@
+<section class="pakiety pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96  pt-xxxl-132 pb-xxxl-132">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="h6 fw-bolder c-body w-100 text-center">Pakiety</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row mt-24">
+            <div class="col-auto mx-auto">
+                <div class="pakiety-bar">
+                    <div class="pakiety-bar-item --active" data-option="spolka">
+                        <span class="p-m fw-bolder">Dla spółek</span>
+                    </div>
+                    <div class="pakiety-bar-item" data-option="jdg">
+                        <span class="p-m fw-bolder">Dla JDG</span>
+                    </div>
+                    <div class="pakiety-bar-item " data-option="kadry">
+                        <span class="p-m fw-bolder">Kadry i płace</span>
+                    </div>
+                    <div class="pakiety-bar-item" data-option="ecommerce">
+                        <span class="p-m fw-bolder">Dla e-commerce</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-64">
+            <div class="col-12">
+                {{> organisms-pakiety-spolki}}
+                {{> organisms-pakiety-jdg}}
+                {{> organisms-pakiety-kadry}}
+                {{> organisms-pakiety-ecommerce}}
+            </div>
+        </div>
+    </div>
+</section>

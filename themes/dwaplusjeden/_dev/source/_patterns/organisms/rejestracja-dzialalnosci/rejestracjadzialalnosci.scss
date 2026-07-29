@@ -1,0 +1,124 @@
+.label-red{
+    padding: var(--Spacing-xs, 4px) var(--Spacing-xl, 24px);
+    border-radius: var(--Radius-round, 1000px);
+    background: var(--Gradient-Primary, linear-gradient(180deg, var(--Icon-primary, #E62E2E) 0%, var(--Icon-primary-dark, #C83232) 100%));
+    width: fit-content;
+}
+.rd-desc{
+    .hp-hero-slider-message{
+        position: unset;
+        width: 100%;
+    }   
+    .accordion{
+        .accordion-item{
+            border: 0;
+            background: transparent;
+            color: #28655B;
+        }
+        .accordion-header{
+            margin: 0;
+        }
+        .accordion-button{
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            text-align: left;
+            color: inherit;
+
+            &::after{
+                content: none;
+            }
+            &:focus{
+                box-shadow: none;
+            }
+            &:not(.collapsed){
+                background: transparent;
+                color: inherit;
+
+                .accordion-item-icon{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .accordion-item-icon{
+            display: inline-flex;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            margin-top: 6px;
+            svg{
+                color: #28655B;
+            }
+        }
+        .accordion-body{
+            padding: 8px 0 0 24px;
+        }
+    }
+}
+
+.rd-services{
+    background: #264543;
+
+
+    &-item{
+        padding: var(--Spacing-xl, 16px) var(--Spacing-2xl, 20px);
+
+        width: 100%;
+        background: var(--Surface-secondary, #28655B);
+
+
+        border-radius: 16px;
+      
+        @include media-breakpoint-up(lg) {
+            padding: var(--Spacing-xl, 24px) var(--Spacing-2xl, 32px);
+            border-radius: var(--Radius-brand-xl, 24px);
+        }
+    }
+    .hp-hero-slider-message {
+        position: unset;
+        max-width: 100%;
+        @include media-breakpoint-down(sm) {
+            .hero-slider-avatar{
+                display: none;
+            }
+        }
+    }
+}
+
+.rd-benefits{
+    background: var(--Surface-page, #FFF);
+    &-grid{
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: repeat(2,minmax(0,1fr));
+        }
+    }
+    &-item{
+        border-radius: 16px;
+        background: var(--Surface-300, #E9F5F4);
+        padding: var(--Spacing-xl, 16px) var(--Spacing-2xl, 20px);
+
+        @include media-breakpoint-up(lg) {
+            padding: var(--Spacing-xl, 24px) var(--Spacing-2xl, 32px);
+            border-radius: var(--Radius-brand-xl, 24px);
+
+        }
+        &-icon{
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--Radius-round, 1000px);
+            background: var(--Surface-primary, #E62E2E);
+            flex-shrink: 0;
+        }
+    }
+}
