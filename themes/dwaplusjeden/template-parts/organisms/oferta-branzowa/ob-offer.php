@@ -5,15 +5,21 @@
  * @package dwaplusjeden
  */
 
-if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) || ! get_field( 'ob_offer_enabled' ) ) {
+if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$left_image  = get_field( 'ob_offer_left_image' );
-$left_text   = get_field( 'ob_offer_left_text' );
-$right_image = get_field( 'ob_offer_right_image' );
-$right_text  = get_field( 'ob_offer_right_text' );
-$link        = dwaplusjeden_get_acf_link( 'ob_offer_link', get_the_ID() );
+$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'ob_offer';
+
+if ( false === get_field( $prefix . '_enabled' ) ) {
+	return;
+}
+
+$left_image  = get_field( $prefix . '_left_image' );
+$left_text   = get_field( $prefix . '_left_text' );
+$right_image = get_field( $prefix . '_right_image' );
+$right_text  = get_field( $prefix . '_right_text' );
+$link        = dwaplusjeden_get_acf_link( $prefix . '_link', get_the_ID() );
 ?>
 
 <section class="ob-offer pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132">

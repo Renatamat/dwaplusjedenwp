@@ -1,9 +1,9 @@
 {
-    "key": "group_oferta_branzowa",
-    "title": "Szablon - Oferta branżowa",
+    "key": "group_branze",
+    "title": "Szablon - Strona branż",
     "fields": [
         {
-            "key": "field_ob_hero_tab",
+            "key": "field_branze_hero_tab",
             "label": "Hero",
             "name": "",
             "aria-label": "",
@@ -21,9 +21,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_hero_clone",
+            "key": "field_branze_hero_clone",
             "label": "Hero",
-            "name": "ob_hero",
+            "name": "branze_hero",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -43,8 +43,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_ob_info_tab",
-            "label": "Info",
+            "key": "field_branze_brand_tab",
+            "label": "Branże",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -61,29 +61,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_info_enabled",
-            "label": "Pokaż sekcję",
-            "name": "ob_info_enabled",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_6a1fb502294c6",
-            "label": "Info",
-            "name": "ob_info",
+            "key": "field_branze_brand_clone",
+            "label": "Branże",
+            "name": "branze_brand",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -95,7 +75,7 @@
                 "id": ""
             },
             "clone": [
-                "group_info_section"
+                "group_global_brand_section"
             ],
             "display": "seamless",
             "layout": "block",
@@ -103,7 +83,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_ob_cta_tab",
+            "key": "field_branze_cta_tab",
             "label": "CTA",
             "name": "",
             "aria-label": "",
@@ -121,9 +101,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_cta_enabled",
+            "key": "field_branze_cta_clone",
             "label": "CTA akordion",
-            "name": "ob_cta",
+            "name": "branze_cta",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -143,7 +123,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_ob_offer_tab",
+            "key": "field_branze_offer_tab",
             "label": "Oferta",
             "name": "",
             "aria-label": "",
@@ -161,9 +141,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_offer_enabled",
+            "key": "field_branze_offer_enabled",
             "label": "Pokaż sekcję",
-            "name": "ob_offer_enabled",
+            "name": "branze_offer_enabled",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -181,9 +161,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_ob_offer_left_image",
+            "key": "field_branze_offer_left_image",
             "label": "Lewy kafel - obraz",
-            "name": "ob_offer_left_image",
+            "name": "branze_offer_left_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -206,9 +186,9 @@
             "mime_types": ""
         },
         {
-            "key": "field_ob_offer_left_text",
+            "key": "field_branze_offer_left_text",
             "label": "Lewy kafel - tekst",
-            "name": "ob_offer_left_text",
+            "name": "branze_offer_left_text",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -219,16 +199,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Dedykowana\nksięgowa",
+            "default_value": "",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
             "new_lines": ""
         },
         {
-            "key": "field_ob_offer_right_image",
+            "key": "field_branze_offer_right_image",
             "label": "Prawy kafel - obraz",
-            "name": "ob_offer_right_image",
+            "name": "branze_offer_right_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -251,9 +231,9 @@
             "mime_types": ""
         },
         {
-            "key": "field_ob_offer_right_text",
+            "key": "field_branze_offer_right_text",
             "label": "Prawy kafel - tekst",
-            "name": "ob_offer_right_text",
+            "name": "branze_offer_right_text",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -264,16 +244,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Aplikacja\nonline",
+            "default_value": "",
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
             "new_lines": ""
         },
         {
-            "key": "field_ob_offer_link",
+            "key": "field_branze_offer_link",
             "label": "Przycisk",
-            "name": "ob_offer_link",
+            "name": "branze_offer_link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -287,7 +267,7 @@
             "return_format": "array"
         },
         {
-            "key": "field_ob_process_tab",
+            "key": "field_branze_process_tab",
             "label": "Proces",
             "name": "",
             "aria-label": "",
@@ -305,9 +285,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_process_enabled",
+            "key": "field_branze_process_clone",
             "label": "Proces",
-            "name": "ob_process",
+            "name": "branze_process",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -327,7 +307,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_ob_call_tab",
+            "key": "field_branze_call_tab",
             "label": "Call",
             "name": "",
             "aria-label": "",
@@ -345,9 +325,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_call_enabled",
+            "key": "field_branze_call_enabled",
             "label": "Pokaż sekcję",
-            "name": "ob_call_enabled",
+            "name": "branze_call_enabled",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -365,65 +345,9 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_ob_call_heading",
+            "key": "field_branze_call_heading",
             "label": "Nagłówek",
-            "name": "ob_call_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Sprawdź, jak może wyglądać obsługa kadr i płac w Twojej firmie",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_ob_call_text",
-            "label": "Tekst",
-            "name": "ob_call_text",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Napisz lub zadzwoń. Powiemy Ci, jak możemy przejąć obsługę i zaproponujemy dopasowany zakres współpracy.",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
-        },
-        {
-            "key": "field_ob_call_link",
-            "label": "Przycisk",
-            "name": "ob_call_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_ob_call_bubble_text",
-            "label": "Dymek - tekst",
-            "name": "ob_call_bubble_text",
+            "name": "branze_call_heading",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -438,12 +362,68 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
-            "key": "field_ob_call_bubble_name",
+            "key": "field_branze_call_text",
+            "label": "Tekst",
+            "name": "branze_call_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_branze_call_link",
+            "label": "Przycisk",
+            "name": "branze_call_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_branze_call_bubble_text",
+            "label": "Dymek - tekst",
+            "name": "branze_call_bubble_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_branze_call_bubble_name",
             "label": "Dymek - imię",
-            "name": "ob_call_bubble_name",
+            "name": "branze_call_bubble_name",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -454,16 +434,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Iwona",
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_ob_call_bubble_role",
+            "key": "field_branze_call_bubble_role",
             "label": "Dymek - rola",
-            "name": "ob_call_bubble_role",
+            "name": "branze_call_bubble_role",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -474,16 +454,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "TWOJA KSIĘGOWA",
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_ob_call_bubble_image",
+            "key": "field_branze_call_bubble_avatar",
             "label": "Dymek - avatar",
-            "name": "ob_call_bubble_image",
+            "name": "branze_call_bubble_avatar",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -506,7 +486,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_ob_faq_tab",
+            "key": "field_branze_faq_tab",
             "label": "FAQ",
             "name": "",
             "aria-label": "",
@@ -524,9 +504,9 @@
             "selected": 0
         },
         {
-            "key": "field_ob_faq_enabled",
+            "key": "field_branze_faq_clone",
             "label": "FAQ",
-            "name": "ob_faq",
+            "name": "branze_faq",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -544,86 +524,6 @@
             "layout": "block",
             "prefix_label": 1,
             "prefix_name": 1
-        },
-        {
-            "key": "field_ob_knowledge_tab",
-            "label": "Wiedza",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_ob_knowledge_enabled",
-            "label": "Wiedza",
-            "name": "ob_knowledge",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_knowledge_section"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 1,
-            "prefix_name": 1
-        },
-        {
-            "key": "field_ob_more_tab",
-            "label": "Powiązane strony usług",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_ob_more_enabled",
-            "label": "Powiązane usługi",
-            "name": "ob_more",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_related_pages_section"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 1,
-            "prefix_name": 1
         }
     ],
     "location": [
@@ -631,7 +531,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-oferta-branzowa.php"
+                "value": "template-branze.php"
             }
         ]
     ],
@@ -647,5 +547,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1785246404
+    "modified": 1785246553
 }

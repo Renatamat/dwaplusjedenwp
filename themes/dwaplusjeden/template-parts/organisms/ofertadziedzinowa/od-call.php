@@ -10,23 +10,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $has_acf = function_exists( 'get_field' );
+$prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'od_call';
 
-if ( $has_acf && false === get_field( 'od_call_enabled' ) ) {
+if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 	return;
 }
 
 $background_image = 315;
-$heading          = $has_acf ? get_field( 'od_call_heading' ) : '';
-$text             = $has_acf ? get_field( 'od_call_text' ) : '';
-$link             = $has_acf ? dwaplusjeden_get_acf_link( 'od_call_link', get_the_ID() ) : array();
+$heading          = $has_acf ? get_field( $prefix . '_heading' ) : '';
+$text             = $has_acf ? get_field( $prefix . '_text' ) : '';
+$link             = $has_acf ? dwaplusjeden_get_acf_link( $prefix . '_link', get_the_ID() ) : array();
 $front_image      = 316;
-$bubble_text      = $has_acf ? get_field( 'od_call_bubble_text' ) : '';
-$bubble_name      = $has_acf ? get_field( 'od_call_bubble_name' ) : '';
-$bubble_role      = $has_acf ? get_field( 'od_call_bubble_role' ) : '';
-$bubble_avatar    = $has_acf ? get_field( 'od_call_bubble_avatar' ) : 0;
+$bubble_text      = $has_acf ? get_field( $prefix . '_bubble_text' ) : '';
+$bubble_name      = $has_acf ? get_field( $prefix . '_bubble_name' ) : '';
+$bubble_role      = $has_acf ? get_field( $prefix . '_bubble_role' ) : '';
+$bubble_avatar    = $has_acf ? get_field( $prefix . '_bubble_avatar' ) : 0;
 ?>
 
-<section class="od-call pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96"<?php echo $heading ? ' aria-labelledby="od-call-heading"' : ''; ?>>
+<section class="od-call pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -39,7 +40,7 @@ $bubble_avatar    = $has_acf ? get_field( 'od_call_bubble_avatar' ) : 0;
 						<?php endif; ?>
 						<div class="od-call-content">
 							<?php if ( $heading ) : ?>
-								<span id="od-call-heading" class="p-xl fw-bolder c-white"><?php echo wp_kses_post( $heading ); ?></span>
+								<span id="<?php echo esc_attr( $prefix ); ?>-heading" class="p-xl fw-bolder c-white"><?php echo wp_kses_post( $heading ); ?></span>
 							<?php endif; ?>
 							<?php if ( $text ) : ?>
 								<p class="p-m c-white"><?php echo wp_kses_post( $text ); ?></p>

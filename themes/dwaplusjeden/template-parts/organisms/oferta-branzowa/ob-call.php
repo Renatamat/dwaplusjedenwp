@@ -5,19 +5,25 @@
  * @package dwaplusjeden
  */
 
-if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) || ! get_field( 'ob_call_enabled' ) ) {
+if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$heading      = get_field( 'ob_call_heading' );
-$text         = get_field( 'ob_call_text' );
-$link         = dwaplusjeden_get_acf_link( 'ob_call_link', get_the_ID() );
-$bg_image     = get_field( 'ob_call_bg_image' );
-$front_image  = get_field( 'ob_call_front_image' );
-$bubble_text  = get_field( 'ob_call_bubble_text' );
-$bubble_name  = get_field( 'ob_call_bubble_name' );
-$bubble_role  = get_field( 'ob_call_bubble_role' );
-$bubble_image = get_field( 'ob_call_bubble_image' );
+$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'ob_call';
+
+if ( ! get_field( $prefix . '_enabled' ) ) {
+	return;
+}
+
+$heading      = get_field( $prefix . '_heading' );
+$text         = get_field( $prefix . '_text' );
+$link         = dwaplusjeden_get_acf_link( $prefix . '_link', get_the_ID() );
+$bg_image     = 542;
+$front_image  = 543;
+$bubble_text  = get_field( $prefix . '_bubble_text' );
+$bubble_name  = get_field( $prefix . '_bubble_name' );
+$bubble_role  = get_field( $prefix . '_bubble_role' );
+$bubble_image = get_field( $prefix . '_bubble_image' );
 ?>
 
 <section class="od-call --ver2 pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96">

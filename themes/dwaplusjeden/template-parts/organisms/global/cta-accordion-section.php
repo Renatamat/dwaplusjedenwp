@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $has_acf = function_exists( 'get_field' );
 $prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'cta';
-$is_offer_cta  = in_array( $prefix, array( 'ob_cta', 'od_cta' ), true );
+$is_offer_cta  = in_array( $prefix, array( 'ob_cta', 'od_cta', 'uslugi_cta', 'branze_cta', 'location_cta' ), true );
 $section_class = $is_offer_cta ? ' ob-cta' : '';
 
 if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {

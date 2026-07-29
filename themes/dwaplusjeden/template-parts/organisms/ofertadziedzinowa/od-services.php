@@ -10,15 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $has_acf = function_exists( 'get_field' );
+$prefix  = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'od_services';
 
-if ( $has_acf && false === get_field( 'od_services_enabled' ) ) {
+if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 	return;
 }
 
-$heading = $has_acf ? get_field( 'od_services_heading' ) : '';
-$text    = $has_acf ? get_field( 'od_services_text' ) : '';
-$items   = $has_acf ? get_field( 'od_services_items' ) : array();
-$link    = $has_acf ? dwaplusjeden_get_acf_link( 'od_services_link', get_the_ID() ) : array();
+$heading = $has_acf ? get_field( $prefix . '_heading' ) : '';
+$text    = $has_acf ? get_field( $prefix . '_text' ) : '';
+$items   = $has_acf ? get_field( $prefix . '_items' ) : array();
+$link    = $has_acf ? dwaplusjeden_get_acf_link( $prefix . '_link', get_the_ID() ) : array();
 ?>
 
 <section class="od-services pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="od-services-heading"' : ''; ?>>

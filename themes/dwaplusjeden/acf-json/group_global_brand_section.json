@@ -1,0 +1,88 @@
+{
+    "key": "group_global_brand_section",
+    "title": "Sekcja branż",
+    "fields": [
+        {
+            "key": "field_global_brand_enabled",
+            "label": "Pokaż sekcję",
+            "name": "enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_global_brand_heading",
+            "label": "Nagłówek",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Wybierz swoją branżę",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_global_brand_text",
+            "label": "Tekst",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Karty poniżej pobierają się automatycznie z dzieci strony Branże (ID 2259).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Działamy z firmami z wielu branż - zarówno z jednoosobowymi <br>działalnościami, jak i spółkami. Realizujemy m.in.:",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "__never__"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Ukryta grupa do klonowania sekcji branż.",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1785254400
+}

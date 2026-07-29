@@ -5,19 +5,25 @@
  * @package dwaplusjeden
  */
 
-if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) || ! get_field( 'homepage_slider_enabled' ) ) {
+if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$slides            = get_field( 'homepage_slider_slides' );
-$secondary_message = get_field( 'homepage_slider_secondary_message' );
-$secondary_name    = get_field( 'homepage_slider_secondary_name' );
-$secondary_role    = get_field( 'homepage_slider_secondary_role' );
-$secondary_avatar  = get_field( 'homepage_slider_secondary_avatar' );
-$primary_message   = get_field( 'homepage_slider_primary_message' );
-$primary_name      = get_field( 'homepage_slider_primary_name' );
-$primary_role      = get_field( 'homepage_slider_primary_role' );
-$primary_avatar    = get_field( 'homepage_slider_primary_avatar' );
+$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'homepage_slider';
+
+if ( ! get_field( $prefix . '_enabled' ) ) {
+	return;
+}
+
+$slides            = get_field( $prefix . '_slides' );
+$secondary_message = get_field( $prefix . '_secondary_message' );
+$secondary_name    = get_field( $prefix . '_secondary_name' );
+$secondary_role    = get_field( $prefix . '_secondary_role' );
+$secondary_avatar  = get_field( $prefix . '_secondary_avatar' );
+$primary_message   = get_field( $prefix . '_primary_message' );
+$primary_name      = get_field( $prefix . '_primary_name' );
+$primary_role      = get_field( $prefix . '_primary_role' );
+$primary_avatar    = get_field( $prefix . '_primary_avatar' );
 
 if ( ! $slides ) {
 	return;

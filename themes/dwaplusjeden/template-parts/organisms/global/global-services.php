@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage services.
+ * Reusable services cards section.
  *
  * @package dwaplusjeden
  */
@@ -9,32 +9,64 @@ if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'homepage_services';
+$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'global_services';
 
-if ( ! get_field( $prefix . '_enabled' ) ) {
+if ( false === get_field( $prefix . '_enabled' ) ) {
 	return;
 }
 
-$eyebrow  = get_field( $prefix . '_eyebrow' );
-$heading  = get_field( $prefix . '_heading' );
-$text     = get_field( $prefix . '_text' );
-$services = get_field( $prefix . '_items' );
+$heading    = get_field( $prefix . '_heading' );
+$text       = get_field( $prefix . '_text' );
+$parent_page_id = ! empty( $args['parent_page_id'] ) ? (int) $args['parent_page_id'] : 0;
+$services   = array();
+$heading_id = $prefix . '-heading';
+
+if ( $parent_page_id ) {
+	if ( has_filter( 'wpml_object_id' ) ) {
+		$parent_page_id = apply_filters( 'wpml_object_id', $parent_page_id, 'page', true );
+	}
+
+	$service_pages = get_pages(
+		array(
+			'child_of'    => $parent_page_id,
+			'parent'      => $parent_page_id,
+			'post_type'   => 'page',
+			'post_status' => 'publish',
+			'sort_column' => 'menu_order,post_title',
+			'sort_order'  => 'ASC',
+		)
+	);
+
+	foreach ( $service_pages as $service_page ) {
+		$page_id       = $service_page instanceof WP_Post ? $service_page->ID : (int) $service_page;
+		$service_title = get_field( 'page_card_title', $page_id );
+		$service_text  = get_field( 'page_card_text', $page_id );
+
+		$services[] = array(
+			'icon'         => get_field( 'page_card_icon', $page_id ),
+			'title'        => $service_title ? $service_title : get_the_title( $page_id ),
+			'text'         => $service_text,
+			'related_page' => $page_id,
+			'link'         => array(),
+			'button_label' => __( 'Sprawdź', 'dwaplusjeden' ),
+		);
+	}
+} else {
+	$services = get_field( $prefix . '_items' );
+}
 ?>
 
-<section class="hp-services pt-56 pb-56 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
+<section class="hp-services pt-56 pb-56 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $heading_id ) . '"' : ''; ?>>
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 col-lg-10 col-xl-8 mx-auto">
 				<div class="d-flex flex-column align-items-center gap-20">
-					<?php if ( $eyebrow ) : ?>
-						<span class="subtitle p-s fw-bolder c-white"><?php echo esc_html( $eyebrow ); ?></span>
-					<?php endif; ?>
 					<div class="d-flex flex-column gap-8 align-items-center">
 						<?php if ( $heading ) : ?>
-							<h2 id="<?php echo esc_attr( $prefix ); ?>-heading" class="h5 fw-bolder c-body text-center"><?php echo esc_html( $heading ); ?></h2>
+							<h2 id="<?php echo esc_attr( $heading_id ); ?>" class="h6 fw-bolder c-body text-center"><?php echo esc_html( $heading ); ?></h2>
 						<?php endif; ?>
 						<?php if ( $text ) : ?>
-							<p class="p-m c-black text-center"><?php echo esc_html( $text ); ?></p>
+							<p class="p-m c-black text-center"><?php echo $text; ?></p>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -48,37 +80,12 @@ $services = get_field( $prefix . '_items' );
 						<?php foreach ( $services as $service ) : ?>
 							<?php
 							$related       = ! empty( $service['related_page'] ) ? $service['related_page'] : null;
-							$related_id    = 0;
-
-							if ( $related instanceof WP_Post ) {
-								$related_id = $related->ID;
-							} elseif ( is_numeric( $related ) ) {
-								$related_id = (int) $related;
-							} elseif ( is_array( $related ) && ! empty( $related[0] ) ) {
-								$related_id = $related[0] instanceof WP_Post ? $related[0]->ID : (int) $related[0];
-							}
-
-							if ( $related_id && has_filter( 'wpml_object_id' ) ) {
-								$related_id = apply_filters( 'wpml_object_id', $related_id, get_post_type( $related_id ), true );
-							}
-
-							$card_mode     = ! empty( $service['card_mode'] ) ? $service['card_mode'] : '';
-							$use_relation  = $related_id && 'manual' !== $card_mode;
 							$manual_link   = ! empty( $service['link'] ) ? $service['link'] : array();
-							$link          = $use_relation ? dwaplusjeden_get_relation_or_link( $related, array() ) : dwaplusjeden_get_relation_or_link( null, $manual_link );
-							$service_icon  = ! empty( $service['icon'] ) ? $service['icon'] : 0;
+							$link          = dwaplusjeden_get_relation_or_link( $related, $manual_link );
 							$service_title = ! empty( $service['title'] ) ? $service['title'] : '';
 							$service_text  = ! empty( $service['text'] ) ? $service['text'] : '';
 							$button_label  = ! empty( $service['button_label'] ) ? $service['button_label'] : __( 'Sprawdź', 'dwaplusjeden' );
 							$nofollow_link = $link;
-
-							if ( $use_relation ) {
-								$related_title = get_field( 'page_card_title', $related_id );
-
-								$service_icon  = get_field( 'page_card_icon', $related_id );
-								$service_title = $related_title ? $related_title : get_the_title( $related_id );
-								$service_text  = get_field( 'page_card_text', $related_id );
-							}
 
 							if ( $nofollow_link ) {
 								$nofollow_link['nofollow'] = '1';
@@ -88,7 +95,7 @@ $services = get_field( $prefix . '_items' );
 								<div class="service-card">
 									<div class="service-card-wrapper">
 										<?php echo $link ? '<a' : '<div'; ?><?php $link ? dwaplusjeden_link_attrs( $nofollow_link ) : null; ?> class="service-card-img"<?php echo $link && $service_title ? ' aria-label="' . esc_attr( $service_title ) . '"' : ''; ?>>
-											<?php dwaplusjeden_image( $service_icon, 'thumbnail', 'service1.svg', $service_title ); ?>
+											<?php dwaplusjeden_image( ! empty( $service['icon'] ) ? $service['icon'] : 0, 'thumbnail', 'service1.svg', $service_title ); ?>
 										<?php echo $link ? '</a>' : '</div>'; ?>
 										<div class="d-flex flex-column gap-20">
 											<div class="d-flex flex-column gap-8 service-card-content">

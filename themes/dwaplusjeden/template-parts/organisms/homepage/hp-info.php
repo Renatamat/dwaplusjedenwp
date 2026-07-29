@@ -5,26 +5,32 @@
  * @package dwaplusjeden
  */
 
-if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) || ! get_field( 'homepage_info_enabled' ) ) {
+if ( ! defined( 'ABSPATH' ) || ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$heading = get_field( 'homepage_info_heading' );
-$text    = get_field( 'homepage_info_text' );
-$cards   = get_field( 'homepage_info_cards' );
-$link    = dwaplusjeden_get_acf_link( 'homepage_info_link', get_the_ID() );
+$prefix = ! empty( $args['field_prefix'] ) ? $args['field_prefix'] : 'homepage_info';
+
+if ( ! get_field( $prefix . '_enabled' ) ) {
+	return;
+}
+
+$heading = get_field( $prefix . '_heading' );
+$text    = get_field( $prefix . '_text' );
+$cards   = get_field( $prefix . '_cards' );
+$link    = dwaplusjeden_get_acf_link( $prefix . '_link', get_the_ID() );
 ?>
 
-<section class="hp-info pt-64 pb-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="homepage-info-heading"' : ''; ?>>
+<section class="hp-info pt-64 pb-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<div class="d-flex flex-column gap-8 align-items-center">
 					<?php if ( $heading ) : ?>
-						<h2 id="homepage-info-heading" class="h5 fw-bolder c-body text-center"><?php echo esc_html( $heading ); ?></h2>
+							<h2 id="<?php echo esc_attr( $prefix ); ?>-heading" class="h5 fw-bolder c-body text-center"><?php echo  $heading ; ?></h2>
 					<?php endif; ?>
 					<?php if ( $text ) : ?>
-						<p class="p-m c-black text-center"><?php echo esc_html( $text ); ?></p>
+						<p class="p-m c-black text-center"><?php echo $text ; ?></p>
 					<?php endif; ?>
 				</div>
 			</div>
