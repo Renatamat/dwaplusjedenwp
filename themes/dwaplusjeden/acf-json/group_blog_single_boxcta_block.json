@@ -1,0 +1,121 @@
+{
+    "key": "group_blog_single_boxcta_block",
+    "title": "Blok: Box CTA",
+    "fields": [
+        {
+            "key": "field_blog_single_boxcta_dark_mode",
+            "label": "Tryb dark",
+            "name": "blog_single_boxcta_dark_mode",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Włącza ciemny wariant boksu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Dark",
+            "ui_off_text": "Jasny"
+        },
+        {
+            "key": "field_blog_single_boxcta_eyebrow",
+            "label": "Mały nagłówek",
+            "name": "blog_single_boxcta_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Potrzebujesz pomocy?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_blog_single_boxcta_heading",
+            "label": "Tekst główny",
+            "name": "blog_single_boxcta_heading",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Umów się na bezpłatną konsultację i dowiedz się,\njak możemy pomóc Twojej firmie",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_blog_single_boxcta_primary_link",
+            "label": "Pierwszy przycisk",
+            "name": "blog_single_boxcta_primary_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Opcjonalnie. Jeśli zostawisz puste, przycisk domyślnie będzie prowadził do /kontakt/ z etykietą: Skontaktuj się z nami.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_blog_single_boxcta_secondary_link",
+            "label": "Drugi przycisk",
+            "name": "blog_single_boxcta_secondary_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Opcjonalnie. Jeśli zostawisz puste, przycisk domyślnie będzie prowadził do /cennik/ z etykietą: Cennik.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/blog-single-boxcta"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola dla bloku Gutenberg: Box CTA.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfml_field_group_mode": "advanced",
+    "modified": 1785324196
+}

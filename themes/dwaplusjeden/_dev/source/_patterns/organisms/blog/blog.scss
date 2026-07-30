@@ -228,8 +228,10 @@
     color: var(--Text-headline, #124738);
  
     @include typographyParagraphS-mobile();
+    line-height: 16px;
     @include media-breakpoint-up(sm) {
         @include typographyParagraphS-tab();
+        line-height: 18px;
     }
     @include media-breakpoint-up(lg) {
         @include typographyParagraphS();
@@ -429,6 +431,48 @@
         h2, h3{
             @include p-m();
             font-weight: 600;
+        }
+    }
+}
+
+.boxcta{
+    border-radius: var(--Radius-brand-xl, 24px);
+    border-bottom: 1px solid var(--Border-400, #D4EAE9);
+    background: var(--Surface-300, #E9F5F4);
+    padding: 24px;
+    @include media-breakpoint-up(sm) {
+        padding: 32px;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: var(--Spacing-3xl, 48px);
+    }
+    &-buttons{
+        width: 100%;
+        max-width: 500px;
+        a{
+            min-width: 220px;
+            text-decoration: unset !important;
+            span{
+                white-space: nowrap;
+            }
+            &.c-btn-fill{
+                color: #fff !important;
+            }
+            &.c-btn-outline{
+                    color: var(--Text-secondary, #264543);
+            }
+        }
+    }
+
+    &.--dark{
+        border-radius: var(--Radius-brand-xl, 24px);
+        border-bottom: 1px solid var(--Border-400, #D4EAE9);
+        background: var(--Surface-secondary, #28655B);
+        span,p{
+            color: #fff !important;
+        }
+        .c-btn-outline{
+            border: 2px solid #fff;
         }
     }
 }

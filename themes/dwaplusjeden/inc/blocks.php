@@ -42,6 +42,33 @@ add_action(
 				),
 			)
 		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'blog-single-boxcta',
+				'title'           => __( 'Box CTA', 'dwaplusjeden' ),
+				'description'     => __( 'Boks CTA do treści wpisu z dwoma przyciskami i wariantem dark.', 'dwaplusjeden' ),
+				'render_template' => 'template-parts/blocks/blog-single-boxcta.php',
+				'enqueue_assets'  => function () {
+					$editor_blocks_style_path = get_template_directory() . '/assets/css/editor-blocks.css';
+
+					wp_enqueue_style(
+						'dwaplusjeden-editor-blocks',
+						get_template_directory_uri() . '/assets/css/editor-blocks.css',
+						array(),
+						file_exists( $editor_blocks_style_path ) ? filemtime( $editor_blocks_style_path ) : '1.0.0'
+					);
+				},
+				'category'        => 'formatting',
+				'icon'            => 'megaphone',
+				'keywords'        => array( 'cta', 'box', 'przycisk', 'blog' ),
+				'mode'            => 'preview',
+				'supports'        => array(
+					'align'  => false,
+					'anchor' => true,
+				),
+			)
+		);
 	}
 );
 

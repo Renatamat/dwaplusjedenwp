@@ -1,14 +1,19 @@
 .breadcrumb{
     display: flex;
-    gap: 8px;
+    gap: 0px;
     align-items: center;
     padding-top: 16px;
+    overflow: auto;
+    @include media-breakpoint-up(sm) {
+        gap: 8px;
+    }
     span{
         padding: var(--Spacing-xs, 4px) var(--Spacing-m, 12px);
         &.breadcrumb-separator{
             padding: 0;
             display: flex;
         }
+        text-wrap: nowrap;
         @include typographyParagraphXs-mobile();
         @include media-breakpoint-up(sm) {
             @include typographyParagraphXs-tab();
