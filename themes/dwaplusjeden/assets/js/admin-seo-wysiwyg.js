@@ -72,6 +72,22 @@
 			return settings;
 		} );
 	}
+
+	const cleanupSpans = ( container ) => {
+		Array.from( container.querySelectorAll( 'span' ) ).reverse().forEach( ( span ) => {
+			const isEmpty = ! span.textContent.replace( /\u00a0/g, '' ).trim() && ! span.querySelector( 'img,svg,iframe,video,audio' );
+
+			if ( isEmpty ) {
+				span.remove();
+				return;
+			}
+
+			if ( ! span.attributes.length ) {
+				span.replaceWith( ...Array.from( span.childNodes ) );
+			}
+		} );
+	};
+
 	const sanitizeContent = ( content ) => {
 		const container = document.createElement( 'div' );
 
@@ -94,6 +110,8 @@
 				}
 			} );
 		} );
+
+		cleanupSpans( container );
 
 		return container.innerHTML;
 	};
@@ -121,12 +139,14 @@
 
 		editor.settings.dwaplusjedenSeoSanitizer = true;
 
-		editor.on( 'BeforeSetContent', ( event ) => {
-			event.content = sanitizeContent( event.content );
+		editor.on( 'PastePostProcess', ( event ) => {
+			if ( event.node ) {
+				event.node.innerHTML = sanitizeContent( event.node.innerHTML );
+			}
 		} );
 
-		editor.on( 'PastePreProcess', ( event ) => {
-			event.content = sanitizeContent( event.content );
+		editor.on( 'paste', () => {
+			window.setTimeout( () => sanitizeEditor( editor ), 0 );
 		} );
 
 		sanitizeEditor( editor );

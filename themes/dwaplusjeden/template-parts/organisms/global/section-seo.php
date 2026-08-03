@@ -16,25 +16,27 @@ if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 	return;
 }
 
-$heading = $has_acf ? get_field( $prefix . '_heading' ) : '';
+$heading     = $has_acf ? get_field( $prefix . '_heading' ) : '';
 $textdesc    = $has_acf ? get_field( $prefix . '_text_desc' ) : '';
-$textheading    = $has_acf ? get_field( $prefix . '_text_heading' ) : '';
-$text    = $has_acf ? get_field( $prefix . '_text' ) : '';
-$image   = $has_acf ? get_field( $prefix . '_image' ) : 0;
+$textheading = $has_acf ? get_field( $prefix . '_text_heading' ) : '';
+$text        = $has_acf ? get_field( $prefix . '_text' ) : '';
+$image       = $has_acf ? get_field( $prefix . '_image' ) : 0;
+$image       = $image ?: 2398;
+$has_text    = $text || $textdesc || $textheading;
 
 
-if ( ! $heading && ! $text && ! $image ) {
+if ( ! $heading && ! $has_text ) {
 	return;
 }
 
 $is_left_layout     = false !== strpos( $prefix, 'left' );
-$text_column_class  = $image ? 'col-lg-7 d-flex align-items-center' : 'col-12';
-$image_column_class = $text ? 'col-lg-5 d-flex align-items-center' : 'col-12';
+$text_column_class  = 'col-lg-7 d-flex align-items-center';
+$image_column_class = 'col-lg-5 d-flex align-items-center';
 
-if ( $text && $image ) {
+if ( $has_text && $image ) {
 	if ( $is_left_layout ) {
-		$text_column_class  .= ' order-1 order-lg-2';
-		$image_column_class .= ' order-2 order-lg-1';
+		$text_column_class  .= ' order-2 order-lg-2';
+		$image_column_class .= ' order-1 order-lg-1';
 	} else {
 		$text_column_class  .= ' order-2 order-lg-1';
 		$image_column_class .= ' order-1 order-lg-2';
@@ -54,25 +56,23 @@ if ( $text && $image ) {
 			</div>
 		<?php endif; ?>
 
-		<?php if ( $text || $image ) : ?>
+		<?php if ( $has_text || $image ) : ?>
 			<div class="row r-gap-24 mt-32 mt-sm-40 mt-lg-48 mt-xxxl-64">
-				<?php if ( $text || $textdesc ) : ?>
-					<div class="<?php echo esc_attr( $text_column_class ); ?>">
-						<div class="section-seo__text p-m c-body pt-lg-56 w-100">
-							<?php if ( $textdesc ) : ?>
-								<?php echo dwaplusjeden_kses_basic_content( $textdesc ); ?>
-							<?php endif; ?>
-							<?php if ( $textheading ) : ?>
-							<h3>
-								<?php echo dwaplusjeden_kses_basic_content( $textheading, true ); ?>
-							</h3>
-							<?php endif; ?>
-							<?php if ( $text ) : ?>
-							<?php echo dwaplusjeden_kses_basic_content( $text ); ?>
-							<?php endif; ?>
-						</div>
+				<div class="<?php echo esc_attr( $text_column_class ); ?>">
+					<div class="section-seo__text p-m c-body pt-lg-56 w-100">
+						<?php if ( $textdesc ) : ?>
+							<?php echo dwaplusjeden_kses_basic_content( $textdesc ); ?>
+						<?php endif; ?>
+						<?php if ( $textheading ) : ?>
+						<h3>
+							<?php echo dwaplusjeden_kses_basic_content( $textheading, true ); ?>
+						</h3>
+						<?php endif; ?>
+						<?php if ( $text ) : ?>
+						<?php echo dwaplusjeden_kses_basic_content( $text ); ?>
+						<?php endif; ?>
 					</div>
-				<?php endif; ?>
+				</div>
 
 				<?php if ( $image ) : ?>
 					<div class="<?php echo esc_attr( $image_column_class ); ?>">

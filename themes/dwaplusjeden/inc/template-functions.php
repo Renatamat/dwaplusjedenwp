@@ -509,6 +509,24 @@ function dwaplusjeden_get_basic_allowed_html( $inline_only = false ) {
 }
 
 /**
+ * Remove editor leftovers that Word/TinyMCE can leave after attribute cleanup.
+ *
+ * @param string $html Sanitized HTML.
+ * @return string
+ */
+function dwaplusjeden_cleanup_editor_spans( $html ) {
+	$html = (string) $html;
+
+	do {
+		$previous = $html;
+		$html     = preg_replace( '/<span(?:\s+class=(["\'])[^"\']*\1)?\s*>(?:\s|&nbsp;|&#160;|<br\s*\/?>)*<\/span>/i', '', $html );
+		$html     = preg_replace( '/<span\s*>(.*?)<\/span>/is', '$1', $html );
+	} while ( $html !== $previous );
+
+	return $html;
+}
+
+/**
  * Normalize and sanitize basic editable content.
  *
  * Heading tags pasted into body content become paragraphs. Inside an existing
@@ -524,7 +542,9 @@ function dwaplusjeden_kses_basic_content( $html, $inline_only = false ) {
 	$html            = preg_replace( '/<h[1-6]\b([^>]*)>/i', '<' . $replacement_tag . '$1>', $html );
 	$html            = preg_replace( '/<\/h[1-6]\s*>/i', '</' . $replacement_tag . '>', $html );
 
-	return wp_kses( $html, dwaplusjeden_get_basic_allowed_html( $inline_only ) );
+	$html = wp_kses( $html, dwaplusjeden_get_basic_allowed_html( $inline_only ) );
+
+	return dwaplusjeden_cleanup_editor_spans( $html );
 }
 /**
  * Print main navigation using Pattern Lab markup.
