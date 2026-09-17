@@ -40,11 +40,12 @@ $archive_data        = array(
 				<?php if ( $categories ) : ?>
 					<div class="blog-allnews-row">
 						<div class="blog-allnews-row-items">
-							<a href="<?php echo esc_url( $posts_page_url ); ?>" class="chip<?php echo $all_active ? ' --active' : ''; ?>">
+							<a href="<?php echo esc_url( $posts_page_url ); ?>" class="chip<?php echo $all_active ? ' --active' : ''; ?>" aria-current="<?php echo esc_attr( $all_active ? 'page' : 'false' ); ?>">
 								<span class="p-s"><?php esc_html_e( 'Wszystkie', 'dwaplusjeden' ); ?></span>
 							</a>
 							<?php foreach ( $categories as $category ) : ?>
-								<a href="<?php echo esc_url( get_category_link( $category ) ); ?>" class="chip<?php echo (int) $category->term_id === $current_category_id ? ' --active' : ''; ?>">
+								<?php $is_current_category = (int) $category->term_id === $current_category_id; ?>
+								<a href="<?php echo esc_url( get_category_link( $category ) ); ?>" class="chip<?php echo $is_current_category ? ' --active' : ''; ?>" aria-current="<?php echo esc_attr( $is_current_category ? 'page' : 'false' ); ?>">
 									<span class="p-s"><?php echo esc_html( $category->name ); ?></span>
 								</a>
 							<?php endforeach; ?>
