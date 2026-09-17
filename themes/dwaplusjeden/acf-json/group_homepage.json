@@ -6,6 +6,7 @@
             "key": "field_homepage_hero_tab",
             "label": "Hero",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_hero_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_hero_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -41,6 +44,7 @@
             "key": "field_homepage_hero_line_1",
             "label": "Pierwsza linia nagłówka",
             "name": "homepage_hero_line_1",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -60,6 +64,7 @@
             "key": "field_homepage_hero_line_2",
             "label": "Druga linia nagłówka",
             "name": "homepage_hero_line_2",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -79,6 +84,7 @@
             "key": "field_homepage_hero_avatars",
             "label": "Avatary",
             "name": "homepage_hero_avatars",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -100,6 +106,7 @@
                     "key": "field_homepage_hero_avatar_image",
                     "label": "Zdjęcie",
                     "name": "image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -118,7 +125,8 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_homepage_hero_avatars"
                 }
             ]
         },
@@ -126,6 +134,7 @@
             "key": "field_homepage_hero_primary_link",
             "label": "Pierwszy przycisk",
             "name": "homepage_hero_primary_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -141,6 +150,7 @@
             "key": "field_homepage_hero_secondary_link",
             "label": "Drugi przycisk",
             "name": "homepage_hero_secondary_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -156,6 +166,7 @@
             "key": "field_homepage_slider_tab",
             "label": "Hero slider",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -166,12 +177,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_slider_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_slider_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -191,6 +204,7 @@
             "key": "field_homepage_slider_slides",
             "label": "Slajdy",
             "name": "homepage_slider_slides",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -212,6 +226,7 @@
                     "key": "field_homepage_slider_slide_image",
                     "label": "Obraz",
                     "name": "image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -230,12 +245,14 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_homepage_slider_slides"
                 },
                 {
                     "key": "field_homepage_slider_slide_alt",
                     "label": "Alt",
                     "name": "alt",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -249,7 +266,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_homepage_slider_slides"
                 }
             ]
         },
@@ -257,6 +275,7 @@
             "key": "field_homepage_slider_secondary_message",
             "label": "Dymek 1 - tekst",
             "name": "homepage_slider_secondary_message",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -276,6 +295,7 @@
             "key": "field_homepage_slider_secondary_name",
             "label": "Dymek 1 - imię",
             "name": "homepage_slider_secondary_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -295,6 +315,7 @@
             "key": "field_homepage_slider_secondary_role",
             "label": "Dymek 1 - rola",
             "name": "homepage_slider_secondary_role",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -314,6 +335,7 @@
             "key": "field_homepage_slider_secondary_avatar",
             "label": "Dymek 1 - avatar",
             "name": "homepage_slider_secondary_avatar",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -338,6 +360,7 @@
             "key": "field_homepage_slider_primary_message",
             "label": "Dymek 2 - tekst",
             "name": "homepage_slider_primary_message",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -357,6 +380,7 @@
             "key": "field_homepage_slider_primary_name",
             "label": "Dymek 2 - imię i nazwisko",
             "name": "homepage_slider_primary_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -376,6 +400,7 @@
             "key": "field_homepage_slider_primary_role",
             "label": "Dymek 2 - rola",
             "name": "homepage_slider_primary_role",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -395,6 +420,7 @@
             "key": "field_homepage_slider_primary_avatar",
             "label": "Dymek 2 - avatar",
             "name": "homepage_slider_primary_avatar",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -419,6 +445,7 @@
             "key": "field_homepage_services_tab",
             "label": "Usługi",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -429,12 +456,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_services_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_services_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -454,6 +483,7 @@
             "key": "field_homepage_services_eyebrow",
             "label": "Etykieta",
             "name": "homepage_services_eyebrow",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -473,6 +503,7 @@
             "key": "field_homepage_services_heading",
             "label": "Nagłówek",
             "name": "homepage_services_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -492,6 +523,7 @@
             "key": "field_homepage_services_text",
             "label": "Tekst",
             "name": "homepage_services_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -511,6 +543,7 @@
             "key": "field_homepage_services_items",
             "label": "Lista usług",
             "name": "homepage_services_items",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -529,46 +562,14 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_homepage_service_card_mode",
-                    "label": "Tryb karty",
-                    "name": "card_mode",
-                    "aria_label": "",
-                    "type": "radio",
-                    "instructions": "Wybierz, czy kafelek ma pobierać dane z relacji, czy z pól wpisanych ręcznie.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "relation": "Relacja",
-                        "manual": "Ręcznie"
-                    },
-                    "default_value": "manual",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "layout": "horizontal",
-                    "save_other_choice": 0
-                },
-                {
                     "key": "field_homepage_service_icon",
                     "label": "Ikonka",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "image",
-                    "instructions": "Używane tylko wtedy, gdy nie wybrano relacji.",
+                    "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "manual"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "30",
                         "class": "",
@@ -583,24 +584,18 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_homepage_services_items"
                 },
                 {
                     "key": "field_homepage_service_title",
                     "label": "Tytuł",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
-                    "instructions": "Używane tylko wtedy, gdy nie wybrano relacji.",
+                    "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "manual"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "70",
                         "class": "",
@@ -610,24 +605,18 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_homepage_services_items"
                 },
                 {
                     "key": "field_homepage_service_text",
                     "label": "Tekst",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Używane tylko wtedy, gdy nie wybrano relacji.",
+                    "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "manual"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -637,24 +626,18 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 3,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "parent_repeater": "field_homepage_services_items"
                 },
                 {
                     "key": "field_homepage_service_related_page",
-                    "label": "Relacja do strony/wpisu",
+                    "label": "Relacja do strony\/wpisu",
                     "name": "related_page",
-                    "type": "relationship",
-                    "instructions": "Wybierz stronę lub wpis. Kafelek pobierze ikonę, tytuł i krótki opis z pól Dane karty strony, a link z wybranej relacji.",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Jeśli wybierzesz relację, będzie ważniejsza niż ręczny link.",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "relation"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "50",
                         "class": "",
@@ -666,55 +649,38 @@
                     ],
                     "taxonomy": "",
                     "return_format": "object",
-                    "filters": [
-                        "search",
-                        "post_type"
-                    ],
-                    "elements": [
-                        "featured_image"
-                    ],
-                    "min": "",
-                    "max": 1
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_homepage_services_items"
                 },
                 {
                     "key": "field_homepage_service_link",
                     "label": "Link ręczny",
                     "name": "link",
+                    "aria-label": "",
                     "type": "link",
-                    "instructions": "Używane tylko wtedy, gdy nie wybrano relacji.",
+                    "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "manual"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_homepage_services_items"
                 },
                 {
                     "key": "field_homepage_service_button_label",
                     "label": "Etykieta przycisku",
                     "name": "button_label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_homepage_service_card_mode",
-                                "operator": "==",
-                                "value": "manual"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -724,7 +690,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_homepage_services_items"
                 }
             ]
         },
@@ -732,6 +699,7 @@
             "key": "field_homepage_cta_tab",
             "label": "CTA",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -742,12 +710,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_cta_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_cta_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -767,6 +737,7 @@
             "key": "field_homepage_cta_heading",
             "label": "Nagłówek",
             "name": "homepage_cta_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -786,6 +757,7 @@
             "key": "field_homepage_cta_text",
             "label": "Tekst",
             "name": "homepage_cta_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -805,6 +777,7 @@
             "key": "field_homepage_cta_items",
             "label": "Lista punktów",
             "name": "homepage_cta_items",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -826,6 +799,7 @@
                     "key": "field_homepage_cta_item_text",
                     "label": "Tekst",
                     "name": "text",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -839,7 +813,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_homepage_cta_items"
                 }
             ]
         },
@@ -847,6 +822,7 @@
             "key": "field_homepage_cta_link",
             "label": "Przycisk",
             "name": "homepage_cta_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -862,17 +838,25 @@
             "key": "field_homepage_cta_image",
             "label": "Obraz",
             "name": "homepage_cta_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_homepage_hero_line_1",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "return_format": "id",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -880,12 +864,15 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium"
         },
         {
             "key": "field_homepage_cta_bubble_text",
             "label": "Dymek - tekst",
             "name": "homepage_cta_bubble_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -905,6 +892,7 @@
             "key": "field_homepage_cta_bubble_name",
             "label": "Dymek - imię",
             "name": "homepage_cta_bubble_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -924,6 +912,7 @@
             "key": "field_homepage_cta_bubble_role",
             "label": "Dymek - rola",
             "name": "homepage_cta_bubble_role",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -943,6 +932,7 @@
             "key": "field_homepage_cta_bubble_image",
             "label": "Dymek - avatar",
             "name": "homepage_cta_bubble_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -967,6 +957,7 @@
             "key": "field_homepage_info_tab",
             "label": "Info",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -977,12 +968,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_info_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_info_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -1002,6 +995,7 @@
             "key": "field_homepage_info_heading",
             "label": "Nagłówek",
             "name": "homepage_info_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1021,6 +1015,7 @@
             "key": "field_homepage_info_text",
             "label": "Tekst",
             "name": "homepage_info_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -1040,6 +1035,7 @@
             "key": "field_homepage_info_cards",
             "label": "Karty",
             "name": "homepage_info_cards",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -1061,6 +1057,7 @@
                     "key": "field_homepage_info_card_icon",
                     "label": "Ikonka",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -1079,12 +1076,14 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_homepage_info_cards"
                 },
                 {
                     "key": "field_homepage_info_card_title",
                     "label": "Tytuł",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -1098,12 +1097,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_homepage_info_cards"
                 },
                 {
                     "key": "field_homepage_info_card_text",
                     "label": "Tekst",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -1117,7 +1118,8 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 2,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "parent_repeater": "field_homepage_info_cards"
                 }
             ]
         },
@@ -1125,6 +1127,7 @@
             "key": "field_homepage_info_link",
             "label": "Przycisk",
             "name": "homepage_info_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -1140,6 +1143,7 @@
             "key": "field_homepage_blog_tab",
             "label": "Blog",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1150,12 +1154,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_homepage_blog_enabled",
             "label": "Pokaż sekcję",
             "name": "homepage_blog_enabled",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -1175,6 +1181,7 @@
             "key": "field_homepage_blog_heading",
             "label": "Nagłówek",
             "name": "homepage_blog_heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1194,6 +1201,7 @@
             "key": "field_homepage_blog_text",
             "label": "Tekst",
             "name": "homepage_blog_text",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -1213,6 +1221,7 @@
             "key": "field_homepage_blog_image",
             "label": "Obraz",
             "name": "homepage_blog_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -1237,6 +1246,7 @@
             "key": "field_homepage_blog_latest_label",
             "label": "Etykieta listy wpisów",
             "name": "homepage_blog_latest_label",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1256,6 +1266,7 @@
             "key": "field_homepage_blog_posts_count",
             "label": "Liczba wpisów",
             "name": "homepage_blog_posts_count",
+            "aria-label": "",
             "type": "number",
             "instructions": "",
             "required": 0,
@@ -1277,6 +1288,7 @@
             "key": "field_homepage_blog_read_more_label",
             "label": "Etykieta linku przy wpisie",
             "name": "homepage_blog_read_more_label",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1296,6 +1308,7 @@
             "key": "field_homepage_blog_archive_link",
             "label": "Przycisk do archiwum",
             "name": "homepage_blog_archive_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -1306,6 +1319,46 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_6aab93d7cc7ff",
+            "label": "FAQ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6aab93edcc800",
+            "label": "FAQ",
+            "name": "homepage_faq",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_faq_section"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -1325,5 +1378,9 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": "2026-06-01 00:00:00"
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1789629554
 }
