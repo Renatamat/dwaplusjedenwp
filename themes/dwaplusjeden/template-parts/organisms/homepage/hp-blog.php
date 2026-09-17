@@ -29,7 +29,7 @@ if ( ! $blog_query->have_posts() ) {
 }
 ?>
 
-<section class="hp-blog pt-64 pb-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="homepage-blog-heading"' : ''; ?>>
+<section class="hp-blog pt-64 pb-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-96"<?php echo $heading ? ' aria-labelledby="homepage-blog-heading"' : ''; ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">

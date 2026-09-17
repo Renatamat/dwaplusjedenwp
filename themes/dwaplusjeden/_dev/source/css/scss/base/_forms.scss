@@ -690,6 +690,7 @@ select {
 	}
 	.select-options-container.--show {
 		display: block;
+		z-index: 3;
 	}
 	&-menu {
 		&:before {

@@ -19,6 +19,13 @@ get_header();
 			get_template_part( 'template-parts/organisms/homepage/hp-cta' );
 			get_template_part( 'template-parts/organisms/homepage/hp-info' );
 			get_template_part( 'template-parts/organisms/homepage/hp-blog' );
+			get_template_part(
+				'template-parts/organisms/global/faq-section',
+				null,
+				array(
+					'field_prefix' => 'homepage_faq',
+				)
+			);
 		endwhile;
 		?>
 	</main>

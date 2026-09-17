@@ -14,7 +14,7 @@ get_header();
 	<?php
 	if ( is_category() ) :
 		get_template_part( 'template-parts/organisms/blog/blog-hero-taxonomy' );
-		get_template_part( 'template-parts/organisms/blog/blog-allnews-taxonomy' );
+		get_template_part( 'template-parts/organisms/blog/blog-allnews' );
 	elseif ( is_tag() || is_date() || is_author() ) :
 		get_template_part( 'template-parts/organisms/blog/blog-hero' );
 		get_template_part( 'template-parts/organisms/blog/blog-new' );
