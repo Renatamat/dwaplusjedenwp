@@ -35,7 +35,13 @@ if ( ! $heading && ! $text && empty( $link['url'] ) ) {
 							<h1 id="<?php echo esc_attr( $prefix ); ?>-heading" class="h5 fw-bolder c-body text-center"><?php echo wp_kses_post( $heading ); ?></h1>
 						<?php endif; ?>
 						<?php if ( $text ) : ?>
-							<p class="p-m c-black text-center"><?php echo wp_kses_post( $text ); ?></p>
+							<?php if ( $text ) : ?>
+								<?php if ($prefix == 'cennik_hero'): ?>
+									<p class="p-l c-black text-center"><?php echo wp_kses_post( $text ); ?></p>
+								<?php else: ?>
+									<p class="p-m c-black text-center"><?php echo wp_kses_post( $text ); ?></p>
+								<?php endif; ?>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div>

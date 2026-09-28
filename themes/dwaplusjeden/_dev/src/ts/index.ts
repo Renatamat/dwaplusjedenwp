@@ -11,10 +11,12 @@ import { initFormWrapCollapse } from "./form-wrap-collapse";
 import { initZlecenieKsiegowosciRepeaters } from "./zlecenie-ksiegowosci-repeaters";
 import { initInfoCardDescriptions } from "./info-card-descriptions";
 import { initCtaAccordionImages } from "./cta-accordion-image";
+import { initFooterFixedbox } from "./footer-fixedbox";
 
 
 
 const initAll = () => {
+  initFooterFixedbox();
   initFloatSidebars();
   initLightGalleries();
   initSwipers();

@@ -72,6 +72,7 @@
             background: rgba(255, 255, 255, 0.70);
             padding: var(--Spacing-xl, 24px);
             position: relative;
+                height: fit-content;
             &-wrapper{
                 display: flex;
                 flex-direction: column;
@@ -99,7 +100,7 @@
                         top: -28px;
                     }
                     span{
-                        white-space: nowrap;
+                        white-space: nowrap; 
                     }
                 }
             }
@@ -111,6 +112,7 @@
             &-points{
                 .--disabled{
                     color: var(--Text-disabled, #B9B9B9);
+                    display: none !important;
                     .pakiety-content-item-points-icon{
                         background: var(--Surface-disabled, #B9B9B9);
 

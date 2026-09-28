@@ -23,6 +23,9 @@
 		</div>
 		<?php get_template_part( 'template-parts/organisms/global/footer-main' ); ?>
 	</footer><!-- #colophon -->
+	<?php if ( is_page() && ( is_page( 2245 ) || in_array( 2245, get_post_ancestors( get_queried_object_id() ), true ) ) ) : ?>
+		<?php get_template_part( 'template-parts/organisms/global/footer-fixedbox' ); ?>
+	<?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
