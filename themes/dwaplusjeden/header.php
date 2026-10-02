@@ -27,8 +27,9 @@
 
 	<?php
 	$header_logo = dwaplusjeden_get_header_logo();
-	$login_url   = function_exists( 'get_field' ) ? get_field( 'general_login_url', 'option' ) : '';
-	$login_url   = dwaplusjeden_translate_url( $login_url );
+	$login_url_header   = function_exists( 'get_field' ) ? get_field( 'general_login_url_header', 'option' ) : '';
+	$login_url_header   = dwaplusjeden_translate_url( $login_url_header );
+	
 	?>
 
 	<header>
@@ -57,9 +58,9 @@
 									<?php dwaplusjeden_main_navigation(); ?>
 
 									<div class="mobile-footer-menu">
-										<?php if ( $login_url ) : ?>
-											<a href="<?php echo esc_url( $login_url ); ?>" class="c-btn c-btn-s c-btn-fill menu-login d-xl-none w-100">
-												<span><?php esc_html_e( 'Logowanie', 'dwaplusjeden' ); ?></span>
+										<?php if ( $login_url_header ) : ?>
+											<a href="<?php echo esc_url( $login_url_header ); ?>" target="_blank" class="c-btn c-btn-s c-btn-fill menu-login d-xl-none w-100">
+												<span><?php esc_html_e( 'Zleć księgowość', 'dwaplusjeden' ); ?></span>
 											</a>
 										<?php endif; ?>
 										
@@ -68,9 +69,9 @@
 							</div>
 
 							<div class="d-flex gap-24 align-items-center">
-								<?php if ( $login_url ) : ?>
-									<a href="<?php echo esc_url( $login_url ); ?>" class="c-btn c-btn-s c-btn-fill menu-login d-none d-sm-flex">
-										<span><?php esc_html_e( 'Logowanie', 'dwaplusjeden' ); ?></span>
+								<?php if ( $login_url_header ) : ?>
+									<a href="<?php echo esc_url( $login_url_header ); ?>" target="_blank" class="c-btn c-btn-s c-btn-fill menu-login d-none d-sm-flex">
+										<span><?php esc_html_e( 'Zleć księgowość', 'dwaplusjeden' ); ?></span>
 									</a>
 								<?php endif; ?>
 								<div class="menu-hamburger d-xl-none">
