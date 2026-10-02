@@ -38,6 +38,23 @@
             "placeholder": ""
         },
         {
+            "key": "field_general_login_url_header",
+            "label": "Link przycisku w headerze",
+            "name": "general_login_url_header",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/online.dwaplusjeden.com\/auth\/login?returnUrl=%2Fpages",
+            "placeholder": ""
+        },
+        {
             "key": "field_company_data_tab",
             "label": "Dane firmy",
             "name": "",
