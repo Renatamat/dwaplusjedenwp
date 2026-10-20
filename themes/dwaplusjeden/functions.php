@@ -205,7 +205,7 @@ function dwaplusjeden_scripts() {
 		wp_enqueue_script( 'dwaplusjeden-blog-load-more', $blog_script_uri, array(), filemtime( $blog_script_path ), true );
 	}
 
-	if ( file_exists( $contact_popup_script_path ) && ( is_page_template( 'template-kontakt.php' ) || is_page_template( 'template-formularz-zgloszeniowy.php' ) ) ) {
+	if ( file_exists( $contact_popup_script_path ) && ( is_page_template( 'template-kontakt.php' ) || is_page_template( 'template-formularz-zgloszeniowy.php' ) || is_page_template( 'template-pit.php' ) ) ) {
 		wp_enqueue_script( 'dwaplusjeden-contact-popup', $contact_popup_script_uri, array(), filemtime( $contact_popup_script_path ), true );
 	}
 

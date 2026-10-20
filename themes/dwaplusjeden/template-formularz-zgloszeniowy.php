@@ -16,7 +16,7 @@ if ( ! $application_redirect_url ) {
 ?>
 
 	<main id="primary" class="site-main">
-		<section class="formularz-zgloszeniowy pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132">
+		<section class="formularz-zgloszeniowy  zlecenie-ksiegowosci  pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 mx-auto">

@@ -398,6 +398,21 @@
         display: flex;
         justify-content: space-between;
 
+        .wpcf7-checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+        }
+
+        .wpcf7-list-item {
+            display: block;
+            margin: 0;
+
+            label {
+                padding-left: 24px;
+            }
+        }
+
         label {
             position: relative;
             display: flex;
@@ -423,7 +438,8 @@
             pointer-events: none;
         }
 
-        input + .CheckboxName::before {
+        input + .CheckboxName::before,
+        input[type="checkbox"] + .wpcf7-list-item-label::before {
             content: "";
             position: absolute;
             top: 0;
@@ -435,12 +451,14 @@
             background: var(--Surface-page, #fff);
         }
 
-        input:checked + .CheckboxName::before {
+        input:checked + .CheckboxName::before,
+        input[type="checkbox"]:checked + .wpcf7-list-item-label::before {
             border-color: var(--Surface-primary, #e62e2e);
             background: var(--Surface-primary, #e62e2e);
         }
 
-        input:checked + .CheckboxName::after {
+        input:checked + .CheckboxName::after,
+        input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
             content: "";
             position: absolute;
             top: 3px;
@@ -452,7 +470,13 @@
             transform: rotate(45deg);
         }
 
-        .CheckboxName {
+        input[type="checkbox"]:focus-visible + .wpcf7-list-item-label::before {
+            outline: 2px solid var(--Border-secondary, #28655b);
+            outline-offset: 2px;
+        }
+
+        .CheckboxName,
+        .wpcf7-list-item-label {
             color: var(--Text-body, #14131c);
             font-size: 14px;
             line-height: 16px;
@@ -655,4 +679,12 @@
             max-width: 1680px;
         }
     }
+}
+.formularz-zgloszeniowy{
+    .form-wrap{
+        margin-bottom: 32px;
+    }
+}
+.formularz-zgloszeniowy .custom-select .select-options-container{
+    left: 50%;
 }
