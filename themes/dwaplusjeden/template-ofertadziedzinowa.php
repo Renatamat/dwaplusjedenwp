@@ -27,6 +27,7 @@ get_header();
                 )
             );
             get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-services' );
+            get_template_part( 'template-parts/organisms/ofertadziedzinowa/od-pricing' );
             get_template_part( 'template-parts/organisms/global/trust-section' );
             get_template_part(
                 'template-parts/organisms/global/proces-section',

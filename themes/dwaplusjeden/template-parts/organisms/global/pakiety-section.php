@@ -17,7 +17,12 @@ if ( $has_acf && false === get_field( $prefix . '_enabled' ) ) {
 }
 
 $heading  = $has_acf ? get_field( $prefix . '_heading' ) : '';
-$packages = $has_acf ? get_field( $prefix . '_packages' ) : array();
+$packages = isset( $args['packages'] ) ? $args['packages'] : ( $has_acf ? get_field( $prefix . '_packages' ) : array() );
+$show_tabs = ! isset( $args['show_tabs'] ) || $args['show_tabs'];
+$section_class = ! empty( $args['section_class'] ) ? sanitize_html_class( $args['section_class'] ) : '';
+$link = ! empty( $args['link'] ) ? $args['link'] : array();
+$is_service_pricing = 'od-pricing' === $section_class;
+$disclaimer = $is_service_pricing && isset( $args['disclaimer'] ) ? trim( (string) $args['disclaimer'] ) : '';
 
 if ( ! $heading && ! $packages ) {
 	return;
@@ -26,7 +31,7 @@ if ( ! $heading && ! $packages ) {
 $active_index = 0;
 ?>
 
-<section class="pakiety pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
+<section class="pakiety<?php echo $section_class ? ' ' . esc_attr( $section_class ) : ''; ?> pt-56 pb-56 pt-sm-64 pb-sm-64 pt-lg-96 pb-lg-96 pt-xxxl-132 pb-xxxl-132"<?php echo $heading ? ' aria-labelledby="' . esc_attr( $prefix ) . '-heading"' : ''; ?>>
 	<div class="container">
 		<?php if ( $heading ) : ?>
 			<div class="row">
@@ -38,6 +43,7 @@ $active_index = 0;
 	</div>
 
 	<?php if ( $packages ) : ?>
+		<?php if ( $show_tabs ) : ?>
 		<div class="container-fluid">
 			<div class="row mt-24">
 				<div class="col-auto mx-auto">
@@ -67,6 +73,7 @@ $active_index = 0;
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<div class="container">
 			<div class="row mt-64">
@@ -143,25 +150,25 @@ $active_index = 0;
 
 									<div class="pakiety-content-item-wrapper">
 										<div class="pakiety-content-item-content">
-											<div class="d-flex flex-column">
+											<div class="d-flex flex-column pakiety-content-item-summary">
 												<?php if ( $title ) : ?>
-													<span class="p-l fw-bolder c-body"><?php echo esc_html( $title ); ?></span>
+													<span class="p-l fw-bolder pakiety-content-item-title<?php echo $is_service_pricing ? '' : ' c-body'; ?>"><?php echo esc_html( $title ); ?></span>
 												<?php endif; ?>
 												<?php if ( $display_price || $price_suffix || $has_select_prices ) : ?>
-													<div class="d-flex gap-8 align-items-end">
-														<span class="p-l fw-bolder" data-pricing-price><?php echo esc_html( $display_price ); ?></span>
+													<div class="d-flex gap-8 align-items-end pakiety-content-item-price">
+														<span class="<?php echo $is_service_pricing ? 'p-xl' : 'p-l'; ?> fw-bolder" data-pricing-price><?php echo esc_html( $display_price ); ?></span>
 														<?php if ( $price_suffix ) : ?>
 															<span class="p-s"><?php echo esc_html( $price_suffix ); ?></span>
 														<?php endif; ?>
 													</div>
 												<?php endif; ?>
 												<?php if ( $note || $description ) : ?>
-													<div class="d-flex flex-column gap-8">
+													<div class="d-flex flex-column gap-8 pakiety-content-item-description">
 														<?php if ( $note ) : ?>
-															<span class="p-xs fw-bolder"><?php echo esc_html( $note ); ?></span>
+															<span class="<?php echo $is_service_pricing ? 'p-s' : 'p-xs'; ?> fw-bolder"><?php echo esc_html( $note ); ?></span>
 														<?php endif; ?>
 														<?php if ( $description ) : ?>
-															<p class="p-xs"><?php echo wp_kses_post( $description ); ?></p>
+															<p class="<?php echo $is_service_pricing ? 'p-s' : 'p-xs'; ?>"><?php echo wp_kses_post( $description ); ?></p>
 														<?php endif; ?>
 													</div>
 												<?php endif; ?>
@@ -229,6 +236,31 @@ $active_index = 0;
 							<?php endforeach; ?>
 						</div>
 					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+	<?php if ( '' !== $disclaimer ) : ?>
+		<div class="container">
+			<div class="row mt-24">
+				<div class="col-12">
+					<div class="od-pricing-disclaimer d-flex align-items-center justify-content-center gap-8">
+						<svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+							<path d="M12 13.8808V7.31832M11.9916 15.7558C11.961 15.7563 11.9307 15.7629 11.9026 15.7753C11.8746 15.7876 11.8493 15.8054 11.8282 15.8277C11.8072 15.85 11.7908 15.8763 11.78 15.905C11.7693 15.9337 11.7644 15.9643 11.7657 15.9949C11.7678 16.0564 11.7938 16.1147 11.838 16.1575C11.8822 16.2003 11.9413 16.2244 12.0029 16.2246C12.0335 16.224 12.0637 16.2173 12.0917 16.2049C12.1197 16.1925 12.1449 16.1747 12.1659 16.1524C12.187 16.1301 12.2034 16.1039 12.2141 16.0753C12.2249 16.0466 12.2299 16.0161 12.2288 15.9855C12.2269 15.9253 12.2023 15.8681 12.1598 15.8255C12.1173 15.7828 12.0602 15.7579 12 15.7558H11.9954M22.3125 11.8239C22.3195 14.5775 21.2408 17.2229 19.3104 19.1865C17.38 21.1501 14.7533 22.2737 12 22.3136C10.6553 22.3339 9.31999 22.0869 8.07145 21.5871C6.82291 21.0873 5.68603 20.3446 4.72674 19.402C3.76744 18.4595 3.00482 17.3359 2.48312 16.0963C1.96141 14.8568 1.69099 13.526 1.68754 12.1811C1.67985 9.42706 2.75819 6.78098 4.68871 4.81677C6.61922 2.85256 9.24624 1.7286 12 1.68864C13.345 1.66853 14.6805 1.91565 15.9291 2.41567C17.1778 2.9157 18.3148 3.65867 19.2741 4.60149C20.2334 5.54432 20.9959 6.66823 21.5175 7.90804C22.0391 9.14786 22.3093 10.4789 22.3125 11.8239Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#E62E2E"/>
+						</svg>
+						<p class="p-s c-black mb-0"><?php echo nl2br( esc_html( $disclaimer ) ); ?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+	<?php if ( ! empty( $link['url'] ) ) : ?>
+		<div class="container">
+			<div class="row mt-48">
+				<div class="col-12 text-center d-flex justify-content-center">
+					<a<?php dwaplusjeden_link_attrs( $link ); ?> class="c-btn c-btn-s c-btn-fill">
+						<span><?php echo esc_html( $link['title'] ); ?></span>
+					</a>
 				</div>
 			</div>
 		</div>

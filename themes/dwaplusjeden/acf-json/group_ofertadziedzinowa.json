@@ -784,6 +784,163 @@
             "return_format": "array"
         },
         {
+            "key": "field_od_pricing_tab",
+            "label": "Cennik",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_od_pricing_enabled",
+            "label": "Pokaż sekcję",
+            "name": "od_pricing_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Domyślnie sekcja jest ukryta. Włącz ją, aby wyświetlić wybrany cennik pod sekcją Usługi.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_od_pricing_heading",
+            "label": "Nagłówek",
+            "name": "od_pricing_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_od_pricing_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Cennik usługi",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_od_pricing_packages",
+            "label": "Cennik",
+            "name": "od_pricing_packages",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Wybierz jeden pakiet cennika. Sekcja wyświetli jego warianty, ceny i opisy tak jak na stronie Cennik.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_od_pricing_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "pricing_package"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": 1,
+            "max": 1,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_od_pricing_disclaimer",
+            "label": "Disclaimer",
+            "name": "od_pricing_disclaimer",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Podpis pod kartami cennika, nad przyciskiem. Ikona jest dodawana automatycznie. Pozostaw puste, aby ukryć podpis wraz z ikoną.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_od_pricing_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_od_pricing_link",
+            "label": "Przycisk pod cennikiem",
+            "name": "od_pricing_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Ustaw adres i tekst przycisku, np. Zleć rozliczenie. Puste pole ukrywa przycisk.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_od_pricing_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_od_process_tab",
             "label": "Proces",
             "name": "",
@@ -1144,5 +1301,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1780907042
+    "modified": 1792484965
 }

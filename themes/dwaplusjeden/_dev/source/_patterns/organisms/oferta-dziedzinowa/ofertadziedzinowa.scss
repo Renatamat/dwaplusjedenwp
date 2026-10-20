@@ -192,6 +192,62 @@
         }
     }
 }
+.od-pricing.pakiety{
+    background: var(--Surface-300, #E9F5F4);
+
+    .pakiety-content{
+        gap: 24px;
+    }
+
+    .pakiety-content-item{
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        height: 100%;
+        padding: 24px;
+        border: 0;
+        border-radius: var(--Radius-brand-xl, 24px);
+        background: var(--Surface-secondary, #28655B);
+        color: #fff;
+        box-shadow: none;
+        overflow-wrap: anywhere;
+
+        &::after{
+            content: "";
+            display: block;
+            flex-shrink: 0;
+            width: 32px;
+            height: 8px;
+            margin-top: 24px;
+            border-radius: var(--Radius-brand, 4px);
+            background: var(--Icon-primary, #E62E2E);
+        }
+
+        &-wrapper{
+            flex: 1;
+            min-width: 0;
+        }
+
+        &-title{
+            color: #3BB9AB;
+        }
+
+        &-price{
+            flex-wrap: wrap;
+            align-items: baseline !important;
+            row-gap: 0 !important;
+        }
+
+        &-description{
+            margin-top: 12px;
+
+            p{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
 .od-trust{
     overflow: hidden;
     &-slider{
@@ -873,7 +929,7 @@
 
                 svg {
                     width: 28px;
-                    height: 28px;
+                    height: 28px; 
                     stroke-width: 3;
                 }
 
