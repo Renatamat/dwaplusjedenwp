@@ -137,6 +137,12 @@ footer{
     .label-s{
         margin: 0px;
     }
+    .wpcf7-list-item{
+        margin-left: 0;
+    }
+    span.wpcf7-not-valid-tip{
+        min-width: 190px;
+    }
     .c-btn-outline{
         width: 100%;
         @include media-breakpoint-up(lg) {

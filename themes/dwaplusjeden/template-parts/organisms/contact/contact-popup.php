@@ -9,6 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	return;
 }
 
+$is_newsletter = isset( $args['variant'] ) && 'newsletter' === $args['variant'];
+$defaults      = $is_newsletter
+	? array(
+		'id'            => 'newsletter-popup',
+		'form_selector' => '.newsletter-card-wrapper',
+		'title'         => __( 'Dziękujemy za zapis do newslettera!', 'dwaplusjeden' ),
+		'subtitle'      => __( 'Bądź na bieżąco z podatkami.', 'dwaplusjeden' ),
+		'text'          => __( 'Praktyczne porady podatkowe i informacje o zmianach w przepisach będziemy przesyłać na podany przez Ciebie adres e-mail.', 'dwaplusjeden' ),
+	)
+	: array();
+$args = wp_parse_args( $args, $defaults );
+
 $popup_id      = ! empty( $args['id'] ) ? sanitize_html_class( $args['id'] ) : 'contact-popup';
 $form_selector = ! empty( $args['form_selector'] ) ? (string) $args['form_selector'] : '.contact';
 $title         = ! empty( $args['title'] ) ? (string) $args['title'] : __( 'Otrzymaliśmy Twoją wiadomość!', 'dwaplusjeden' );

@@ -119,6 +119,13 @@ $footer_menu_columns      = array(
 
 						<?php if ( $newsletter_shortcode ) : ?>
 							<?php echo do_shortcode( $newsletter_shortcode ); ?>
+							<?php
+							get_template_part(
+								'template-parts/organisms/contact/contact-popup',
+								null,
+								array( 'variant' => 'newsletter' )
+							);
+							?>
 						<?php endif; ?>
 					</div>
 				</div>
