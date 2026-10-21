@@ -91,7 +91,7 @@ $footer_menu_columns      = array(
 							<?php endif; ?>
 
 							<?php if ( ! empty( $footer_contact_link['url'] ) ) : ?>
-								<a<?php dwaplusjeden_link_attrs( $footer_contact_link ); ?> class="c-btn c-btn-s c-btn-fill footer-btn-contact">
+								<a<?php dwaplusjeden_link_attrs( $footer_contact_link ); ?> class="c-btn c-btn-s c-btn-fill footer-btn-contact" target="_blank">
 									<span><?php echo esc_html( $footer_contact_link['title'] ?: $footer_contact_label ); ?></span>
 								</a>
 							<?php endif; ?>
