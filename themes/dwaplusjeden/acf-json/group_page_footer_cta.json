@@ -1,0 +1,158 @@
+{
+    "key": "group_page_footer_cta",
+    "title": "CTA w stopce",
+    "fields": [
+        {
+            "key": "field_page_footer_cta_custom",
+            "label": "Indywidualne dane CTA w stopce",
+            "name": "page_footer_cta_custom",
+            "type": "true_false",
+            "instructions": "W\u0142\u0105cz, aby zast\u0105pi\u0107 globalne CTA danymi tej strony. Puste pola nie b\u0119d\u0105 uzupe\u0142niane z opcji motywu. Wy\u0142\u0105czenie przywraca globalne ustawienia CTA.",
+            "required": 0,
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_page_footer_cta_avatar",
+            "label": "Zdj\u0119cie doradcy",
+            "name": "page_footer_cta_avatar",
+            "type": "image",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_page_footer_cta_name",
+            "label": "Imi\u0119 i nazwisko",
+            "name": "page_footer_cta_name",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "default_value": ""
+        },
+        {
+            "key": "field_page_footer_cta_role",
+            "label": "Stanowisko",
+            "name": "page_footer_cta_role",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "default_value": ""
+        },
+        {
+            "key": "field_page_footer_cta_heading",
+            "label": "Nag\u0142\u00f3wek",
+            "name": "page_footer_cta_heading",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "default_value": ""
+        },
+        {
+            "key": "field_page_footer_cta_text",
+            "label": "Tekst",
+            "name": "page_footer_cta_text",
+            "type": "textarea",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "default_value": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_page_footer_cta_primary_link",
+            "label": "Pierwszy przycisk",
+            "name": "page_footer_cta_primary_link",
+            "type": "link",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "return_format": "array"
+        },
+        {
+            "key": "field_page_footer_cta_secondary_link",
+            "label": "Drugi przycisk",
+            "name": "page_footer_cta_secondary_link",
+            "type": "link",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_footer_cta_custom",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Indywidualne CTA w stopce dla wybranej strony.",
+    "show_in_rest": false,
+    "modified": 1793013500
+}

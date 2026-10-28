@@ -58,13 +58,21 @@ $archive_data        = array(
 		<div class="row mt-52 mt-sm-64 mt-xl-96">
 			<div class="col-12 offset-xxxl-1 col-xxxl-10">
 				<?php if ( have_posts() ) : ?>
-					<div class="row r-gap-24 a-card-sequence" data-blog-posts-grid data-animate-start="top 90%" data-animate-batch-max="3">
+					<?php
+					ob_start();
+					get_template_part( 'template-parts/organisms/blog/blog-newsletter' );
+					$newsletter_html = ob_get_clean();
+					?>
+					<div class="blog-allnews-grid a-card-sequence" data-blog-posts-grid data-animate-start="top 90%" data-animate-batch-max="3">
 						<?php while ( have_posts() ) : ?>
 							<?php the_post(); ?>
 							<?php ++$displayed_posts; ?>
 							<div class="col-sm-6 col-lg-4 a-card-item">
 								<?php get_template_part( 'template-parts/organisms/blog/blog-card', null, array( 'post_id' => get_the_ID() ) ); ?>
 							</div>
+							<?php if ( 1 === $displayed_posts ) : ?>
+								<?php echo $newsletter_html; ?>
+							<?php endif; ?>
 						<?php endwhile; ?>
 					</div>
 				<?php else : ?>
