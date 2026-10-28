@@ -13,14 +13,18 @@ if ( ! function_exists( 'get_field' ) ) {
 	return;
 }
 
-$enabled        = get_field( 'footer_cta_enabled', 'option' );
-$avatar_id      = get_field( 'footer_cta_avatar', 'option' );
-$name           = get_field( 'footer_cta_name', 'option' );
-$role           = get_field( 'footer_cta_role', 'option' );
-$heading        = get_field( 'footer_cta_heading', 'option' );
-$text           = get_field( 'footer_cta_text', 'option' );
-$primary_link   = dwaplusjeden_get_acf_link( 'footer_cta_primary_link' );
-$secondary_link = dwaplusjeden_get_acf_link( 'footer_cta_secondary_link' );
+$page_id        = get_queried_object_id();
+$custom_cta     = is_page() && get_field( 'page_footer_cta_custom', $page_id );
+$source_id      = $custom_cta ? $page_id : 'option';
+$field_prefix   = $custom_cta ? 'page_footer_cta_' : 'footer_cta_';
+$enabled        = $custom_cta ? true : get_field( 'footer_cta_enabled', 'option' );
+$avatar_id      = get_field( $field_prefix . 'avatar', $source_id );
+$name           = get_field( $field_prefix . 'name', $source_id );
+$role           = get_field( $field_prefix . 'role', $source_id );
+$heading        = get_field( $field_prefix . 'heading', $source_id );
+$text           = get_field( $field_prefix . 'text', $source_id );
+$primary_link   = dwaplusjeden_get_acf_link( $field_prefix . 'primary_link', $source_id );
+$secondary_link = dwaplusjeden_get_acf_link( $field_prefix . 'secondary_link', $source_id );
 $avatar_src     = $avatar_id ? wp_get_attachment_image_url( $avatar_id, 'thumbnail' ) : '';
 $avatar_alt     = $avatar_id ? get_post_meta( $avatar_id, '_wp_attachment_image_alt', true ) : '';
 
