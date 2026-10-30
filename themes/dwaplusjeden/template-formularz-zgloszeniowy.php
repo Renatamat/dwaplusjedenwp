@@ -36,9 +36,9 @@ if ( ! $application_redirect_url ) {
 			array(
 				'id'            => 'application-popup',
 				'form_selector' => '.formularz-zgloszeniowy',
-				'title'         => __( 'Dziękujemy za Twoją aplikację!', 'dwaplusjeden' ),
-				'subtitle'      => __( "Skontaktujemy się z Tobą tak szybko,\njak będzie to możliwe.", 'dwaplusjeden' ),
-				'text'          => __( "Potwierdzenie wysłania zgłoszenia otrzymasz\nna podany przez Ciebie adres e-mail.", 'dwaplusjeden' ),
+				'title'         => __( 'Dziękujemy za zgłoszenie!', 'dwaplusjeden' ),
+				'subtitle'      => __( "Miło nam, że chcesz współpracować z 2+1.\nZapoznamy się z Twoim zgłoszeniem.", 'dwaplusjeden' ),
+				'text'          => __( "Jeśli zaprosimy Cię do kolejnego etapu,\nskontaktujemy się z Tobą, aby porozmawiać o współpracy. Zastrzegamy sobie prawo do kontaktowania się z wybranymi kandydatami.", 'dwaplusjeden' ),
 				'button_label'  => __( 'Ok', 'dwaplusjeden' ),
 				'button_url'    => $application_redirect_url,
 			)

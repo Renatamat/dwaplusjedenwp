@@ -21,6 +21,62 @@
             border-radius: var(--Radius-brand, 4px);
             border: var(--Stroke-s, 1px) solid var(--Border-secondary, #28655B);
         }
+        .CheckboxWrap.label-s .wpcf7-acceptance{
+            .wpcf7-list-item{
+                display: block;
+                margin: 0;
+            }
+            label{
+                align-items: flex-start;
+                min-height: 16px;
+                padding: 0 0 0 24px;
+            }
+            .wpcf7-list-item-label{
+                color: var(--Text-body, #14131C);
+                font-family: $font-family-body;
+                font-weight: 400;
+                @include typographyParagraphS-mobile();
+
+                @include media-breakpoint-up(sm) {
+                    @include typographyParagraphS-tab();
+                }
+                @include media-breakpoint-up(lg) {
+                    @include typographyParagraphS();
+                }
+            }
+            input[type="checkbox"]{
+                width: 16px;
+                height: 16px;
+                margin: 0;
+
+                + .wpcf7-list-item-label::before{
+                    width: 16px;
+                    height: 16px;
+                    border: 1.2px solid var(--Border-secondary, #28655B);
+                    border-radius: 1.6px;
+                    background: #fff;
+                }
+                &:checked + .wpcf7-list-item-label::before{
+                    border-color: $color-checkbox-bg;
+                    background: $color-checkbox-bg;
+                }
+                &:checked + .wpcf7-list-item-label::after{
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 6px;
+                    width: 5px;
+                    height: 9px;
+                    border-right: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    transform: rotate(45deg);
+                }
+                &:focus-visible + .wpcf7-list-item-label::before{
+                    outline: 2px solid var(--Border-secondary, #28655B);
+                    outline-offset: 2px;
+                }
+            }
+        }
         .custom-select .select-selected{
             border-radius: var(--Radius-brand, 4px);
             border: var(--Stroke-s, 1px) solid var(--Border-secondary, #28655B);
